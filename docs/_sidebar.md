@@ -1,0 +1,20 @@
+- [🏠 首页](/)
+- **基础篇**
+  - [音程与音阶](basics/intervals-scales.md)
+  - [三和弦的构成](basics/triads.md)
+  - [七和弦与延伸音](basics/seventh-chords.md)
+  - [和弦转位](basics/inversions.md)
+- **进阶篇**
+  - [调性与和弦功能](advanced/tonality.md)
+  - [常用和弦进行](advanced/progressions.md)
+  - [副属和弦与离调](advanced/secondary-dominants.md)
+  - [和弦替代](advanced/substitutions.md)
+- **伴奏篇**
+  - [伴奏织体概览](accompaniment/textures.md)
+  - [基础节奏型](accompaniment/rhythm-patterns.md)
+  - [分解与琶音](accompaniment/arpeggios.md)
+  - [风格化伴奏](accompaniment/styles.md)
+- **实战篇**
+  - [经典曲目拆解](practice/song-breakdown.md)
+  - [即兴弹唱思路](practice/improvisation.md)
+  - [移调与简化](practice/transposition.md)
