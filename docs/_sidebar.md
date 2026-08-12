@@ -15,6 +15,13 @@
   - [分解与琶音](accompaniment/arpeggios.md)
   - [风格化伴奏](accompaniment/styles.md)
 - **实战篇**
+  - 每日练习模板
+    - [练习框架](practice/daily-routine.md)
+    - [大三和弦](practice/major-triads.md)
+    - [小三和弦](practice/minor-triads.md)
+    - [挂留和弦](practice/sus-chords.md)
+    - [加九音和弦](practice/add9-chords.md)
+    - [六和弦与六九和弦](practice/sixth-chords.md)
   - [经典曲目拆解](practice/song-breakdown.md)
   - [即兴弹唱思路](practice/improvisation.md)
   - [移调与简化](practice/transposition.md)
