@@ -71,7 +71,7 @@ svg_parts.append('</svg>')
 
 svg_content = '\n'.join(svg_parts)
 
-output_path = r'd:\Githubprojects\chords-keys-cookbook\docs\practice\circle-of-fifths.svg'
+output_path = r'd:\Githubprojects\chords-keys-cookbook\docs\assets\images\common\circle-of-fifths.svg'
 with open(output_path, 'w', encoding='utf-8') as f:
     f.write(svg_content)
 
