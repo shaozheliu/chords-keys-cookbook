@@ -4,7 +4,7 @@
 
 大三和弦由**根音 + 大三度 + 纯五度**构成。
 
-以 C 大调为例：**C - E - G**
+以 C 大三和弦为例：**C - E - G**
 
 ---
 
@@ -21,7 +21,7 @@
 | 声部 | 左手 | 右手 |
 |------|------|------|
 | 指法 | **3 指**（中指）弹根音 | **1-2-4 指** 弹三音和弦 |
-| 示例（C 大调） | ③ → C（低八度） | ①-G、②-C、④-E（或自由排列） |
+| 示例（C 大三和弦） | ③ → C（低八度） | ①-G、②-C、④-E（或自由排列） |
 
 右手三音和弦有三种声部排列，按练习顺序为「第二转位排列 → 原位排列 → 第一转位排列」：
 
@@ -44,7 +44,7 @@
 | 声部 | 左手 | 右手 |
 |------|------|------|
 | 指法 | **5 指**弹根音 + **2 指**弹五音 | **1-2-3-5 指** |
-| 示例（C 大调） | ⑤-C（低）、②-G | ①-C、②-E、③-G、⑤-C（高八度） |
+| 示例（C 大三和弦） | ⑤-C（低）、②-G | ①-C、②-E、③-G、⑤-C（高八度） |
 
 > **练习要点**：左手五指与小指间距较大（纯五度），手腕保持放松不要僵硬；右手 1-2-3-5 跨度也为纯五度（C→C），确保每个音均匀触键。
 
@@ -64,87 +64,87 @@
 
 ## 三、练习分组
 
-按五度圈把 12 个调分成五组，按照节奏练习：
+按五度圈把 12 个大三和弦分成五组，按照节奏练习：
 
 #### 周一 ·（F、C、G）
 
-**F 大调**
+**F 大三和弦**
 
-![F 大调 · 手型一](../assets/images/major-triads/F-hand-shape-1.svg)
+![F 大三和弦 · 手型一](../assets/images/major-triads/F-hand-shape-1.svg)
 
-![F 大调 · 手型二](../assets/images/major-triads/F-hand-shape-2.svg)
+![F 大三和弦 · 手型二](../assets/images/major-triads/F-hand-shape-2.svg)
 
-**C 大调**
+**C 大三和弦**
 
-![C 大调 · 手型一](../assets/images/major-triads/C-hand-shape-1.svg)
+![C 大三和弦 · 手型一](../assets/images/major-triads/C-hand-shape-1.svg)
 
-![C 大调 · 手型二](../assets/images/major-triads/C-hand-shape-2.svg)
+![C 大三和弦 · 手型二](../assets/images/major-triads/C-hand-shape-2.svg)
 
-**G 大调**
+**G 大三和弦**
 
-![G 大调 · 手型一](../assets/images/major-triads/G-hand-shape-1.svg)
+![G 大三和弦 · 手型一](../assets/images/major-triads/G-hand-shape-1.svg)
 
-![G 大调 · 手型二](../assets/images/major-triads/G-hand-shape-2.svg)
+![G 大三和弦 · 手型二](../assets/images/major-triads/G-hand-shape-2.svg)
 
 #### 周二 ·（D、A、E）
 
-**D 大调**
+**D 大三和弦**
 
-![D 大调 · 手型一](../assets/images/major-triads/D-hand-shape-1.svg)
+![D 大三和弦 · 手型一](../assets/images/major-triads/D-hand-shape-1.svg)
 
-![D 大调 · 手型二](../assets/images/major-triads/D-hand-shape-2.svg)
+![D 大三和弦 · 手型二](../assets/images/major-triads/D-hand-shape-2.svg)
 
-**A 大调**
+**A 大三和弦**
 
-![A 大调 · 手型一](../assets/images/major-triads/A-hand-shape-1.svg)
+![A 大三和弦 · 手型一](../assets/images/major-triads/A-hand-shape-1.svg)
 
-![A 大调 · 手型二](../assets/images/major-triads/A-hand-shape-2.svg)
+![A 大三和弦 · 手型二](../assets/images/major-triads/A-hand-shape-2.svg)
 
-**E 大调**
+**E 大三和弦**
 
-![E 大调 · 手型一](../assets/images/major-triads/E-hand-shape-1.svg)
+![E 大三和弦 · 手型一](../assets/images/major-triads/E-hand-shape-1.svg)
 
-![E 大调 · 手型二](../assets/images/major-triads/E-hand-shape-2.svg)
+![E 大三和弦 · 手型二](../assets/images/major-triads/E-hand-shape-2.svg)
 
 #### 周三~周四 ·（B、F#、Db）
 
-**B 大调**
+**B 大三和弦**
 
-![B 大调 · 手型一](../assets/images/major-triads/B-hand-shape-1.svg)
+![B 大三和弦 · 手型一](../assets/images/major-triads/B-hand-shape-1.svg)
 
-![B 大调 · 手型二](../assets/images/major-triads/B-hand-shape-2.svg)
+![B 大三和弦 · 手型二](../assets/images/major-triads/B-hand-shape-2.svg)
 
-**F# 大调**
+**F# 大三和弦**
 
-![F# 大调 · 手型一](../assets/images/major-triads/F%23-hand-shape-1.svg)
+![F# 大三和弦 · 手型一](../assets/images/major-triads/F%23-hand-shape-1.svg)
 
-![F# 大调 · 手型二](../assets/images/major-triads/F%23-hand-shape-2.svg)
+![F# 大三和弦 · 手型二](../assets/images/major-triads/F%23-hand-shape-2.svg)
 
-**Db 大调**
+**Db 大三和弦**
 
-![Db 大调 · 手型一](../assets/images/major-triads/Db-hand-shape-1.svg)
+![Db 大三和弦 · 手型一](../assets/images/major-triads/Db-hand-shape-1.svg)
 
-![Db 大调 · 手型二](../assets/images/major-triads/Db-hand-shape-2.svg)
+![Db 大三和弦 · 手型二](../assets/images/major-triads/Db-hand-shape-2.svg)
 
 #### 周五~周六 ·（Ab、Eb、Bb）            
 
-**Ab 大调**
+**Ab 大三和弦**
 
-![Ab 大调 · 手型一](../assets/images/major-triads/Ab-hand-shape-1.svg)
+![Ab 大三和弦 · 手型一](../assets/images/major-triads/Ab-hand-shape-1.svg)
 
-![Ab 大调 · 手型二](../assets/images/major-triads/Ab-hand-shape-2.svg)
+![Ab 大三和弦 · 手型二](../assets/images/major-triads/Ab-hand-shape-2.svg)
 
-**Eb 大调**
+**Eb 大三和弦**
 
-![Eb 大调 · 手型一](../assets/images/major-triads/Eb-hand-shape-1.svg)
+![Eb 大三和弦 · 手型一](../assets/images/major-triads/Eb-hand-shape-1.svg)
 
-![Eb 大调 · 手型二](../assets/images/major-triads/Eb-hand-shape-2.svg)
+![Eb 大三和弦 · 手型二](../assets/images/major-triads/Eb-hand-shape-2.svg)
 
-**Bb 大调**
+**Bb 大三和弦**
 
-![Bb 大调 · 手型一](../assets/images/major-triads/Bb-hand-shape-1.svg)
+![Bb 大三和弦 · 手型一](../assets/images/major-triads/Bb-hand-shape-1.svg)
 
-![Bb 大调 · 手型二](../assets/images/major-triads/Bb-hand-shape-2.svg)
+![Bb 大三和弦 · 手型二](../assets/images/major-triads/Bb-hand-shape-2.svg)
 
 #### 周日 · 全量练习与查漏补缺
 
@@ -172,7 +172,7 @@
 | 2 | 原位排列 | 根音 - 三音 - 五音 | 根音 | Do - Mi - Sol |
 | 3 | 第一转位排列 | 三音 - 五音 - 根音 | 三音 | Mi - Sol - Do |
 
-> 以 C 大调为例：G - C - E → C - E - G → E - G - C，右手指法均为 1-2-4。
+> 以 C 大三和弦为例：G - C - E → C - E - G → E - G - C，右手指法均为 1-2-4。
 
 每种排列先练**柱式和弦**（同时按下），再练**琶音分解**（逐音弹出）；左手根音力度稍重，建立低音支撑。
 

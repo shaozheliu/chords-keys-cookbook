@@ -8,6 +8,8 @@
 # 用「半音模型」渲染键盘，可正确高亮黑键根音/和弦音。
 # ============================================================
 
+from pathlib import Path
+
 # 配色（与现有脚本保持一致）
 LEFT_STROKE = "#dc2626"    # 左手主色（红）
 RIGHT_STROKE = "#2563eb"   # 右手主色（蓝）
@@ -143,7 +145,7 @@ H = KEY_Y + WHITE_H + 74           # 画布总高
 def draw_hand(svg, W, tonic_name, hand):
     offset, mode = TONIC_INFO[tonic_name]
 
-    title = f'{tonic_name} 大调 · {hand["label"]}（{hand["sub"]}）'
+    title = f'{tonic_name} Major · {hand["label"]}（{hand["sub"]}）'
     svg.append(f'<text x="{W/2}" y="{TITLE_Y}" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">{title}</text>')
     svg.append(f'<text x="{W/2}" y="{SUBTITLE_Y}" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#888">{hand["desc"]}</text>')
 
@@ -196,9 +198,9 @@ def build_single_svg(tonic_name, hand, idx):
     draw_hand(svg, W, tonic_name, hand)
     svg.append('</svg>')
 
-    path = rf'd:\Githubprojects\chords-keys-cookbook\docs\assets\images\major-triads\{tonic_name}-hand-shape-{idx}.svg'
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(svg))
+    path = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'major-triads' / f'{tonic_name}-hand-shape-{idx}.svg'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text('\n'.join(svg), encoding='utf-8')
     print(f'{tonic_name}-hand-shape-{idx}.svg done')
 
 

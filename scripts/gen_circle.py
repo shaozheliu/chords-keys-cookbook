@@ -1,4 +1,5 @@
 import math
+from pathlib import Path
 
 # SVG canvas
 w, h = 500, 500
@@ -71,8 +72,8 @@ svg_parts.append('</svg>')
 
 svg_content = '\n'.join(svg_parts)
 
-output_path = r'd:\Githubprojects\chords-keys-cookbook\docs\assets\images\common\circle-of-fifths.svg'
-with open(output_path, 'w', encoding='utf-8') as f:
-    f.write(svg_content)
+output_path = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'common' / 'circle-of-fifths.svg'
+output_path.parent.mkdir(parents=True, exist_ok=True)
+output_path.write_text(svg_content, encoding='utf-8')
 
 print(f'Generated: {output_path}')

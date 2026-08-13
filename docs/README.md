@@ -1,6 +1,6 @@
-# 🎹 Chords & Keys Handbook
+# 🎹 Chords & Keys Cookbook
 
-> 钢琴弹唱Handbook — 从和弦到伴奏的系统指南
+> 钢琴弹唱Cookbook — 从和弦到伴奏的系统指南
 
 ## 关于本手册
 
