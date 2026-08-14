@@ -1,27 +1,29 @@
+<!-- 本文件由 scripts/gen_sidebar.py 自动生成，请勿手动编辑 -->
+
 - [🏠 首页](/)
-- **基础篇**
-  - [音程与音阶](basics/intervals-scales.md)
-  - [三和弦的构成](basics/triads.md)
-  - [七和弦与延伸音](basics/seventh-chords.md)
-  - [和弦转位](basics/inversions.md)
-- **进阶篇**
-  - [调性与和弦功能](advanced/tonality.md)
-  - [常用和弦进行](advanced/progressions.md)
-  - [副属和弦与离调](advanced/secondary-dominants.md)
-  - [和弦替代](advanced/substitutions.md)
-- **伴奏篇**
-  - [伴奏织体概览](accompaniment/textures.md)
-  - [基础节奏型](accompaniment/rhythm-patterns.md)
-  - [分解与琶音](accompaniment/arpeggios.md)
-  - [风格化伴奏](accompaniment/styles.md)
-- **实战篇**
-  - 每日练习模板
-    - [练习框架](practice/daily-routine.md)
-    - [大三和弦](practice/major-triads.md)
-    - [小三和弦](practice/minor-triads.md)
-    - [挂留二和弦（sus2）](practice/sus2-chords.md)
-    - [加九音和弦](practice/add9-chords.md)
-    - [六和弦与六九和弦](practice/sixth-chords.md)
-  - [经典曲目拆解](practice/song-breakdown.md)
-  - [即兴弹唱思路](practice/improvisation.md)
-  - [移调与简化](practice/transposition.md)
+- 第一部分 基础篇
+  - [一、音程与音阶](1-基础篇/1-音程与音阶.md)
+  - [二、三和弦的构成](1-基础篇/2-三和弦的构成.md)
+  - [三、七和弦与延伸音](1-基础篇/3-七和弦与延伸音.md)
+  - [四、和弦转位](1-基础篇/4-和弦转位.md)
+- 第二部分 进阶篇
+  - [一、调性与和弦功能](2-进阶篇/1-调性与和弦功能.md)
+  - [二、常用和弦进行](2-进阶篇/2-常用和弦进行.md)
+  - [三、副属和弦与离调](2-进阶篇/3-副属和弦与离调.md)
+  - [四、和弦替代](2-进阶篇/4-和弦替代.md)
+- 第三部分 伴奏篇
+  - [一、伴奏织体概览](3-伴奏篇/1-伴奏织体概览.md)
+  - [二、基础节奏型](3-伴奏篇/2-基础节奏型.md)
+  - [三、分解与琶音](3-伴奏篇/3-分解与琶音.md)
+  - [四、风格化伴奏](3-伴奏篇/4-风格化伴奏.md)
+- 第四部分 实战篇
+  - 一、每日练习
+    - [1.1 每日练习模板](4-实战篇/1-每日练习/1-每日练习模板.md)
+    - [1.2 大三和弦](4-实战篇/1-每日练习/2-大三和弦.md)
+    - [1.3 小三和弦](4-实战篇/1-每日练习/3-小三和弦.md)
+    - [1.4 挂留二和弦（sus2）](4-实战篇/1-每日练习/4-挂留二和弦（sus2）.md)
+    - [1.5 挂留四和弦（sus4）](4-实战篇/1-每日练习/5-挂留四和弦（sus4）.md)
+    - [1.6 加九音和弦](4-实战篇/1-每日练习/6-加九音和弦.md)
+    - [1.7 六和弦与六九和弦](4-实战篇/1-每日练习/7-六和弦与六九和弦.md)
+  - [二、经典曲目拆解](4-实战篇/2-经典曲目拆解.md)
+  - [三、即兴弹唱思路](4-实战篇/3-即兴弹唱思路.md)
