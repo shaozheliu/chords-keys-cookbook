@@ -6,6 +6,7 @@
 #   - 篇内子文件夹 = 「章」（带节），命名「N-章名」，章名作为章标题；
 #     子文件夹内的 .md 文件 = 「节」，其首个 # H1 作为节标题；
 #     若子文件夹内有 README.md，则章条目链接到 README.md，否则为纯分组标题
+#   - 编号：篇 = 第X部分（中文）；章 = X.Y；节 = X.Y.Z（阿拉伯十进制）
 # 用法：
 #   python scripts/gen_sidebar.py
 # 输出：
@@ -114,7 +115,7 @@ def build_sidebar(parts):
     for part_idx, (part_title, chapters) in enumerate(parts, start=1):
         lines.append(f'- 第{cn_num(part_idx)}部分 {part_title}')
         for ch_idx, (title, link, sections) in enumerate(chapters, start=1):
-            label = f'{cn_num(ch_idx)}、{title}'
+            label = f'{part_idx}.{ch_idx} {title}'
             if link is not None:
                 rel = link.relative_to(DOCS_DIR).as_posix()
                 lines.append(f'  - [{label}]({rel})')
@@ -122,7 +123,7 @@ def build_sidebar(parts):
                 lines.append(f'  - {label}')
             for sec_idx, (md, sec_title) in enumerate(sections, start=1):
                 rel = md.relative_to(DOCS_DIR).as_posix()
-                lines.append(f'    - [{ch_idx}.{sec_idx} {sec_title}]({rel})')
+                lines.append(f'    - [{part_idx}.{ch_idx}.{sec_idx} {sec_title}]({rel})')
     return '\n'.join(lines) + '\n'
 
 

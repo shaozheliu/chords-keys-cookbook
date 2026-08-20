@@ -64,83 +64,83 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 #### 周一 ·（F、C、G）
 
-**F sus2**
+**Fsus2**
 
-![F sus2 · 手型一](../../assets/images/sus2-chords/F-hand-shape-1.svg)
+![Fsus2 · 手型一](../../assets/images/sus2-chords/F-hand-shape-1.svg)
 
-![F sus2 · 手型二](../../assets/images/sus2-chords/F-hand-shape-2.svg)
+![Fsus2 · 手型二](../../assets/images/sus2-chords/F-hand-shape-2.svg)
 
-**C sus2**
+**Csus2**
 
-![C sus2 · 手型一](../../assets/images/sus2-chords/C-hand-shape-1.svg)
+![Csus2 · 手型一](../../assets/images/sus2-chords/C-hand-shape-1.svg)
 
-![C sus2 · 手型二](../../assets/images/sus2-chords/C-hand-shape-2.svg)
+![Csus2 · 手型二](../../assets/images/sus2-chords/C-hand-shape-2.svg)
 
-**G sus2**
+**Gsus2**
 
-![G sus2 · 手型一](../../assets/images/sus2-chords/G-hand-shape-1.svg)
+![Gsus2 · 手型一](../../assets/images/sus2-chords/G-hand-shape-1.svg)
 
-![G sus2 · 手型二](../../assets/images/sus2-chords/G-hand-shape-2.svg)
+![Gsus2 · 手型二](../../assets/images/sus2-chords/G-hand-shape-2.svg)
 
 #### 周二 ·（D、A、E）
 
-**D sus2**
+**Dsus2**
 
-![D sus2 · 手型一](../../assets/images/sus2-chords/D-hand-shape-1.svg)
+![Dsus2 · 手型一](../../assets/images/sus2-chords/D-hand-shape-1.svg)
 
-![D sus2 · 手型二](../../assets/images/sus2-chords/D-hand-shape-2.svg)
+![Dsus2 · 手型二](../../assets/images/sus2-chords/D-hand-shape-2.svg)
 
-**A sus2**
+**Asus2**
 
-![A sus2 · 手型一](../../assets/images/sus2-chords/A-hand-shape-1.svg)
+![Asus2 · 手型一](../../assets/images/sus2-chords/A-hand-shape-1.svg)
 
-![A sus2 · 手型二](../../assets/images/sus2-chords/A-hand-shape-2.svg)
+![Asus2 · 手型二](../../assets/images/sus2-chords/A-hand-shape-2.svg)
 
-**E sus2**
+**Esus2**
 
-![E sus2 · 手型一](../../assets/images/sus2-chords/E-hand-shape-1.svg)
+![Esus2 · 手型一](../../assets/images/sus2-chords/E-hand-shape-1.svg)
 
-![E sus2 · 手型二](../../assets/images/sus2-chords/E-hand-shape-2.svg)
+![Esus2 · 手型二](../../assets/images/sus2-chords/E-hand-shape-2.svg)
 
 #### 周三~周四 ·（B、F#、Db）
 
-**B sus2**
+**Bsus2**
 
-![B sus2 · 手型一](../../assets/images/sus2-chords/B-hand-shape-1.svg)
+![Bsus2 · 手型一](../../assets/images/sus2-chords/B-hand-shape-1.svg)
 
-![B sus2 · 手型二](../../assets/images/sus2-chords/B-hand-shape-2.svg)
+![Bsus2 · 手型二](../../assets/images/sus2-chords/B-hand-shape-2.svg)
 
-**F# sus2**
+**F#sus2**
 
-![F# sus2 · 手型一](../../assets/images/sus2-chords/F%23-hand-shape-1.svg)
+![F#sus2 · 手型一](../../assets/images/sus2-chords/F%23-hand-shape-1.svg)
 
-![F# sus2 · 手型二](../../assets/images/sus2-chords/F%23-hand-shape-2.svg)
+![F#sus2 · 手型二](../../assets/images/sus2-chords/F%23-hand-shape-2.svg)
 
-**Db sus2**
+**Dbsus2**
 
-![Db sus2 · 手型一](../../assets/images/sus2-chords/Db-hand-shape-1.svg)
+![Dbsus2 · 手型一](../../assets/images/sus2-chords/Db-hand-shape-1.svg)
 
-![Db sus2 · 手型二](../../assets/images/sus2-chords/Db-hand-shape-2.svg)
+![Dbsus2 · 手型二](../../assets/images/sus2-chords/Db-hand-shape-2.svg)
 
 #### 周五~周六 ·（Ab、Eb、Bb）
 
-**Ab sus2**
+**Absus2**
 
-![Ab sus2 · 手型一](../../assets/images/sus2-chords/Ab-hand-shape-1.svg)
+![Absus2 · 手型一](../../assets/images/sus2-chords/Ab-hand-shape-1.svg)
 
-![Ab sus2 · 手型二](../../assets/images/sus2-chords/Ab-hand-shape-2.svg)
+![Absus2 · 手型二](../../assets/images/sus2-chords/Ab-hand-shape-2.svg)
 
-**Eb sus2**
+**Ebsus2**
 
-![Eb sus2 · 手型一](../../assets/images/sus2-chords/Eb-hand-shape-1.svg)
+![Ebsus2 · 手型一](../../assets/images/sus2-chords/Eb-hand-shape-1.svg)
 
-![Eb sus2 · 手型二](../../assets/images/sus2-chords/Eb-hand-shape-2.svg)
+![Ebsus2 · 手型二](../../assets/images/sus2-chords/Eb-hand-shape-2.svg)
 
-**Bb sus2**
+**Bbsus2**
 
-![Bb sus2 · 手型一](../../assets/images/sus2-chords/Bb-hand-shape-1.svg)
+![Bbsus2 · 手型一](../../assets/images/sus2-chords/Bb-hand-shape-1.svg)
 
-![Bb sus2 · 手型二](../../assets/images/sus2-chords/Bb-hand-shape-2.svg)
+![Bbsus2 · 手型二](../../assets/images/sus2-chords/Bb-hand-shape-2.svg)
 
 #### 周日 · 全量练习与查漏补缺
 

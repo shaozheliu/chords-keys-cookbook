@@ -41,64 +41,63 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 #### 周一 ·（F、C、G）
 
-**F sus4**
+**Fsus4**
 
-![F sus4 · 扩张型](../../assets/images/sus4-chords/F-hand-shape-2.svg)
+![Fsus4 · 扩张型](../../assets/images/sus4-chords/F-hand-shape-2.svg)
 
-**C sus4**
+**Csus4**
 
-![C sus4 · 扩张型](../../assets/images/sus4-chords/C-hand-shape-2.svg)
+![Csus4 · 扩张型](../../assets/images/sus4-chords/C-hand-shape-2.svg)
 
-**G sus4**
+**Gsus4**
 
-![G sus4 · 扩张型](../../assets/images/sus4-chords/G-hand-shape-2.svg)
+![Gsus4 · 扩张型](../../assets/images/sus4-chords/G-hand-shape-2.svg)
 
 #### 周二 ·（D、A、E）
 
-**D sus4**
+**Dsus4**
 
-![D sus4 · 扩张型](../../assets/images/sus4-chords/D-hand-shape-2.svg)
+![Dsus4 · 扩张型](../../assets/images/sus4-chords/D-hand-shape-2.svg)
 
-**A sus4**
+**Asus4**
 
-![A sus4 · 扩张型](../../assets/images/sus4-chords/A-hand-shape-2.svg)
+![Asus4 · 扩张型](../../assets/images/sus4-chords/A-hand-shape-2.svg)
 
-**E sus4**
+**Esus4**
 
-![E sus4 · 扩张型](../../assets/images/sus4-chords/E-hand-shape-2.svg)
+![Esus4 · 扩张型](../../assets/images/sus4-chords/E-hand-shape-2.svg)
 
 #### 周三~周四 ·（B、F#、Db）
 
-**B sus4**
+**Bsus4**
 
-![B sus4 · 扩张型](../../assets/images/sus4-chords/B-hand-shape-2.svg)
+![Bsus4 · 扩张型](../../assets/images/sus4-chords/B-hand-shape-2.svg)
 
-**F# sus4**
+**F#sus4**
 
-![F# sus4 · 扩张型](../../assets/images/sus4-chords/F%23-hand-shape-2.svg)
+![F#sus4 · 扩张型](../../assets/images/sus4-chords/F%23-hand-shape-2.svg)
 
-**Db sus4**
+**Dbsus4**
 
-![Db sus4 · 扩张型](../../assets/images/sus4-chords/Db-hand-shape-2.svg)
+![Dbsus4 · 扩张型](../../assets/images/sus4-chords/Db-hand-shape-2.svg)
 
 #### 周五~周六 ·（Ab、Eb、Bb）
 
-**Ab sus4**
+**Absus4**
 
-![Ab sus4 · 扩张型](../../assets/images/sus4-chords/Ab-hand-shape-2.svg)
+![Absus4 · 扩张型](../../assets/images/sus4-chords/Ab-hand-shape-2.svg)
 
-**Eb sus4**
+**Ebsus4**
 
-![Eb sus4 · 扩张型](../../assets/images/sus4-chords/Eb-hand-shape-2.svg)
+![Ebsus4 · 扩张型](../../assets/images/sus4-chords/Eb-hand-shape-2.svg)
 
-**Bb sus4**
+**Bbsus4**
 
-![Bb sus4 · 扩张型](../../assets/images/sus4-chords/Bb-hand-shape-2.svg)
+![Bbsus4 · 扩张型](../../assets/images/sus4-chords/Bb-hand-shape-2.svg)
 
 #### 周日 · 全量练习与查漏补缺
 
 周日查漏补缺
----
 
 ## 四、练习步骤
 
@@ -119,15 +118,15 @@ sus4 的练习沿两条线展开：先在 12 个调里把手型练熟（**手型
 
 把在某个调上练熟的手型**整体平移**到五度圈的下一个调：手型关系完全不变，只有根音位置移动。按 C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F 逐个平移，每移一调重新执行纵向练习，重点感受黑键四音（如 F 的 Bb、Db 的 Gb）如何随平移出现。
 
-### （二）和弦进行练习：IVsus2 → Vsus4 → I（核心）
+### （二）和弦进行练习：Fsus2 → Gsus4 → C（核心）
 
-sus4 最有用的场景是在**终止式**里制造张力与解决。以 C 大调的经典进行 **F - G - C**（IV → V → I）为例：下属用 sus2、属用 sus4、主回到收缩的大三，三者层层推进。
+sus4 最有用的场景是在**终止式**里制造张力与解决。以 C 大调的经典进行 **Fsus2 → Gsus4 → C**（IV → V → I）为例：下属用 sus2、属用 sus4、主回到收缩的大三，三者层层推进。
 
 | 级数 | 和弦 | 手型 | 左手（低→高） | 右手（低→高） |
 |------|------|------|--------------|--------------|
-| IV | F sus2 | 扩张型 | F - C - F（5-2-1） | G - C - G（1-2-5） |
-| V | G sus4 | 扩张型 | G - D（5-2） | G - C - D - G（1-2-3-5） |
-| I | C 大三 | 紧凑型（收缩） | C（3） | G - C - E（1-2-4） |
+| IV | Fsus2 | 扩张型 | F - C - F（5-2-1） | G - C - G（1-2-5） |
+| V | Gsus4 | 扩张型 | G - D（5-2） | G - C - D - G（1-2-3-5） |
+| I | C | 紧凑型（收缩） | C（3） | G - C - E（1-2-4） |
 
 ![F-G-C 进行](../../assets/images/sus4-chords/F-G-C-progression.gif)
 
@@ -136,5 +135,5 @@ sus4 最有用的场景是在**终止式**里制造张力与解决。以 C 大�
 **练习要点**：
 
 1. 先逐个和弦单独练熟（尤其 Fsus2 的左手跨八度、Gsus4 的四音 C）；
-2. 再按 IV → V → I 顺序连贯弹奏，体会挂留音作为共同音的平滑过渡——Fsus2 的二音 G 留到 Gsus4（V 的根音）、Gsus4 的四音 C 留到 C 大三（I 的根音）；
-3. 最后放慢速度，听属（V）回主（I）的"落地感"，让右手在 Gsus4 与 C 大三之间自然换位，避免硬切。
+2. 再按 Fsus2 → Gsus4 → C 顺序连贯弹奏，体会挂留音作为共同音的平滑过渡——Fsus2 的二音 G 留到 Gsus4（V 的根音）、Gsus4 的四音 C 留到 C（I 的根音）；
+3. 最后放慢速度，听属（V）回主（I）的"落地感"，让右手在 Gsus4 与 C 之间自然换位，避免硬切。
