@@ -27,7 +27,7 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 > **练习要点**：左手根音力度稍重，建立低音支撑感；右手 1-2-3 三音间距较近（纯四度 + 大二度），手指保持放松。
 
-![手型一示意图](../../assets/images/sus2-chords/C-hand-shape-1.svg)
+![手型一示意图](../../../assets/images/sus2-chords/C-hand-shape-1.svg)
 
 ### 手型二：左手 do-so-do + 右手 re-so-re
 
@@ -40,7 +40,7 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 > **练习要点**：左手 5→1 跨一个八度、右手 1→5 也跨八度，手腕放松不要僵硬；确保每个音均匀触键。
 
-![手型二示意图](../../assets/images/sus2-chords/C-hand-shape-2.svg)
+![手型二示意图](../../../assets/images/sus2-chords/C-hand-shape-2.svg)
 
 ### 两种手型对比
 
@@ -66,81 +66,81 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 **Fsus2**
 
-![Fsus2 · 手型一](../../assets/images/sus2-chords/F-hand-shape-1.svg)
+![Fsus2 · 手型一](../../../assets/images/sus2-chords/F-hand-shape-1.svg)
 
-![Fsus2 · 手型二](../../assets/images/sus2-chords/F-hand-shape-2.svg)
+![Fsus2 · 手型二](../../../assets/images/sus2-chords/F-hand-shape-2.svg)
 
 **Csus2**
 
-![Csus2 · 手型一](../../assets/images/sus2-chords/C-hand-shape-1.svg)
+![Csus2 · 手型一](../../../assets/images/sus2-chords/C-hand-shape-1.svg)
 
-![Csus2 · 手型二](../../assets/images/sus2-chords/C-hand-shape-2.svg)
+![Csus2 · 手型二](../../../assets/images/sus2-chords/C-hand-shape-2.svg)
 
 **Gsus2**
 
-![Gsus2 · 手型一](../../assets/images/sus2-chords/G-hand-shape-1.svg)
+![Gsus2 · 手型一](../../../assets/images/sus2-chords/G-hand-shape-1.svg)
 
-![Gsus2 · 手型二](../../assets/images/sus2-chords/G-hand-shape-2.svg)
+![Gsus2 · 手型二](../../../assets/images/sus2-chords/G-hand-shape-2.svg)
 
 #### 周二 ·（D、A、E）
 
 **Dsus2**
 
-![Dsus2 · 手型一](../../assets/images/sus2-chords/D-hand-shape-1.svg)
+![Dsus2 · 手型一](../../../assets/images/sus2-chords/D-hand-shape-1.svg)
 
-![Dsus2 · 手型二](../../assets/images/sus2-chords/D-hand-shape-2.svg)
+![Dsus2 · 手型二](../../../assets/images/sus2-chords/D-hand-shape-2.svg)
 
 **Asus2**
 
-![Asus2 · 手型一](../../assets/images/sus2-chords/A-hand-shape-1.svg)
+![Asus2 · 手型一](../../../assets/images/sus2-chords/A-hand-shape-1.svg)
 
-![Asus2 · 手型二](../../assets/images/sus2-chords/A-hand-shape-2.svg)
+![Asus2 · 手型二](../../../assets/images/sus2-chords/A-hand-shape-2.svg)
 
 **Esus2**
 
-![Esus2 · 手型一](../../assets/images/sus2-chords/E-hand-shape-1.svg)
+![Esus2 · 手型一](../../../assets/images/sus2-chords/E-hand-shape-1.svg)
 
-![Esus2 · 手型二](../../assets/images/sus2-chords/E-hand-shape-2.svg)
+![Esus2 · 手型二](../../../assets/images/sus2-chords/E-hand-shape-2.svg)
 
 #### 周三~周四 ·（B、F#、Db）
 
 **Bsus2**
 
-![Bsus2 · 手型一](../../assets/images/sus2-chords/B-hand-shape-1.svg)
+![Bsus2 · 手型一](../../../assets/images/sus2-chords/B-hand-shape-1.svg)
 
-![Bsus2 · 手型二](../../assets/images/sus2-chords/B-hand-shape-2.svg)
+![Bsus2 · 手型二](../../../assets/images/sus2-chords/B-hand-shape-2.svg)
 
 **F#sus2**
 
-![F#sus2 · 手型一](../../assets/images/sus2-chords/F%23-hand-shape-1.svg)
+![F#sus2 · 手型一](../../../assets/images/sus2-chords/F%23-hand-shape-1.svg)
 
-![F#sus2 · 手型二](../../assets/images/sus2-chords/F%23-hand-shape-2.svg)
+![F#sus2 · 手型二](../../../assets/images/sus2-chords/F%23-hand-shape-2.svg)
 
 **Dbsus2**
 
-![Dbsus2 · 手型一](../../assets/images/sus2-chords/Db-hand-shape-1.svg)
+![Dbsus2 · 手型一](../../../assets/images/sus2-chords/Db-hand-shape-1.svg)
 
-![Dbsus2 · 手型二](../../assets/images/sus2-chords/Db-hand-shape-2.svg)
+![Dbsus2 · 手型二](../../../assets/images/sus2-chords/Db-hand-shape-2.svg)
 
 #### 周五~周六 ·（Ab、Eb、Bb）
 
 **Absus2**
 
-![Absus2 · 手型一](../../assets/images/sus2-chords/Ab-hand-shape-1.svg)
+![Absus2 · 手型一](../../../assets/images/sus2-chords/Ab-hand-shape-1.svg)
 
-![Absus2 · 手型二](../../assets/images/sus2-chords/Ab-hand-shape-2.svg)
+![Absus2 · 手型二](../../../assets/images/sus2-chords/Ab-hand-shape-2.svg)
 
 **Ebsus2**
 
-![Ebsus2 · 手型一](../../assets/images/sus2-chords/Eb-hand-shape-1.svg)
+![Ebsus2 · 手型一](../../../assets/images/sus2-chords/Eb-hand-shape-1.svg)
 
-![Ebsus2 · 手型二](../../assets/images/sus2-chords/Eb-hand-shape-2.svg)
+![Ebsus2 · 手型二](../../../assets/images/sus2-chords/Eb-hand-shape-2.svg)
 
 **Bbsus2**
 
-![Bbsus2 · 手型一](../../assets/images/sus2-chords/Bb-hand-shape-1.svg)
+![Bbsus2 · 手型一](../../../assets/images/sus2-chords/Bb-hand-shape-1.svg)
 
-![Bbsus2 · 手型二](../../assets/images/sus2-chords/Bb-hand-shape-2.svg)
+![Bbsus2 · 手型二](../../../assets/images/sus2-chords/Bb-hand-shape-2.svg)
 
 #### 周日 · 全量练习与查漏补缺
 
@@ -148,7 +148,7 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 ## 四、练习步骤（每个调）
 
-每个调的练习沿**纵向 → 横向 → 视唱**三条线展开：先在调内把手型练熟（纵向），再按五度圈做移调横向迁移（横向），全程唱出级数/唱名强化听感（视唱练耳，见 [每日练习模板](1-每日练习模板.md) 的「贯穿原则」）。
+每个调的练习沿**纵向 → 横向 → 视唱**三条线展开：先在调内把手型练熟（纵向），再按五度圈做移调横向迁移（横向），全程唱出级数/唱名强化听感（视唱练耳，见 [每日练习模板](../README.md) 的「贯穿原则」）。
 
 ### 纵向：调内声部（Voicing）
 

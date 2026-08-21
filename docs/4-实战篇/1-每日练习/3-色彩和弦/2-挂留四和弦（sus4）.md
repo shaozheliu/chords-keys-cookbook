@@ -27,7 +27,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 > **练习要点**：左手纯五度跨度（C→G）与大三扩张型一致，手腕放松不要僵硬；右手 1-2-3-5 跨度也为纯八度（C→C），唯一变化是 ② 指从大三的 E 移到 F，注意 ② 指（fa）与 ③ 指（so）之间的大二度间距。
 
-![Csus4 示意图](../../assets/images/sus4-chords/C-hand-shape-2.svg)
+![Csus4 示意图](../../../assets/images/sus4-chords/C-hand-shape-2.svg)
 
 ---
 
@@ -43,57 +43,57 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 **Fsus4**
 
-![Fsus4 · 扩张型](../../assets/images/sus4-chords/F-hand-shape-2.svg)
+![Fsus4 · 扩张型](../../../assets/images/sus4-chords/F-hand-shape-2.svg)
 
 **Csus4**
 
-![Csus4 · 扩张型](../../assets/images/sus4-chords/C-hand-shape-2.svg)
+![Csus4 · 扩张型](../../../assets/images/sus4-chords/C-hand-shape-2.svg)
 
 **Gsus4**
 
-![Gsus4 · 扩张型](../../assets/images/sus4-chords/G-hand-shape-2.svg)
+![Gsus4 · 扩张型](../../../assets/images/sus4-chords/G-hand-shape-2.svg)
 
 #### 周二 ·（D、A、E）
 
 **Dsus4**
 
-![Dsus4 · 扩张型](../../assets/images/sus4-chords/D-hand-shape-2.svg)
+![Dsus4 · 扩张型](../../../assets/images/sus4-chords/D-hand-shape-2.svg)
 
 **Asus4**
 
-![Asus4 · 扩张型](../../assets/images/sus4-chords/A-hand-shape-2.svg)
+![Asus4 · 扩张型](../../../assets/images/sus4-chords/A-hand-shape-2.svg)
 
 **Esus4**
 
-![Esus4 · 扩张型](../../assets/images/sus4-chords/E-hand-shape-2.svg)
+![Esus4 · 扩张型](../../../assets/images/sus4-chords/E-hand-shape-2.svg)
 
 #### 周三~周四 ·（B、F#、Db）
 
 **Bsus4**
 
-![Bsus4 · 扩张型](../../assets/images/sus4-chords/B-hand-shape-2.svg)
+![Bsus4 · 扩张型](../../../assets/images/sus4-chords/B-hand-shape-2.svg)
 
 **F#sus4**
 
-![F#sus4 · 扩张型](../../assets/images/sus4-chords/F%23-hand-shape-2.svg)
+![F#sus4 · 扩张型](../../../assets/images/sus4-chords/F%23-hand-shape-2.svg)
 
 **Dbsus4**
 
-![Dbsus4 · 扩张型](../../assets/images/sus4-chords/Db-hand-shape-2.svg)
+![Dbsus4 · 扩张型](../../../assets/images/sus4-chords/Db-hand-shape-2.svg)
 
 #### 周五~周六 ·（Ab、Eb、Bb）
 
 **Absus4**
 
-![Absus4 · 扩张型](../../assets/images/sus4-chords/Ab-hand-shape-2.svg)
+![Absus4 · 扩张型](../../../assets/images/sus4-chords/Ab-hand-shape-2.svg)
 
 **Ebsus4**
 
-![Ebsus4 · 扩张型](../../assets/images/sus4-chords/Eb-hand-shape-2.svg)
+![Ebsus4 · 扩张型](../../../assets/images/sus4-chords/Eb-hand-shape-2.svg)
 
 **Bbsus4**
 
-![Bbsus4 · 扩张型](../../assets/images/sus4-chords/Bb-hand-shape-2.svg)
+![Bbsus4 · 扩张型](../../../assets/images/sus4-chords/Bb-hand-shape-2.svg)
 
 #### 周日 · 全量练习与查漏补缺
 
@@ -101,7 +101,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 ## 四、练习步骤
 
-sus4 的练习沿两条线展开：先在 12 个调里把手型练熟（**手型平移**），再把 sus4 放进实际和弦进行中体会它的功能（**和弦进行练习**，核心）。全程同步唱级数/唱名（见 [每日练习模板](1-每日练习模板.md) 的「贯穿原则」）。
+sus4 的练习沿两条线展开：先在 12 个调里把手型练熟（**手型平移**），再把 sus4 放进实际和弦进行中体会它的功能（**和弦进行练习**，核心）。全程同步唱级数/唱名（见 [每日练习模板](../README.md) 的「贯穿原则」）。
 
 ### （一）手型平移（每个调）
 
@@ -128,7 +128,7 @@ sus4 最有用的场景是在**终止式**里制造张力与解决。以 C 大�
 | V | Gsus4 | 扩张型 | G - D（5-2） | G - C - D - G（1-2-3-5） |
 | I | C | 紧凑型（收缩） | C（3） | G - C - E（1-2-4） |
 
-![F-G-C 进行](../../assets/images/sus4-chords/F-G-C-progression.gif)
+![F-G-C 进行](../../../assets/images/sus4-chords/F-G-C-progression.gif)
 
 > **挂留音的共同音衔接**：Fsus2 的二音 G 恰是下一个和弦 G 的根音；Gsus4 的四音 C 恰是最终主和弦 C 的根音。挂留音并非凭空消失，而是作为**共同音平滑过渡**到下一个和弦，这正是挂留和弦让声部进行更连贯的原因。
 
