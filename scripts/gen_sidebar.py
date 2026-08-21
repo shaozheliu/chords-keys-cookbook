@@ -5,7 +5,8 @@
 #   - 篇内直接放置的 .md 文件 = 「章」（无节），其首个 # H1 作为章标题
 #   - 篇内子文件夹 = 「章」（带节），命名「N-章名」，章名作为章标题；
 #     子文件夹内的 .md 文件 = 「节」，其首个 # H1 作为节标题；
-#     若子文件夹内有 README.md，则章条目链接到 README.md，否则为纯分组标题
+#     若子文件夹内有 README.md，则章条目链接到 README.md（作为目录页），
+#     且子节不在侧栏展开，由目录页自行导航；否则为纯分组标题并展开子节
 #   - 编号：篇 = 第X部分（中文）；章 = X.Y；节 = X.Y.Z（阿拉伯十进制）
 # 用法：
 #   python scripts/gen_sidebar.py
@@ -94,12 +95,14 @@ def collect_parts():
                 chapters.append((title, path, []))
             else:  # dir
                 title = strip_prefix(path.name)
-                sections = []
-                for md in sorted([f for f in path.iterdir() if is_md_file(f)],
-                                 key=lambda f: sort_key(f.name)):
-                    sections.append((md, extract_h1(md) or md.stem))
                 readme = path / 'README.md'
                 link = readme if readme.exists() else None
+                # 有 README.md（目录页）时，明细由目录页自行导航，侧栏不再展开子节
+                sections = []
+                if link is None:
+                    for md in sorted([f for f in path.iterdir() if is_md_file(f)],
+                                     key=lambda f: sort_key(f.name)):
+                        sections.append((md, extract_h1(md) or md.stem))
                 chapters.append((title, link, sections))
         parts.append((part_title, chapters))
     return parts
