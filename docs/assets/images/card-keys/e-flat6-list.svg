@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 128" width="228" height="128">
+<rect width="228" height="128" fill="#FFFFFF"/>
+<defs><linearGradient id="pressGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6EE7B7"/><stop offset="100%" stop-color="#A7F3D0"/></linearGradient><filter id="blackShadow" x="-20%" y="-10%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.28"/></filter></defs>
+<path d="M 6.00 6.00 H 22.62 V 120.00 Q 22.62 122.00 20.62 122.00 H 8.00 Q 6.00 122.00 6.00 120.00 Z" fill="url(#pressGrad)" stroke="#059669" stroke-width="1.5"/>
+<text x="14.31" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="700" fill="#065F46">C4</text>
+<path d="M 22.62 6.00 H 39.23 V 120.00 Q 39.23 122.00 37.23 122.00 H 24.62 Q 22.62 122.00 22.62 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="30.92" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">D</text>
+<path d="M 39.23 6.00 H 55.85 V 120.00 Q 55.85 122.00 53.85 122.00 H 41.23 Q 39.23 122.00 39.23 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="47.54" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">E</text>
+<path d="M 55.85 6.00 H 72.46 V 120.00 Q 72.46 122.00 70.46 122.00 H 57.85 Q 55.85 122.00 55.85 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="64.15" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">F</text>
+<path d="M 72.46 6.00 H 89.08 V 120.00 Q 89.08 122.00 87.08 122.00 H 74.46 Q 72.46 122.00 72.46 120.00 Z" fill="url(#pressGrad)" stroke="#059669" stroke-width="1.5"/>
+<text x="80.77" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="700" fill="#065F46">G</text>
+<path d="M 89.08 6.00 H 105.69 V 120.00 Q 105.69 122.00 103.69 122.00 H 91.08 Q 89.08 122.00 89.08 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="97.38" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">A</text>
+<path d="M 105.69 6.00 H 122.31 V 120.00 Q 122.31 122.00 120.31 122.00 H 107.69 Q 105.69 122.00 105.69 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="114.00" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">B</text>
+<path d="M 122.31 6.00 H 138.92 V 120.00 Q 138.92 122.00 136.92 122.00 H 124.31 Q 122.31 122.00 122.31 120.00 Z" fill="url(#pressGrad)" stroke="#059669" stroke-width="1.5"/>
+<text x="130.62" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="700" fill="#065F46">C5</text>
+<path d="M 138.92 6.00 H 155.54 V 120.00 Q 155.54 122.00 153.54 122.00 H 140.92 Q 138.92 122.00 138.92 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="147.23" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">D</text>
+<path d="M 155.54 6.00 H 172.15 V 120.00 Q 172.15 122.00 170.15 122.00 H 157.54 Q 155.54 122.00 155.54 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="163.85" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">E</text>
+<path d="M 172.15 6.00 H 188.77 V 120.00 Q 188.77 122.00 186.77 122.00 H 174.15 Q 172.15 122.00 172.15 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="180.46" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">F</text>
+<path d="M 188.77 6.00 H 205.38 V 120.00 Q 205.38 122.00 203.38 122.00 H 190.77 Q 188.77 122.00 188.77 120.00 Z" fill="url(#pressGrad)" stroke="#059669" stroke-width="1.5"/>
+<text x="197.08" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="700" fill="#065F46">G</text>
+<path d="M 205.38 6.00 H 222.00 V 120.00 Q 222.00 122.00 220.00 122.00 H 207.38 Q 205.38 122.00 205.38 120.00 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1"/>
+<text x="213.69" y="118.40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#0A0A0A">A</text>
+<rect x="17.80" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+<rect x="34.41" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#10B981" filter="url(#blackShadow)" stroke="#059669" stroke-width="1.5"/>
+<rect x="67.64" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+<rect x="84.26" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+<rect x="100.87" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#10B981" filter="url(#blackShadow)" stroke="#059669" stroke-width="1.5"/>
+<rect x="134.10" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+<rect x="150.72" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#10B981" filter="url(#blackShadow)" stroke="#059669" stroke-width="1.5"/>
+<rect x="183.95" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+<rect x="200.57" y="6.00" width="9.64" height="67.28" rx="1.73" ry="1.73" fill="#171717" filter="url(#blackShadow)"/>
+</svg>
