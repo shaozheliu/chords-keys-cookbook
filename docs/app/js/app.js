@@ -7,13 +7,37 @@
 const DATA_BASE = '../data/';
 const ASSET_BASE = '../assets/images/';
 
-/** 模块导航（所有页面均位于 /xxx/ 一层目录下，相对路径统一） */
-const NAV_ITEMS = [
-  { id: 'chords', label: '和弦', href: '../chords/' },
-  { id: 'practice', label: '练习', href: '../practice/' },
-  { id: 'progressions', label: '进行', href: '../progressions/' },
-  { id: 'songs', label: '曲目', href: '../songs/' },
+/** 是否在站点根目录（首页） */
+function isRootPage() {
+  return document.body.dataset.root === '1';
+}
+
+/** 模块页相对路径前缀 */
+function navPrefix() {
+  return isRootPage() ? '' : '../';
+}
+
+/** 首页链接 */
+function homeHref() {
+  return isRootPage() ? './' : '../';
+}
+
+/** 模块导航：首页 / 和弦 / 练习 / 进行（对齐 Figma L0–L6） */
+const NAV_DEFS = [
+  { id: 'home', label: '首页', path: null },
+  { id: 'chords', label: '和弦', path: 'chords/' },
+  { id: 'practice', label: '练习', path: 'practice/' },
+  { id: 'progressions', label: '进行', path: 'progressions/' },
 ];
+
+function navItems() {
+  const prefix = navPrefix();
+  const home = homeHref();
+  return NAV_DEFS.map(item => ({
+    ...item,
+    href: item.path === null ? home : `${prefix}${item.path}`,
+  }));
+}
 
 /** 和弦后缀 → 和弦符号后缀 */
 const SUFFIX_SYMBOL = {
@@ -158,10 +182,11 @@ function chordNotes(chord, tonic, tonicPc) {
 function renderNav(activeId) {
   const host = document.querySelector('[data-nav]');
   if (!host) return;
+  const items = navItems();
   host.innerHTML = `
-    <a class="brand" href="../chords/">钢琴即兴</a>
+    <a class="brand" href="${homeHref()}">钢琴即兴</a>
     <nav class="site-nav">
-      ${NAV_ITEMS.map(item => `
+      ${items.map(item => `
         <a class="${item.id === activeId ? 'active' : ''}" href="${item.href}">${item.label}</a>
       `).join('')}
     </nav>
@@ -174,9 +199,6 @@ function renderFooter() {
   if (!host) return;
   host.innerHTML = `
     <div>钢琴即兴 · 自学手册</div>
-    <nav>
-      ${NAV_ITEMS.map(item => `<a href="${item.href}">${item.label}</a>`).join('')}
-    </nav>
     <div>© 2026 Chords &amp; Keys Handbook</div>
   `;
 }

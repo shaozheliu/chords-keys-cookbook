@@ -1,7 +1,8 @@
 /* ==========================================================================
    和弦进行模块
-   数据：progressions.json（进行定义 + 小节手位），measures.tonic 形如 "F" / "Am"，
-        尾部的 m 仅用于标注小三大度，展示符号时需去掉后再拼和弦后缀。
+   列表页（L5）+ 详情页（L6），对齐 Figma：
+   - 列表：罗马数字 + 标签 + 情绪
+   - 详情：介绍 / 代表曲目 / 情绪 / 好听组合
    ========================================================================== */
 
 (async function init() {
@@ -9,6 +10,8 @@
   renderFooter();
 
   const root = document.getElementById('app');
+  const isDetail = document.body.dataset.page === 'detail';
+
   const [progData, chordsData] = await Promise.all([
     fetchJSON('progressions.json'),
     fetchJSON('chords.json'),
@@ -21,30 +24,30 @@
 
   const progressions = progData.progressions;
 
-  // 支持 #<id> 直达（练习页的「关联进行」入口）
-  const wanted = getQueryParam('id') || window.location.hash.replace(/^#\/?/, '');
-  const hit = progressions.find(p => p.id === wanted);
-  let activeId = hit ? hit.id : progressions[0].id;
-
-  /** 去掉 tonic 尾部的 m（如 "Am" → "A"），得到可拼接后缀的根音 */
+  /** 去掉 tonic 尾部的 m（如 "Am" → "A"） */
   const rootOf = tonic => String(tonic).replace(/m$/, '');
 
-  /** 小节展示符号：根音 + 和弦后缀 */
   function measureSymbol(measure) {
     const chord = (chordsData && findChord(chordsData.chords, measure.chordId)) || null;
-    const rootName = rootOf(measure.tonic);
-    if (!chord) return rootName;
+    const tonic = String(measure.tonic);
+    const rootName = rootOf(tonic);
+    if (!chord) return tonic;
     const suffix = SUFFIX_SYMBOL[chord.suffix];
-    return `${rootName}${suffix === undefined ? chord.suffix : suffix}`;
+    const s = suffix === undefined ? chord.suffix : suffix;
+    // tonic 形如 "Am"：小三保留 Am；加九写成 Amadd9；小七写成 Am7
+    if (/m$/.test(tonic)) {
+      if (chord.suffix === 'minor') return tonic;
+      if (chord.suffix === 'm7') return `${rootName}m7`;
+      if (chord.suffix === 'add9') return `${tonic}add9`;
+    }
+    return `${rootName}${s}`;
   }
 
-  /** 小节符号指向的和弦详情链接 */
   function measureHref(measure) {
     if (!chordsData) return null;
     const rootName = rootOf(measure.tonic);
-    const tonicSlug = chordsData.tonicSlugMap[rootName];
     const chord = findChord(chordsData.chords, measure.chordId);
-    if (!tonicSlug || !chord) return null;
+    if (!chordsData.tonicSlugMap[rootName] || !chord) return null;
     return `../chords/detail.html#slug=${chordSlug(chord, rootName, chordsData.tonicSlugMap)}`;
   }
 
@@ -55,141 +58,195 @@
     return hand ? hand.label.split('·')[0].trim() : '';
   }
 
-  function refresh() {
-    const active = progressions.find(p => p.id === activeId) || progressions[0];
+  function moodLine(prog) {
+    return (prog.moodTags || []).join(' · ');
+  }
 
-    const cards = progressions.map(prog => `
-      <button type="button" class="text-card ${prog.id === active.id ? 'active' : ''}" data-prog="${prog.id}">
-        <div class="text-card-head">
-          <strong>${escapeHtml(prog.name)}</strong>
-          <span class="chip">${escapeHtml(prog.key)}</span>
-        </div>
-        <p>${escapeHtml(prog.description)}</p>
-        <div class="symbol-line">
-          ${prog.measures.map(m => escapeHtml(measureSymbol(m))).join(' <em>→</em> ')}
-        </div>
-      </button>
-    `).join('');
-
-    const measures = active.measures.map(m => {
-      const href = measureHref(m);
-      const symbol = escapeHtml(measureSymbol(m));
-      const hand = handLabel(m);
+  function renderList() {
+    const cards = progressions.map(prog => {
+      const seq = (prog.listChords || []).map(escapeHtml).join(' → ');
       return `
-        <div class="measure">
-          <div class="measure-head">
-            <span class="measure-degree">${escapeHtml(m.degree)}</span>
-            <span class="measure-symbol">${href ? `<a href="${href}">${symbol}</a>` : symbol}</span>
+        <a class="prog-card" href="detail.html#id=${encodeURIComponent(prog.id)}">
+          <div class="prog-card-top">
+            <strong>${escapeHtml(prog.name)}</strong>
+            <span class="chip">${escapeHtml(prog.tag || prog.key)}</span>
           </div>
-          <dl>
-            <div><dt>左手</dt><dd>${escapeHtml(m.leftHand)}</dd></div>
-            <div><dt>右手</dt><dd>${escapeHtml(m.rightHand)}</dd></div>
-            ${hand ? `<div><dt>手型</dt><dd>${escapeHtml(hand)}</dd></div>` : ''}
-          </dl>
-        </div>
+          <div class="prog-roman">${escapeHtml(prog.roman || '')}</div>
+          <div class="prog-seq">${seq}</div>
+          <p class="prog-desc">${escapeHtml(prog.description)}</p>
+          <div class="prog-mood">情绪：${escapeHtml(moodLine(prog) || '—')}</div>
+        </a>
       `;
     }).join('');
 
-    const handFigure = active.folder ? `
-      <section class="panel">
-        <h2 class="block-title">进行手位图</h2>
-        <figure class="figure">
-          <img src="${svgProgressionPath(active.folder, rootOf(active.measures[0].tonic))}"
-               alt="${escapeHtml(`${active.name} 手位图`)}" loading="lazy"
-               onerror="imgFallback(this, '手位图待生成')">
-          <figcaption>以 ${escapeHtml(active.key)} 为例，五个八度内的完整手位走向。</figcaption>
-        </figure>
-      </section>
-    ` : `
-      <section class="panel">
-        <h2 class="block-title">进行手位图</h2>
-        <div class="placeholder">手位图待生成</div>
-      </section>
-    `;
-
-    const rhythmFigure = active.rhythmSvg ? `
-      <section class="panel">
-        <h2 class="block-title">节奏型</h2>
-        <figure class="figure">
-          <img src="${svgAssetPath(active.rhythmSvg)}" alt="${escapeHtml(`${active.name} 节奏型`)}" loading="lazy"
-               onerror="imgFallback(this, '节奏型待生成')">
-          <figcaption>把这条进行套进节奏型里，先慢速对齐，再逐步提速。</figcaption>
-        </figure>
-      </section>
-    ` : `
-      <section class="panel">
-        <h2 class="block-title">节奏型</h2>
-        <div class="placeholder">节奏型待生成</div>
-      </section>
-    `;
-
-    const otherChips = progressions
-      .filter(p => p.id !== active.id)
-      .map(p => `<a class="chip" href="#${p.id}">${escapeHtml(p.name)}</a>`)
-      .join('');
-
     root.innerHTML = `
-      <p class="crumb">进行</p>
-      <h1>和弦进行</h1>
-      <p class="lead">四条最常用的弹唱进行，从下属到属、从挂留到解决。每条进行都拆到小节手位，可以直接照着练。</p>
-
-      <div class="card-grid wide" style="margin-bottom:40px">${cards}</div>
+      <p class="crumb"><a href="../">首页</a> / 进行</p>
+      <h1>和弦进行大全</h1>
+      <p class="lead">每张卡片是一条可复用的和弦组合。点进二级页可查看介绍、代表曲目、情绪分析，以及支持 sus2 / sus4 / add9 等变体的小节拆解。</p>
 
       <div class="section-head">
-        <h2>${escapeHtml(active.name)}</h2>
-        <span class="crumb" style="margin:0">${escapeHtml(active.key)} · 共 ${active.measures.length} 小节</span>
+        <h2>热门进行</h2>
+        <span class="crumb" style="margin:0">共 ${progressions.length} 条</span>
       </div>
-
-      <article class="detail-layout">
-        <div class="detail-main">
-          <section>
-            <h2 class="block-title">进行概览</h2>
-            <div class="info">
-              <div class="info-row"><dt>调性</dt><dd>${escapeHtml(active.key)}</dd></div>
-              <div class="info-row"><dt>级数序列</dt><dd>${active.measures.map(m => escapeHtml(m.degree)).join(' → ')}</dd></div>
-              <div class="info-row"><dt>和弦序列</dt><dd>${active.measures.map(m => escapeHtml(measureSymbol(m))).join(' → ')}</dd></div>
-              <div class="info-row"><dt>进行说明</dt><dd>${escapeHtml(active.description)}</dd></div>
-            </div>
-          </section>
-
-          <section>
-            <h2 class="block-title">小节拆解</h2>
-            <div class="measure-grid">${measures}</div>
-          </section>
-
-          ${handFigure}
-          ${rhythmFigure}
-        </div>
-
-        <aside class="related">
-          <h2>练习提示</h2>
-          <p class="note" style="margin-bottom:0">
-            先分手再合手：左手固定根音—五音框架，右手只走上方三音，对齐后再加节奏。
-          </p>
-          <h2 style="margin-top:24px">其它进行</h2>
-          <div class="chips tight">${otherChips}</div>
-        </aside>
-      </article>
+      <div class="prog-grid">${cards}</div>
     `;
-
-    root.querySelectorAll('[data-prog]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeId = btn.dataset.prog;
-        history.replaceState(null, '', `#${activeId}`);
-        refresh();
-        root.querySelector('.section-head')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
   }
 
-  // 通过 hash 切换进行（浏览器前进/后退）
-  window.addEventListener('hashchange', () => {
-    const next = window.location.hash.replace(/^#\/?/, '');
-    if (next && next !== activeId && progressions.some(p => p.id === next)) {
-      activeId = next;
-      refresh();
-    }
-  });
+  function renderDetail(prog) {
+    const basicCards = (prog.basicChords || []).map((sym, i) => `
+      <div class="basic-chord">
+        <span class="basic-degree">${escapeHtml((prog.basicDegrees || [])[i] || '')}</span>
+        <strong>${escapeHtml(sym)}</strong>
+      </div>
+    `).join('');
 
-  refresh();
+    const songs = (prog.songs || []).map((s, i) => `
+      <div class="song-row">
+        <span class="song-index">${i + 1}</span>
+        <div>
+          <strong>${escapeHtml(s.title)} · ${escapeHtml(s.artist)}</strong>
+          <p>${escapeHtml(s.note || '')}</p>
+        </div>
+      </div>
+    `).join('') || `<div class="placeholder">曲目示例待补充</div>`;
+
+    const moodTags = (prog.moodTags || []).map(t =>
+      `<span class="chip active">${escapeHtml(t)}</span>`
+    ).join('');
+
+    const combos = (prog.combos || []).map(combo => {
+      const tagClass = combo.tagTone === 'accent' ? 'chip accent' : 'chip';
+      const symbols = (combo.symbols || []).map(s =>
+        `<span class="combo-sym">${escapeHtml(s)}</span>`
+      ).join('<span class="combo-arrow">→</span>');
+      const degrees = (combo.degrees || []).map(escapeHtml).join(' · ');
+
+      const measures = (combo.measures || []).map(m => {
+        const href = measureHref(m);
+        const symbol = escapeHtml(measureSymbol(m));
+        const hand = handLabel(m);
+        return `
+          <div class="measure">
+            <div class="measure-head">
+              <span class="measure-degree">${escapeHtml(m.degree)}</span>
+              <span class="measure-symbol">${href ? `<a href="${href}">${symbol}</a>` : symbol}</span>
+            </div>
+            <dl>
+              <div><dt>左手</dt><dd>${escapeHtml(m.leftHand)}</dd></div>
+              <div><dt>右手</dt><dd>${escapeHtml(m.rightHand)}</dd></div>
+              ${hand ? `<div><dt>手型</dt><dd>${escapeHtml(hand)}</dd></div>` : ''}
+            </dl>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <article class="combo-card" data-combo="${escapeHtml(combo.id)}">
+          <div class="combo-head">
+            <strong>${escapeHtml(combo.title)}</strong>
+            <span class="${tagClass}">${escapeHtml(combo.tag || '')}</span>
+          </div>
+          <div class="combo-flow">${symbols}</div>
+          <div class="combo-degrees">${degrees}</div>
+          <p class="note">${escapeHtml(combo.note || '')}</p>
+          <div class="combo-mood">情绪：${escapeHtml(combo.mood || '')}</div>
+          <div class="measure-grid" style="margin-top:16px">${measures}</div>
+        </article>
+      `;
+    }).join('');
+
+    const firstTonic = prog.basicChords && prog.basicChords[0]
+      ? rootOf(prog.basicChords[0])
+      : 'C';
+
+    const handFigure = prog.folder ? `
+      <section class="panel">
+        <h2 class="block-title">进行手位图</h2>
+        <figure class="figure">
+          <img src="${svgProgressionPath(prog.folder, firstTonic)}"
+               alt="${escapeHtml(`${prog.name} 手位图`)}" loading="lazy"
+               onerror="imgFallback(this, '手位图待生成')">
+          <figcaption>以 ${escapeHtml(prog.key)} 为例。</figcaption>
+        </figure>
+      </section>
+    ` : '';
+
+    const rhythmFigure = prog.rhythmSvg ? `
+      <section class="panel">
+        <h2 class="block-title">节奏型</h2>
+        <figure class="figure">
+          <img src="${svgAssetPath(prog.rhythmSvg)}" alt="${escapeHtml(`${prog.name} 节奏型`)}" loading="lazy"
+               onerror="imgFallback(this, '节奏型待生成')">
+        </figure>
+      </section>
+    ` : '';
+
+    root.innerHTML = `
+      <p class="crumb"><a href="../">首页</a> / <a href="./">进行</a> / ${escapeHtml(prog.name.replace(/\s*进行$/, '') || prog.id)}</p>
+      <div class="detail-hero">
+        <div class="detail-hero-title">
+          <h1>${escapeHtml(prog.name)}</h1>
+          <span class="chip">${escapeHtml(prog.tag || '')}</span>
+        </div>
+        <p class="detail-sub">${escapeHtml(prog.roman || '')} · 基本和弦 ${(prog.basicChords || []).join(' → ')}</p>
+        <p class="lead" style="margin-bottom:0">介绍层只写基本和弦；色彩变体（sus / add9 等）收在下方「好听组合」。</p>
+      </div>
+
+      <section class="section">
+        <h2 class="block-title">和弦介绍</h2>
+        <p class="note" style="margin-bottom:20px">${escapeHtml(prog.intro || prog.description)}</p>
+        <div class="basic-grid">${basicCards}</div>
+        <div class="info" style="margin-top:20px">
+          <div class="info-row"><dt>调性</dt><dd>${escapeHtml(prog.key)}</dd></div>
+          <div class="info-row"><dt>罗马数字</dt><dd>${escapeHtml(prog.roman || '')}</dd></div>
+          <div class="info-row"><dt>基本和弦</dt><dd>${(prog.basicChords || []).map(escapeHtml).join(' → ')}</dd></div>
+          <div class="info-row"><dt>说明</dt><dd>${escapeHtml(prog.description)}（基本三和弦骨架）</dd></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="block-title">代表曲目</h2>
+        <div class="song-list">${songs}</div>
+      </section>
+
+      <section class="section">
+        <h2 class="block-title">情绪色彩分析</h2>
+        <div class="chips" style="margin-bottom:14px">${moodTags}</div>
+        <p class="note" style="margin:0">${escapeHtml(prog.moodAnalysis || '')}</p>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>好听组合</h2>
+          <span class="crumb" style="margin:0">每张卡 = 一整条组合</span>
+        </div>
+        <p class="note" style="margin-bottom:20px">点开任一组合，可对照小节手位反复练习。</p>
+        <div class="combo-list">${combos}</div>
+      </section>
+
+      ${handFigure}
+      ${rhythmFigure}
+
+      <div class="chips" style="margin-top:8px">
+        <a class="chip ghost" href="./">← 返回进行列表</a>
+      </div>
+    `;
+  }
+
+  if (isDetail) {
+    const wanted = getQueryParam('id') || window.location.hash.replace(/^#\/?/, '').replace(/^id=/, '');
+    const hit = progressions.find(p => p.id === wanted) || progressions[0];
+
+    function show() {
+      const id = getQueryParam('id') || window.location.hash.replace(/^#\/?/, '').replace(/^id=/, '');
+      const prog = progressions.find(p => p.id === id) || progressions[0];
+      renderDetail(prog);
+      document.title = `${prog.name} — 钢琴即兴`;
+    }
+
+    window.addEventListener('hashchange', show);
+    show();
+  } else {
+    renderList();
+  }
 })();

@@ -8,38 +8,52 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎹</text></svg>">
   <link rel="stylesheet" href="app/css/app.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="./">钢琴即兴</a>
-    <nav class="site-nav">
-      <a href="chords/">和弦</a>
-      <a href="practice/">练习</a>
-      <a href="progressions/">进行</a>
-      <a href="songs/">曲目</a>
-    </nav>
-  </header>
+<body data-root="1">
+  <header class="site-header" data-nav></header>
 
-  <main class="landing">
-    <div class="glyph">🎹</div>
-    <h1>钢琴弹唱 · 和弦与键盘手册</h1>
-    <p>和弦库 / 每日练习 / 和弦进行 / 曲目拆解 —— 四步把伴奏弹起来。</p>
-    <div class="links">
-      <a class="chip active" href="chords/">进入和弦库</a>
-      <a class="chip ghost" href="practice/">每日练习</a>
-      <a class="chip ghost" href="progressions/">和弦进行</a>
-      <a class="chip ghost" href="songs/">曲目拆解</a>
-    </div>
+  <main class="home">
+    <section class="home-hero">
+      <span class="home-badge">钢琴即兴自学手册 · 从和弦到弹唱</span>
+      <h1>把十二个调<br>练成自己的和声语感</h1>
+      <p class="home-lead">键盘图、手型练习、常用进行，收成一套能每天打开练的小站。配色跟随琴键：浅底、黑键强调、克制留白。</p>
+      <div class="home-cta">
+        <a class="btn btn-primary" href="practice/">开始每日练习 →</a>
+        <a class="btn btn-ghost" href="chords/">浏览和弦大全</a>
+      </div>
+    </section>
+
+    <section class="home-entries">
+      <div class="home-entries-head">
+        <h2>四个入口，一条练习路径</h2>
+        <p>先建立手型，再移调，最后用进行把和弦串起来。</p>
+      </div>
+      <div class="home-grid">
+        <a class="home-card" href="chords/">
+          <strong>和弦</strong>
+          <span>十二调 × 多种色彩，键盘图一眼看清构成。</span>
+          <em>进入 →</em>
+        </a>
+        <a class="home-card" href="practice/">
+          <strong>练习</strong>
+          <span>按五度圈把一周调组排好，每天只练一组。</span>
+          <em>进入 →</em>
+        </a>
+        <a class="home-card" href="progressions/">
+          <strong>进行</strong>
+          <span>常用弹唱组合，记录多种好听变体。</span>
+          <em>进入 →</em>
+        </a>
+        <div class="home-card is-soon">
+          <strong>曲目</strong>
+          <span>把进行落到歌里，后续会逐步补齐。</span>
+          <em>敬请期待</em>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div>钢琴即兴 · 自学手册</div>
-    <nav>
-      <a href="chords/">和弦</a>
-      <a href="practice/">练习</a>
-      <a href="progressions/">进行</a>
-      <a href="songs/">曲目</a>
-    </nav>
-    <div>© 2026 Chords &amp; Keys Handbook</div>
-  </footer>
+  <footer class="site-footer" data-footer></footer>
+  <script src="app/js/app.js"></script>
+  <script>renderNav('home'); renderFooter();</script>
 </body>
 </html>
