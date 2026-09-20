@@ -1,0 +1,140 @@
+{
+  "songs": [
+    {
+      "id": "moon-represents-my-heart",
+      "title": "月亮代表我的心",
+      "info": {
+        "key": "C大调",
+        "timeSignature": "4/4",
+        "tempo": "♩= 72（中速抒情）",
+        "difficulty": 1,
+        "coreTechniques": ["I-IV-V级进行", "柱式与分解伴奏切换"]
+      },
+      "harmonicAnalysis": [
+        {
+          "section": "主歌",
+          "progression": "C → Am → F → G",
+          "degrees": "I → vi → IV → V",
+          "function": "稳定 → 色彩 → 下属 → 属"
+        },
+        {
+          "section": "副歌",
+          "progression": "F → G → C → Am → Dm → G → C",
+          "degrees": "IV → V → I → vi → ii → V → I",
+          "function": "下属 → 属 → 解决"
+        }
+      ],
+      "sectionBreakdown": [
+        {
+          "section": "主歌",
+          "leftHand": "根音（3 指）单音或根音 + 五音（5、2 指）框架，走 I–vi–IV–V 根音运动",
+          "rightHand": "手型一（紧凑型）为主，声部薄、留白多，配合歌词叙述感"
+        },
+        {
+          "section": "副歌",
+          "leftHand": "切换为根音 + 五音框架，配合右手柱式和弦增厚织体",
+          "rightHand": "手型二（扩张型），完成「薄 → 厚」的段落情绪推进"
+        }
+      ],
+      "accompaniment": [
+        {
+          "section": "主歌",
+          "texture": "分解 / 半柱式",
+          "handShape": "紧凑型",
+          "mood": "平稳、叙述"
+        },
+        {
+          "section": "副歌",
+          "texture": "柱式 / 琶音",
+          "handShape": "扩张型",
+          "mood": "饱满、推进"
+        }
+      ],
+      "practicePoints": [
+        "先慢后快：以慢速、均匀、放松为第一原则，速度在准确性之后",
+        "唱级数：边弹边默念「I–vi–IV–V」，把和声功能与手指落位绑定",
+        "段落切换：重点练习主歌（薄）→ 副歌（厚）的手型切换，形成条件反射",
+        "迁移应用：同一套 I–vi–IV–V 手型可平移到其他调"
+      ],
+      "chartSvg": null
+    },
+    {
+      "id": "chuxian-you-likai",
+      "title": "出现又离开",
+      "info": {
+        "key": "A大调",
+        "timeSignature": "4/4",
+        "tempo": "♩≈ 80（中速抒情）",
+        "difficulty": 2,
+        "coreTechniques": ["低音级进（1–7–6）", "段落情绪切换（分解 ↔ 柱式 / 琶音）"]
+      },
+      "harmonicAnalysis": [
+        {
+          "section": "主歌",
+          "progression": "A → E/G# → F#m → E → D → A → D → E",
+          "degrees": "1 → 5/7 → 6m → 5 → 4 → 1 → 4 → 5",
+          "function": "稳定 → 属（低音级进）→ 色彩 → 下属 → 解决"
+        },
+        {
+          "section": "副歌",
+          "progression": "D → E → A ／ D → E → F#m",
+          "degrees": "4 → 5 → 1 ／ 4 → 5 → 6m",
+          "function": "下属 → 属 → 解决（两套收束）"
+        },
+        {
+          "section": "桥段",
+          "progression": "Bm → E → F#m → D → E → A",
+          "degrees": "2m → 5 → 6m → 4 → 5 → 1",
+          "function": "色彩 → 属 → 下属 → 属 → 解决"
+        }
+      ],
+      "sectionBreakdown": [
+        {
+          "section": "主歌",
+          "leftHand": "走 1–7–6 低音级进（A → G# → F#），根音下沉营造叙述感；可用根音单音或根音 + 五音框架",
+          "rightHand": "紧凑型（手型一）为主，分解和弦、声部薄、留白多"
+        },
+        {
+          "section": "副歌",
+          "leftHand": "根音 + 五音框架，配合柱式 / 琶音增厚织体",
+          "rightHand": "扩张型（手型二），完成「薄 → 厚」的压抑式推进"
+        },
+        {
+          "section": "桥段",
+          "leftHand": "2m–5–6m–4–5–1 根音运动，保持律动",
+          "rightHand": "柱式 / 琶音推进，情绪由「压抑」转向「释放」，结尾回到 4–5–1 / 4–5–6m 收束"
+        }
+      ],
+      "accompaniment": [
+        {
+          "section": "前奏 / 主歌（一）",
+          "texture": "分解",
+          "handShape": "紧凑型",
+          "mood": "平静、叙述"
+        },
+        {
+          "section": "副歌",
+          "texture": "柱式 / 琶音",
+          "handShape": "扩张型",
+          "mood": "压抑、爆发"
+        },
+        {
+          "section": "桥段",
+          "texture": "柱式 / 琶音（结尾回归分解）",
+          "handShape": "过渡",
+          "mood": "释放、释然"
+        }
+      ],
+      "practicePoints": [
+        "先慢后快：以慢速、均匀、放松为第一原则，速度在准确性之后",
+        "唱级数：边弹边默念「1–5/7–6m–5–4–1–4–5」，把和声功能与手指落位绑定",
+        "低音级进：重点练主歌 A → E/G# → F#m 的左手 1–7–6 下行，体会「以静衬动」",
+        "段落切换：练「分解（主歌）→ 柱式 / 琶音（副歌 / 桥段）」的织体切换，形成条件反射",
+        "词曲对位：对照弹唱谱，先弹熟和弦走向，再逐句对歌词，最后整曲连贯",
+        "迁移应用：同一套级数手型可平移到其他调"
+      ],
+      "chartSvg": "assets/images/songs/chuxian-you-likai-chart.svg",
+      "leadSheetSvg": "assets/images/songs/chuxian-you-likai-ver1.svg"
+    }
+  ]
+}

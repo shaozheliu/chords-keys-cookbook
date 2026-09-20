@@ -1,26 +1,51 @@
-# 🎹 Chords & Keys Cookbook
+# 钢琴即兴 · 和弦与键盘手册（前端站点）
 
-> 钢琴弹唱Cookbook — 从和弦到伴奏的系统指南
+本目录即 GitHub Pages 的站点根目录，前置说明见仓库根部的 [`README.md`](../README.md)。
 
-## 关于本手册
+## 站点入口
 
-本手册面向钢琴弹唱爱好者，系统整理和弦理论、键盘和声、伴奏织体与即兴弹唱的核心知识。
+| 模块 | 入口 |
+|------|------|
+| 首页（四模块分流） | [`index.html`](./index.html) |
+| 和弦库 | [`chords/`](./chords/) |
+| 每日练习 | [`practice/`](./practice/) |
+| 和弦进行 | [`progressions/`](./progressions/) |
+| 曲目拆解 | [`songs/`](./songs/) |
 
-无论你是刚入门的初学者，还是希望提升伴奏能力的中级玩家，这里都有适合你的内容。
+## 目录约定
 
-## 目录概览
+```
+docs/
+├── index.html          # 首页
+├── app/                # 公共前端资源
+│   ├── css/app.css     # 浅色极简设计系统（设计令牌 + 组件样式）
+│   └── js/app.js       # 数据加载 / SVG 路径 / 卡片与导航渲染
+├── data/               # JSON 数据层
+│   ├── chords.json       # 和弦家族与 9 种和弦定义、12 调映射
+│   ├── practice.json     # 周维度轮动分组与练习步骤
+│   ├── progressions.json # 和弦进行与逐小节手位
+│   └── songs.json        # 曲目五维度拆解
+├── chords/             # 和弦库（index / family / detail + js/chords.js）
+├── practice/           # 每日练习
+├── progressions/       # 和弦进行
+├── songs/              # 曲目拆解
+├── assets/images/      # 预生成 SVG（键盘图 / 手型图 / 进行图 / 节奏型）
+└── 1-基础篇 ~ 4-实战篇/ # 理论 Markdown，作为内容储备，暂未接入导航
+```
 
-- **基础篇**：音程与音阶、三和弦的构成、七和弦与延伸音、和弦转位
-- **进阶篇**：调性与和弦功能、常用和弦进行、副属和弦与离调、和弦替代
-- **伴奏篇**：伴奏织体概览、基础节奏型、分解与琶音、风格化伴奏
-- **实战篇**：每日练习、经典曲目拆解、即兴弹唱思路
+## 本地预览
 
-## 和弦大全
+`fetch()` 需要 HTTP 环境：
 
-按键盘图浏览和弦，查看构成与练习手型。
+```bash
+npx serve docs        # 或
+python -m http.server 8000 --directory docs
+```
 
-[打开和弦大全](chords/)
+## 内部约定
 
-## 开始阅读
-
-从左侧导航栏选择章节，或直接浏览下方内容。顶部「和弦」也会进入和弦大全。
+- **路由**：静态服务器会把 `xxx.html` 301 到无扩展名路径并丢弃查询串，因此模块内部统一用 hash 传参
+  （`detail.html#slug=c-major`、`family.html#type=sevenths`、`progressions/#4566`）。
+- **资源命名**：卡片图 `card-keys/{slug}-{list|hero}.svg`；手型图 `{folder}/{调名}-hand-shape-{id}.svg`；
+  进行图 `{folder}/{调名}-progression.svg`。`major` / `minor` 后缀用连字符（`c-major`），其余直接拼接（`c7`、`csus4`）。
+- **模块解耦**：练习与进行只存 `chordId`，曲目只存 `progressionId`，运行时查表渲染。

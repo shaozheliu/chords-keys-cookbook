@@ -2,311 +2,44 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Chords & Keys Cookbook — 钢琴弹唱Cookbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>钢琴即兴 · 和弦与键盘手册</title>
+  <meta name="description" content="钢琴弹唱自学手册：和弦库、每日练习、和弦进行、曲目拆解四大模块。">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎹</text></svg>">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <style>
-    :root {
-      --theme-color: #0a0a0a;
-      --theme-color-dark: #0a0a0a;
-      --theme-color-light: #fafafa;
-      --text-color-base: #0a0a0a;
-      --text-color-secondary: #737373;
-      --text-color-tertiary: #a1a1aa;
-      --background: #fafafa;
-      --sidebar-background: #ffffff;
-      --sidebar-width: 280px;
-      --sidebar-nav-link-color: #52525b;
-      --sidebar-nav-link-color--active: #0a0a0a;
-      --sidebar-nav-link-border-color--active: #0a0a0a;
-      --sidebar-name-color: #0a0a0a;
-      --code-theme-background: #f4f4f5;
-      --code-theme-text: #0a0a0a;
-      --border-color: #e5e5e5;
-      --base-font-family: "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      --mono-hue: 0;
-      --mono-saturation: 0%;
-    }
-
-    body {
-      background: #fafafa;
-      color: #0a0a0a;
-      font-family: "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    }
-
-    .sidebar {
-      background: #ffffff;
-      border-right: 1px solid #e5e5e5;
-    }
-
-    .sidebar-toggle {
-      background: transparent;
-    }
-
-    .sidebar > h1 {
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: 0;
-    }
-
-    .sidebar > h1 a {
-      color: #0a0a0a;
-    }
-
-    .sidebar .search input {
-      background: #fafafa;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      color: #0a0a0a;
-    }
-
-    .sidebar .search input:focus {
-      border-color: #0a0a0a;
-      box-shadow: none;
-    }
-
-    .sidebar-nav ul li a {
-      color: #52525b;
-    }
-
-    .sidebar-nav ul li.active > a,
-    .sidebar-nav ul li a:hover {
-      color: #0a0a0a;
-      font-weight: 600;
-    }
-
-    .sidebar-nav ul li.active > a {
-      border-right: 2px solid #0a0a0a;
-    }
-
-    .app-nav {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      right: auto;
-      margin: 0;
-      transform: translateX(-50%);
-      z-index: 20;
-      background: transparent;
-    }
-
-    .app-nav::before {
-      display: none;
-    }
-
-    .app-nav > ul,
-    .app-nav ul {
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .app-nav li {
-      display: inline-flex;
-      margin: 0;
-    }
-
-    .app-nav a {
-      padding: 22px 0 18px;
-      font-size: 22px;
-      line-height: 1;
-      color: #737373;
-      font-weight: 400;
-      text-decoration: none;
-    }
-
-    .app-nav li.active > a,
-    .app-nav a:hover {
-      color: #0a0a0a;
-      font-weight: 700;
-      border-bottom: 2px solid #0a0a0a;
-    }
-
-    .github-corner {
-      z-index: 30;
-    }
-
-    main {
-      background: #fafafa;
-    }
-
-    .content {
-      padding-top: 72px;
-    }
-
-    .markdown-section {
-      max-width: 980px;
-      margin: 8px 32px 48px;
-      padding: 36px 40px 48px;
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 16px;
-    }
-
-    .markdown-section h1,
-    .markdown-section h2,
-    .markdown-section h3,
-    .markdown-section h4 {
-      color: #0a0a0a;
-      font-weight: 600;
-    }
-
-    .markdown-section h1 {
-      font-size: 32px;
-    }
-
-    .markdown-section h2 {
-      font-size: 22px;
-      margin: 36px 0 16px;
-    }
-
-    .markdown-section p,
-    .markdown-section li {
-      color: #0a0a0a;
-    }
-
-    .markdown-section a {
-      color: #0a0a0a;
-      font-weight: 600;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    .markdown-section hr {
-      border-bottom: 1px solid #e5e5e5;
-    }
-
-    .markdown-section blockquote {
-      margin: 16px 0;
-      padding: 8px 16px;
-      border-left: 2px solid #0a0a0a;
-      background: #fafafa;
-      color: #52525b;
-    }
-
-    .markdown-section blockquote p {
-      color: #52525b;
-    }
-
-    .markdown-section table {
-      display: table;
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .markdown-section th,
-    .markdown-section td {
-      border: none;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 10px 14px;
-    }
-
-    .markdown-section thead tr,
-    .markdown-section tr:nth-child(2n) {
-      background: #fafafa;
-    }
-
-    .markdown-section th {
-      font-weight: 600;
-      color: #0a0a0a;
-    }
-
-    .markdown-section img {
-      display: block;
-      max-width: min(100%, 720px);
-      height: auto;
-      margin: 16px 0 24px;
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-    }
-
-    .markdown-section code {
-      background: #f4f4f5;
-      color: #0a0a0a;
-      border-radius: 4px;
-    }
-
-    .markdown-section pre {
-      background: #f4f4f5;
-      border-radius: 8px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .app-nav {
-        left: 16px;
-        transform: none;
-      }
-
-      .app-nav a {
-        font-size: 16px;
-        padding-top: 16px;
-      }
-
-      .markdown-section {
-        margin: 8px 12px 32px;
-        padding: 24px 16px 32px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="app/css/app.css">
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'Chords & Keys Cookbook',
-      repo: 'shaozheliu/chords-keys-handbook',
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 3,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md',
-        '/.*/_navbar.md': '/_navbar.md'
-      },
-      coverpage: false,
-      auto2top: true,
-      routerMode: 'hash',
-      search: {
-        placeholder: '搜索…',
-        noData: '没有结果',
-        maxAge: 86400000
-      },
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
-      plugins: [
-        function (hook) {
-          function openChordCatalog(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            var path = window.location.pathname.replace(/index\.html$/, '');
-            if (!path.endsWith('/')) path += '/';
-            window.location.assign(path + 'chords/');
-          }
-          function bindChordLinks() {
-            document.querySelectorAll('a').forEach(function (a) {
-              if (a.dataset.chordBound) return;
-              var href = a.getAttribute('href') || '';
-              var text = (a.textContent || '').replace(/\s+/g, '');
-              var inNav = a.closest('.app-nav') && text === '和弦';
-              var toCatalog = /#\/chords\/?$/.test(href) || /(?:^|\/)chords\/?$/.test(href);
-              if (!inNav && !toCatalog && text !== '打开和弦大全') return;
-              a.dataset.chordBound = '1';
-              a.addEventListener('click', openChordCatalog, true);
-            });
-          }
-          hook.ready(bindChordLinks);
-          hook.doneEach(bindChordLinks);
-        }
-      ]
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  <header class="site-header">
+    <a class="brand" href="./">钢琴即兴</a>
+    <nav class="site-nav">
+      <a href="chords/">和弦</a>
+      <a href="practice/">练习</a>
+      <a href="progressions/">进行</a>
+      <a href="songs/">曲目</a>
+    </nav>
+  </header>
+
+  <main class="landing">
+    <div class="glyph">🎹</div>
+    <h1>钢琴弹唱 · 和弦与键盘手册</h1>
+    <p>和弦库 / 每日练习 / 和弦进行 / 曲目拆解 —— 四步把伴奏弹起来。</p>
+    <div class="links">
+      <a class="chip active" href="chords/">进入和弦库</a>
+      <a class="chip ghost" href="practice/">每日练习</a>
+      <a class="chip ghost" href="progressions/">和弦进行</a>
+      <a class="chip ghost" href="songs/">曲目拆解</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>钢琴即兴 · 自学手册</div>
+    <nav>
+      <a href="chords/">和弦</a>
+      <a href="practice/">练习</a>
+      <a href="progressions/">进行</a>
+      <a href="songs/">曲目</a>
+    </nav>
+    <div>© 2026 Chords &amp; Keys Handbook</div>
+  </footer>
 </body>
 </html>

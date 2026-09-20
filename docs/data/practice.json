@@ -1,0 +1,119 @@
+{
+  "weeklyGroups": [
+    {
+      "day": "周一",
+      "tonics": ["F", "C", "G"],
+      "note": "白键友好，建立手型手感"
+    },
+    {
+      "day": "周二",
+      "tonics": ["D", "A", "E"],
+      "note": "升号渐多，平移手型"
+    },
+    {
+      "day": "周三~周四",
+      "tonics": ["B", "F#", "Db"],
+      "note": "升降号最多，两天分摊巩固"
+    },
+    {
+      "day": "周五~周六",
+      "tonics": ["Ab", "Eb", "Bb"],
+      "note": "降号调，两天分摊巩固"
+    },
+    {
+      "day": "周日",
+      "tonics": "all",
+      "note": "完整五度圈跑一遍，查漏补缺"
+    }
+  ],
+  "practices": [
+    {
+      "chordId": "major",
+      "steps": [
+        {"phase": "纵向", "name": "手型一三种声部排列", "detail": "第二转位 → 原位 → 第一转位", "type": "紧凑型"},
+        {"phase": "纵向", "name": "手型二柱式与琶音", "detail": "感受薄 → 厚的声部加厚", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "紧凑型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-3-5", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "紧凑型 ↔ 扩张型"}
+      ],
+      "progressionId": null
+    },
+    {
+      "chordId": "minor",
+      "steps": [
+        {"phase": "纵向", "name": "手型一三种声部排列", "detail": "第二转位 → 原位 → 第一转位", "type": "紧凑型"},
+        {"phase": "纵向", "name": "手型二柱式与琶音", "detail": "感受薄 → 厚的声部加厚", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "紧凑型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-♭3-5", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "紧凑型 ↔ 扩张型"}
+      ],
+      "progressionId": null
+    },
+    {
+      "chordId": "maj7",
+      "steps": [
+        {"phase": "纵向", "name": "手型一收缩型声部排列", "detail": "五音-七音-三音，感受七音色彩", "type": "收缩型"},
+        {"phase": "纵向", "name": "手型二中间型柱式", "detail": "根音-高八度根音 + 三音-五音-七音", "type": "中间型"},
+        {"phase": "纵向", "name": "手型三扩张型琶音", "detail": "完整四音声部，薄 → 厚推进", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "收缩型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-3-5-7", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 二 ↔ 三动态切换", "detail": "强化肌肉记忆", "type": "收缩 ↔ 中间 ↔ 扩张"}
+      ],
+      "progressionId": "4566"
+    },
+    {
+      "chordId": "m7",
+      "steps": [
+        {"phase": "纵向", "name": "手型一声部排列", "detail": "七音-三音-五音，感受小七色彩", "type": "紧凑型"},
+        {"phase": "纵向", "name": "手型二柱式与琶音", "detail": "三音-五音-七音-高八度三音", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "紧凑型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-♭3-5-♭7", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "紧凑型 ↔ 扩张型"}
+      ],
+      "progressionId": "add9-m7"
+    },
+    {
+      "chordId": "sus2",
+      "steps": [
+        {"phase": "纵向", "name": "手型一紧凑型声部排列", "detail": "五音-根音-二音，感受开放色彩", "type": "紧凑型"},
+        {"phase": "纵向", "name": "手型二扩张型柱式", "detail": "二音-五音-高八度二音", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "紧凑型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-2-5", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "紧凑型 ↔ 扩张型"}
+      ],
+      "progressionId": null
+    },
+    {
+      "chordId": "sus4",
+      "steps": [
+        {"phase": "纵向", "name": "手型二扩张型声部排列", "detail": "根音-四音-五音-高八度根音，感受悬置张力", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-4-5", "type": "双手"},
+        {"phase": "切换", "name": "sus4 → 大三和弦解决", "detail": "感受挂四 → 主和弦的解决感", "type": "扩张型 → 紧凑型"}
+      ],
+      "progressionId": "sus4-resolve"
+    },
+    {
+      "chordId": "add9",
+      "steps": [
+        {"phase": "纵向", "name": "手型一收缩型声部排列", "detail": "五音-根音-九音-三音，感受九音色彩", "type": "收缩型"},
+        {"phase": "纵向", "name": "手型二扩张型柱式", "detail": "九音-三音-五音-高八度根音", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "收缩型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-2-3-5", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "收缩型 ↔ 扩张型"}
+      ],
+      "progressionId": "4566"
+    },
+    {
+      "chordId": "maj6",
+      "steps": [
+        {"phase": "纵向", "name": "手型一收缩型声部排列", "detail": "六音-根音-三音，感受六音色彩", "type": "收缩型"},
+        {"phase": "纵向", "name": "手型二扩张型柱式", "detail": "根音-三音-五音-六音", "type": "扩张型"},
+        {"phase": "横向", "name": "五度圈移调", "detail": "C → G → D → A → E → B → F# → Db → Ab → Eb → Bb → F", "type": "收缩型 ↔ 扩张型"},
+        {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-3-5-6", "type": "双手"},
+        {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "收缩型 ↔ 扩张型"}
+      ],
+      "progressionId": null
+    }
+  ]
+}

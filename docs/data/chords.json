@@ -1,0 +1,424 @@
+{
+  "families": [
+    {
+      "id": "triads",
+      "title": "三和弦",
+      "lead": "共 2 个子类型，24 个和弦。大三与小三是钢琴即兴最常用的基础色彩。",
+      "kinds": ["major", "minor"]
+    },
+    {
+      "id": "sevenths",
+      "title": "七和弦",
+      "lead": "共 3 个子类型，36 个和弦。属七负责推动，小七与大七负责色彩。",
+      "kinds": ["dom7", "m7", "maj7"]
+    },
+    {
+      "id": "suspended",
+      "title": "挂留和弦",
+      "lead": "共 2 个子类型，24 个和弦。挂二更开放，挂四更倾向于解决。",
+      "kinds": ["sus2", "sus4"]
+    },
+    {
+      "id": "added",
+      "title": "加音和弦",
+      "lead": "共 2 个子类型，24 个和弦。加九与六和弦都在三和弦上加一个色彩音。",
+      "kinds": ["add9", "maj6"]
+    }
+  ],
+  "chords": [
+    {
+      "id": "major",
+      "section": "大三和弦",
+      "typeName": "大三和弦",
+      "intervals": [0, 4, 7],
+      "formula": "1 - 3 - 5",
+      "tone": "明亮、开阔、稳定",
+      "style": "流行 / 民谣 / 乡村",
+      "folder": "major-triads",
+      "suffix": "major",
+      "familyId": "triads",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 紧凑型",
+          "description": "左手 3 指弹根音，右手 1-2-4 指弹三音和弦。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "R", "degree": "五音"},
+            {"offset": 0, "finger": 2, "hand": "R", "degree": "根音"},
+            {"offset": 4, "finger": 4, "hand": "R", "degree": "三音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 丰满型",
+          "description": "左手 5 指与 2 指弹根音和五音，右手 1-2-3-5 指弹四音和弦。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "R", "degree": "根音"},
+            {"offset": 4, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 12, "finger": 5, "hand": "R", "degree": "根音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "minor",
+      "section": "小三和弦",
+      "typeName": "小三和弦",
+      "intervals": [0, 3, 7],
+      "formula": "1 - ♭3 - 5",
+      "tone": "柔和、内敛、暗淡",
+      "style": "抒情 / 民谣 / 流行",
+      "folder": "minor-triads",
+      "suffix": "minor",
+      "familyId": "triads",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 紧凑型",
+          "description": "左手 3 指弹根音，右手 1-2-4 指弹五音、根音、降三音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "R", "degree": "五音"},
+            {"offset": 0, "finger": 2, "hand": "R", "degree": "根音"},
+            {"offset": 3, "finger": 4, "hand": "R", "degree": "三音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 扩张型",
+          "description": "左手 5 指与 2 指弹根音和五音，右手 1-2-3-5 指弹根音、降三音、五音和高八度根音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "R", "degree": "根音"},
+            {"offset": 3, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 12, "finger": 5, "hand": "R", "degree": "根音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dom7",
+      "section": "属七和弦",
+      "typeName": "属七和弦",
+      "intervals": [0, 4, 7, 10],
+      "formula": "1 - 3 - 5 - ♭7",
+      "tone": "紧张、有推动力",
+      "style": "布鲁斯 / 流行 / 爵士",
+      "folder": "dom7-chords",
+      "suffix": "7",
+      "familyId": "sevenths",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一",
+          "description": "左手 3 指与 1 指弹根音和五音，右手 1-2-4 指弹七音、三音、五音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "L", "degree": "五音"},
+            {"offset": -2, "finger": 1, "hand": "R", "degree": "七音"},
+            {"offset": 4, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 4, "hand": "R", "degree": "五音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二",
+          "description": "左手 5-3-1 指弹根音、五音、七音，右手 1-2-3-5 指弹根音、三音、五音和高八度根音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 3, "hand": "L", "degree": "五音"},
+            {"offset": -2, "finger": 1, "hand": "L", "degree": "七音"},
+            {"offset": 0, "finger": 1, "hand": "R", "degree": "根音"},
+            {"offset": 4, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 12, "finger": 5, "hand": "R", "degree": "根音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m7",
+      "section": "小七和弦",
+      "typeName": "小七和弦",
+      "intervals": [0, 3, 7, 10],
+      "formula": "1 - ♭3 - 5 - ♭7",
+      "tone": "柔和、流动",
+      "style": "流行 / R&B / 爵士",
+      "folder": "m7-chords",
+      "suffix": "m7",
+      "familyId": "sevenths",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一",
+          "description": "左手 3-1指 根音-五音 ｜ 右手 1-2-4指 七音-三音-五音",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "L", "degree": "五音"},
+            {"offset": -2, "finger": 1, "hand": "R", "degree": "七音"},
+            {"offset": 3, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 4, "hand": "R", "degree": "五音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二",
+          "description": "左手 5-2-1指 根音-五音-高八度根音 ｜ 右手 1-2-3-5指 三音-五音-七音-高八度三音",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "L", "degree": "根音"},
+            {"offset": 3, "finger": 1, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 2, "hand": "R", "degree": "五音"},
+            {"offset": 10, "finger": 3, "hand": "R", "degree": "七音"},
+            {"offset": 15, "finger": 5, "hand": "R", "degree": "三音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maj7",
+      "section": "大七和弦",
+      "typeName": "大七和弦",
+      "intervals": [0, 4, 7, 11],
+      "formula": "1 - 3 - 5 - 7",
+      "tone": "明亮、梦幻",
+      "style": "流行 / 爵士 / 民谣",
+      "folder": "maj7-chords",
+      "suffix": "maj7",
+      "familyId": "sevenths",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 收缩型",
+          "description": "左手 3 指弹根音，右手 1-2-4 指弹五音、七音、三音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "R", "degree": "五音"},
+            {"offset": -1, "finger": 2, "hand": "R", "degree": "七音"},
+            {"offset": 4, "finger": 4, "hand": "R", "degree": "三音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 中间型",
+          "description": "左手 5 指与 1 指弹根音和高八度根音，右手 1-2-4 指弹三音、五音、七音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": 0, "finger": 1, "hand": "L", "degree": "根音"},
+            {"offset": 4, "finger": 1, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 2, "hand": "R", "degree": "五音"},
+            {"offset": 11, "finger": 4, "hand": "R", "degree": "七音"}
+          ]
+        },
+        {
+          "id": 3,
+          "label": "手型三 · 扩张型",
+          "description": "左手 5-2-1 指弹根音、五音和高八度根音，右手 1-2-3-5 指弹三音、五音、七音和高八度三音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "L", "degree": "根音"},
+            {"offset": 4, "finger": 1, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 2, "hand": "R", "degree": "五音"},
+            {"offset": 11, "finger": 3, "hand": "R", "degree": "七音"},
+            {"offset": 16, "finger": 5, "hand": "R", "degree": "三音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sus2",
+      "section": "挂二和弦",
+      "typeName": "挂二和弦",
+      "intervals": [0, 2, 7],
+      "formula": "1 - 2 - 5",
+      "tone": "开放、悬置",
+      "style": "流行 / 民谣",
+      "folder": "sus2-chords",
+      "suffix": "sus2",
+      "familyId": "suspended",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 紧凑型",
+          "description": "左手 3 指弹根音，右手 1-2-3 指弹五音、根音、二音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "R", "degree": "五音"},
+            {"offset": 0, "finger": 2, "hand": "R", "degree": "根音"},
+            {"offset": 2, "finger": 3, "hand": "R", "degree": "二音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 扩张型",
+          "description": "左手 5-2-1 指弹根音、五音和高八度根音，右手 1-2-5 指弹二音、五音和高八度二音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "L", "degree": "根音"},
+            {"offset": 2, "finger": 1, "hand": "R", "degree": "二音"},
+            {"offset": 7, "finger": 2, "hand": "R", "degree": "五音"},
+            {"offset": 14, "finger": 5, "hand": "R", "degree": "二音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sus4",
+      "section": "挂四和弦",
+      "typeName": "挂四和弦",
+      "intervals": [0, 5, 7],
+      "formula": "1 - 4 - 5",
+      "tone": "悬置、等待解决",
+      "style": "流行 / 摇滚",
+      "folder": "sus4-chords",
+      "suffix": "sus4",
+      "familyId": "suspended",
+      "handShapes": [
+        {
+          "id": 2,
+          "label": "手型二 · 扩张型",
+          "description": "左手 5 指与 2 指弹根音和五音，右手 1-2-3-5 指弹根音、四音、五音和高八度根音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "R", "degree": "根音"},
+            {"offset": 5, "finger": 2, "hand": "R", "degree": "四音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 12, "finger": 5, "hand": "R", "degree": "根音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "add9",
+      "section": "加九和弦",
+      "typeName": "加九和弦",
+      "intervals": [0, 2, 4, 7],
+      "formula": "1 - 2 - 3 - 5",
+      "tone": "明亮、带色彩",
+      "style": "流行 / 民谣",
+      "folder": "add9-chords",
+      "suffix": "add9",
+      "familyId": "added",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 收缩型",
+          "description": "左手 3 指弹根音，右手 1-2-3-4 指弹五音、根音、九音、三音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "R", "degree": "五音"},
+            {"offset": 0, "finger": 2, "hand": "R", "degree": "根音"},
+            {"offset": 2, "finger": 3, "hand": "R", "degree": "九音"},
+            {"offset": 4, "finger": 4, "hand": "R", "degree": "三音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 扩张型",
+          "description": "左手 5-4-1 指弹根音、五音和高八度根音，右手 1-2-3-5 指弹九音、三音、五音和高八度根音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 4, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "L", "degree": "根音"},
+            {"offset": 2, "finger": 1, "hand": "R", "degree": "九音"},
+            {"offset": 4, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 12, "finger": 5, "hand": "R", "degree": "根音"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maj6",
+      "section": "六和弦",
+      "typeName": "六和弦",
+      "intervals": [0, 4, 7, 9],
+      "formula": "1 - 3 - 5 - 6",
+      "tone": "温暖、复古",
+      "style": "爵士 / 流行 / 民谣",
+      "folder": "maj6-chords",
+      "suffix": "6",
+      "familyId": "added",
+      "handShapes": [
+        {
+          "id": 1,
+          "label": "手型一 · 收缩型",
+          "description": "左手 3 指与 1 指弹根音和五音，右手 1-2-4 指弹六音、根音、三音。",
+          "notes": [
+            {"offset": -12, "finger": 3, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 1, "hand": "L", "degree": "五音"},
+            {"offset": -3, "finger": 1, "hand": "R", "degree": "六音"},
+            {"offset": 0, "finger": 2, "hand": "R", "degree": "根音"},
+            {"offset": 4, "finger": 4, "hand": "R", "degree": "三音"}
+          ]
+        },
+        {
+          "id": 2,
+          "label": "手型二 · 扩张型",
+          "description": "左手 5 指与 2 指弹根音和五音，右手 1-2-3-4 指弹根音、三音、五音、六音。",
+          "notes": [
+            {"offset": -12, "finger": 5, "hand": "L", "degree": "根音"},
+            {"offset": -5, "finger": 2, "hand": "L", "degree": "五音"},
+            {"offset": 0, "finger": 1, "hand": "R", "degree": "根音"},
+            {"offset": 4, "finger": 2, "hand": "R", "degree": "三音"},
+            {"offset": 7, "finger": 3, "hand": "R", "degree": "五音"},
+            {"offset": 9, "finger": 4, "hand": "R", "degree": "六音"}
+          ]
+        }
+      ]
+    }
+  ],
+  "tonics": ["C", "G", "D", "A", "E", "B", "F#", "Db", "Ab", "Eb", "Bb", "F"],
+  "tonicSlugMap": {
+    "C": "c",
+    "G": "g",
+    "D": "d",
+    "A": "a",
+    "E": "e",
+    "B": "b",
+    "F#": "f-sharp",
+    "Db": "d-flat",
+    "Ab": "a-flat",
+    "Eb": "e-flat",
+    "Bb": "b-flat",
+    "F": "f"
+  },
+  "tonicCn": {
+    "C": "C",
+    "G": "G",
+    "D": "D",
+    "A": "A",
+    "E": "E",
+    "B": "B",
+    "F#": "升F",
+    "Db": "降D",
+    "Ab": "降A",
+    "Eb": "降E",
+    "Bb": "降B",
+    "F": "F"
+  },
+  "tonicPc": {
+    "C": 0,
+    "G": 7,
+    "D": 2,
+    "A": 9,
+    "E": 4,
+    "B": 11,
+    "F#": 6,
+    "Db": 1,
+    "Ab": 8,
+    "Eb": 3,
+    "Bb": 10,
+    "F": 5
+  }
+}

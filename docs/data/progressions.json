@@ -1,0 +1,148 @@
+{
+  "progressions": [
+    {
+      "id": "4566",
+      "name": "4566 进行",
+      "key": "C大调",
+      "description": "下属-属-小主，add9 收束情绪",
+      "folder": "add9-progressions",
+      "measures": [
+        {
+          "degree": "IVsus2",
+          "chordId": "sus2",
+          "tonic": "F",
+          "handShapeId": 2,
+          "leftHand": "F-C-F（5-2-1）",
+          "rightHand": "G-C-G（1-2-5）"
+        },
+        {
+          "degree": "Vsus4",
+          "chordId": "sus4",
+          "tonic": "G",
+          "handShapeId": 2,
+          "leftHand": "G-D（5-2）",
+          "rightHand": "G-C-D-G（1-2-3-5）"
+        },
+        {
+          "degree": "viadd9",
+          "chordId": "add9",
+          "tonic": "Am",
+          "handShapeId": 2,
+          "leftHand": "A-E-A（5-4-1）",
+          "rightHand": "B-C-E-A（1-2-3-5）"
+        },
+        {
+          "degree": "viadd9",
+          "chordId": "add9",
+          "tonic": "Am",
+          "handShapeId": 2,
+          "leftHand": "A-E-A（5-4-1）",
+          "rightHand": "B-C-E-A（1-2-3-5）"
+        }
+      ],
+      "rhythmSvg": "assets/images/rhythm-patterns/add9-m7-8x8-tie.svg"
+    },
+    {
+      "id": "add9-m7",
+      "name": "1add9 → 3m7 → 4sus2 → 5sus4 进行",
+      "key": "C大调",
+      "description": "1-3-4-5 级数进行，小七落在三级，统一骨架：左手 3-1指 根音-五音 ｜ 右手 1-2-4指",
+      "folder": "m7-progressions",
+      "measures": [
+        {
+          "degree": "1add9",
+          "chordId": "add9",
+          "tonic": "C",
+          "handShapeId": 1,
+          "leftHand": "C-G（3-1）",
+          "rightHand": "D-E-G（1-2-4）"
+        },
+        {
+          "degree": "3m7",
+          "chordId": "m7",
+          "tonic": "Em",
+          "handShapeId": 1,
+          "leftHand": "E-B（3-1）",
+          "rightHand": "D-G-B（1-2-4）"
+        },
+        {
+          "degree": "4sus2",
+          "chordId": "sus2",
+          "tonic": "F",
+          "handShapeId": 1,
+          "leftHand": "F-C（3-1）",
+          "rightHand": "G-C-D（1-2-4）"
+        },
+        {
+          "degree": "5sus4",
+          "chordId": "sus4",
+          "tonic": "G",
+          "handShapeId": 2,
+          "leftHand": "G-D（3-1）",
+          "rightHand": "G-C-D-G（1-2-4）"
+        }
+      ],
+      "rhythmSvg": "assets/images/rhythm-patterns/add9-m7-8x8-tie.svg"
+    },
+    {
+      "id": "sus4-resolve",
+      "name": "IVsus2 → Vsus4 → I 进行",
+      "key": "C大调",
+      "description": "下属挂留二 → 属挂留四 → 主大三，终止式",
+      "folder": "sus4-progressions",
+      "measures": [
+        {
+          "degree": "IVsus2",
+          "chordId": "sus2",
+          "tonic": "F",
+          "handShapeId": 2,
+          "leftHand": "F-C-F（5-2-1）",
+          "rightHand": "G-C-G（1-2-5）"
+        },
+        {
+          "degree": "Vsus4",
+          "chordId": "sus4",
+          "tonic": "G",
+          "handShapeId": 2,
+          "leftHand": "G-D（5-2）",
+          "rightHand": "G-C-D-G（1-2-3-5）"
+        },
+        {
+          "degree": "I",
+          "chordId": "major",
+          "tonic": "C",
+          "handShapeId": 1,
+          "leftHand": "C（3）",
+          "rightHand": "G-C-E（1-2-4）"
+        }
+      ],
+      "rhythmSvg": null
+    },
+    {
+      "id": "maj7-1451",
+      "name": "1maj7 → 4maj7 进行",
+      "key": "C大调",
+      "description": "大七和弦的 I-IV 色彩进行，配合节奏型练习",
+      "folder": null,
+      "measures": [
+        {
+          "degree": "1maj7",
+          "chordId": "maj7",
+          "tonic": "C",
+          "handShapeId": 1,
+          "leftHand": "C（3）",
+          "rightHand": "G-B-E（1-2-4）"
+        },
+        {
+          "degree": "4maj7",
+          "chordId": "maj7",
+          "tonic": "F",
+          "handShapeId": 1,
+          "leftHand": "F（3）",
+          "rightHand": "C-E-A（1-2-4）"
+        }
+      ],
+      "rhythmSvg": "assets/images/rhythm-patterns/maj7-4-88-4-1616-8.svg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "spaceKey": "6e39ed39c313410bb187b9ea1ee4c85f",
+      "projectPath": "d:\\Githubprojects\\chords-keys-cookbook\\docs",
+      "desc": "和弦 Keys CookBook — 钢琴弹唱练习手册（和弦库 / 每日练习 / 和弦进行 / 曲目拆解 四模块，JSON 数据驱动）",
+      "createdAt": 1789892878527
+    },
+    {
+      "spaceKey": "1d45b39a26cb4020b86c06e3031dbb14",
+      "projectPath": "d:\\Githubprojects\\chords-keys-cookbook\\docs",
+      "desc": "和弦 Keys CookBook — 钢琴弹唱练习手册（和弦库 / 每日练习 / 和弦进行 / 曲目拆解 四模块，JSON 数据驱动）",
+      "createdAt": 1789892937380
+    },
+    {
+      "spaceKey": "506d8db9e9cf4a7293604249419f5260",
+      "projectPath": "d:\\Githubprojects\\chords-keys-cookbook\\docs",
+      "desc": "和弦 Keys CookBook — 钢琴弹唱练习手册（和弦库 / 每日练习 / 和弦进行 / 曲目拆解 四模块，JSON 数据驱动）",
+      "createdAt": 1789893066676
+    }
+  ]
+}
