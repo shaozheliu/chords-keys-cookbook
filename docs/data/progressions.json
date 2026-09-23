@@ -1,87 +1,45 @@
 {
   "progressions": [
     {
-      "id": "4566",
-      "name": "4566 进行",
-      "tag": "色彩挂留",
+      "id": "1564",
+      "name": "1564 万能四和弦",
+      "tag": "弹唱常用",
       "key": "C大调",
-      "roman": "IV-V-vi-vi",
-      "listChords": ["Fsus2", "Gsus4", "Amadd9", "Amadd9"],
-      "basicChords": ["F", "G", "Am", "Am"],
-      "basicDegrees": ["IV", "V", "vi", "vi"],
-      "description": "下属-属-小主，add9 收束情绪",
-      "intro": "从下属 F 起手，经属和弦 G 推开张力，落到关系小调 Am 并连停两拍。本页介绍层只写基本三和弦骨架；sus / add9 等色彩变体收在下方「好听组合」里。",
-      "moodTags": ["温暖", "悬置", "收束"],
-      "moodAnalysis": "IV 与 vi 的明暗对比带来温暖感；挂留和弦把解决往后推半拍，最后用 add9 轻轻收住。适合抒情弹唱与叙事段落。",
+      "roman": "I-V-vi-IV",
+      "listChords": ["C", "G", "Am", "F"],
+      "basicChords": ["C", "G", "Am", "F"],
+      "basicDegrees": ["I", "V", "vi", "IV"],
+      "description": "I-V-vi-IV，当代流行与华语金曲最常见的四和弦循环",
+      "intro": "从主和弦出发，经属和弦制造期待，再以相对小调加入温柔色彩，最后用下属托起情绪回到起点。结构对称、记法简单，吉他弹唱与键盘伴奏都极易上手。",
+      "moodTags": ["积极", "温暖", "万能"],
+      "moodAnalysis": "I 与 IV 均为大调和弦，整体落在大调明亮的底色上；vi 是相对小调（C 大调的 Am），在明快基调里掺入一丝柔和与感伤，有「笑着想起往事」的画面感。V → vi 的根音下行与 IV 的开放感形成自然循环，适合主歌叙事与副歌记忆点。",
       "songs": [
-        { "title": "告白气球", "artist": "周杰伦", "note": "常用 IV-V-vi-IV 变体，情绪相近" },
-        { "title": "成都", "artist": "赵雷", "note": "温暖循环，适合慢板弹唱" },
-        { "title": "突然好想你", "artist": "五月天", "note": "收束处可用 viadd9 点亮色彩" }
+        { "title": "告白气球", "artist": "周杰伦", "note": "经典 1564 循环，副歌记忆点" },
+        { "title": "平凡之路", "artist": "朴树", "note": "主歌叙事循环" },
+        { "title": "演员", "artist": "薛之谦", "note": "情绪推进常用 vi 收色" },
+        { "title": "成都", "artist": "赵雷", "note": "温暖慢板弹唱" },
+        { "title": "突然好想你", "artist": "五月天", "note": "副歌 IV 托起情绪" }
       ],
-      "folder": "add9-progressions",
-      "rhythmSvg": "assets/images/rhythm-patterns/add9-m7-8x8-tie.svg",
+      "folder": null,
+      "rhythmSvg": null,
       "combos": [
         {
-          "id": "hang",
-          "title": "组合一 · 挂留收束",
-          "tag": "主推",
-          "tagTone": "accent",
-          "mood": "悬置 → 收束",
-          "note": "下属挂二开场，属挂四推情绪，小主加九连停两拍。",
-          "symbols": ["Fsus2", "Gsus4", "Amadd9", "Amadd9"],
-          "degrees": ["IVsus2", "Vsus4", "viadd9", "viadd9"],
-          "measures": [
-            {
-              "degree": "IVsus2",
-              "chordId": "sus2",
-              "tonic": "F",
-              "handShapeId": 2,
-              "leftHand": "F-C-F（5-2-1）",
-              "rightHand": "G-C-G（1-2-5）"
-            },
-            {
-              "degree": "Vsus4",
-              "chordId": "sus4",
-              "tonic": "G",
-              "handShapeId": 2,
-              "leftHand": "G-D（5-2）",
-              "rightHand": "G-C-D-G（1-2-3-5）"
-            },
-            {
-              "degree": "viadd9",
-              "chordId": "add9",
-              "tonic": "Am",
-              "handShapeId": 2,
-              "leftHand": "A-E-A（5-4-1）",
-              "rightHand": "B-C-E-A（1-2-3-5）"
-            },
-            {
-              "degree": "viadd9",
-              "chordId": "add9",
-              "tonic": "Am",
-              "handShapeId": 2,
-              "leftHand": "A-E-A（5-4-1）",
-              "rightHand": "B-C-E-A（1-2-3-5）"
-            }
-          ]
-        },
-        {
           "id": "basic",
-          "title": "组合二 · 干净骨架",
+          "title": "组合一 · 干净骨架",
           "tag": "基础",
           "tagTone": "ink",
           "mood": "清晰 · 稳",
-          "note": "与介绍层一致，先把基本和弦弹顺，再叠色彩。",
-          "symbols": ["F", "G", "Am", "Am"],
-          "degrees": ["IV", "V", "vi", "vi"],
+          "note": "先用三和弦把级数走顺，再替换色彩。",
+          "symbols": ["C", "G", "Am", "F"],
+          "degrees": ["I", "V", "vi", "IV"],
           "measures": [
             {
-              "degree": "IV",
+              "degree": "I",
               "chordId": "major",
-              "tonic": "F",
+              "tonic": "C",
               "handShapeId": 1,
-              "leftHand": "F-C（5-2）",
-              "rightHand": "A-C-F（1-2-5）"
+              "leftHand": "C-G（5-2）",
+              "rightHand": "G-C-E（1-2-5）"
             },
             {
               "degree": "V",
@@ -100,32 +58,32 @@
               "rightHand": "A-C-E（1-2-4）"
             },
             {
-              "degree": "vi",
-              "chordId": "minor",
-              "tonic": "Am",
-              "handShapeId": 1,
-              "leftHand": "A-E（5-2）",
-              "rightHand": "A-C-E（1-2-4）"
-            }
-          ]
-        },
-        {
-          "id": "half",
-          "title": "组合三 · 半挂留",
-          "tag": "备选",
-          "tagTone": "ink",
-          "mood": "轻悬置",
-          "note": "只在属和弦挂四，收束用 Amadd9 点一下九音。",
-          "symbols": ["F", "Gsus4", "Am", "Amadd9"],
-          "degrees": ["IV", "Vsus4", "vi", "viadd9"],
-          "measures": [
-            {
               "degree": "IV",
               "chordId": "major",
               "tonic": "F",
               "handShapeId": 1,
               "leftHand": "F-C（5-2）",
               "rightHand": "A-C-F（1-2-5）"
+            }
+          ]
+        },
+        {
+          "id": "color",
+          "title": "组合二 · 色彩推进",
+          "tag": "主推",
+          "tagTone": "accent",
+          "mood": "明亮 · 温暖",
+          "note": "主和弦换 add9，属和弦换 sus4，vi 用 add9 收色，IV 挂二开场更开放。",
+          "symbols": ["Cadd9", "Gsus4", "Amadd9", "Fsus2"],
+          "degrees": ["Iadd9", "Vsus4", "viadd9", "IVsus2"],
+          "measures": [
+            {
+              "degree": "Iadd9",
+              "chordId": "add9",
+              "tonic": "C",
+              "handShapeId": 2,
+              "leftHand": "C-G-C（5-4-1）",
+              "rightHand": "D-E-G-C（1-2-3-5）"
             },
             {
               "degree": "Vsus4",
@@ -136,171 +94,151 @@
               "rightHand": "G-C-D-G（1-2-3-5）"
             },
             {
-              "degree": "vi",
-              "chordId": "minor",
-              "tonic": "Am",
-              "handShapeId": 1,
-              "leftHand": "A-E（5-2）",
-              "rightHand": "A-C-E（1-2-4）"
-            },
-            {
               "degree": "viadd9",
               "chordId": "add9",
               "tonic": "Am",
               "handShapeId": 2,
               "leftHand": "A-E-A（5-4-1）",
               "rightHand": "B-C-E-A（1-2-3-5）"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "add9-m7",
-      "name": "1-3-4-5 色彩进行",
-      "tag": "弹唱常用",
-      "key": "C大调",
-      "roman": "I-iii-IV-V",
-      "listChords": ["Cadd9", "Em7", "Fsus2", "Gsus4"],
-      "basicChords": ["C", "Em", "F", "G"],
-      "basicDegrees": ["I", "iii", "IV", "V"],
-      "description": "1-3-4-5 级数进行，小七落在三级",
-      "intro": "主音开场，三级小七带出柔和转折，再经下属到属。统一骨架：左手 3-1 指根音-五音，右手 1-2-4 指。介绍层写基本和弦，色彩版见好听组合。",
-      "moodTags": ["明亮", "推进"],
-      "moodAnalysis": "I 到 iii 轻轻下沉，IV 再抬起，V 把乐句往前推。add9 / m7 / sus 叠色后更适合流行弹唱副歌。",
-      "songs": [
-        { "title": "晴天", "artist": "周杰伦", "note": "主歌常用 I-iii-IV-V 骨架" },
-        { "title": "那些你很冒险的梦", "artist": "林俊杰", "note": "推进感强，适合副歌" }
-      ],
-      "folder": "m7-progressions",
-      "rhythmSvg": "assets/images/rhythm-patterns/add9-m7-8x8-tie.svg",
-      "combos": [
-        {
-          "id": "color",
-          "title": "组合一 · 色彩推进",
-          "tag": "主推",
-          "tagTone": "accent",
-          "mood": "明亮 · 推进",
-          "note": "左手固定根五，右手统一 1-2-4，色彩叠在上方。",
-          "symbols": ["Cadd9", "Em7", "Fsus2", "Gsus4"],
-          "degrees": ["1add9", "3m7", "4sus2", "5sus4"],
-          "measures": [
-            {
-              "degree": "1add9",
-              "chordId": "add9",
-              "tonic": "C",
-              "handShapeId": 1,
-              "leftHand": "C-G（3-1）",
-              "rightHand": "D-E-G（1-2-4）"
             },
             {
-              "degree": "3m7",
-              "chordId": "m7",
-              "tonic": "Em",
-              "handShapeId": 1,
-              "leftHand": "E-B（3-1）",
-              "rightHand": "D-G-B（1-2-4）"
-            },
-            {
-              "degree": "4sus2",
+              "degree": "IVsus2",
               "chordId": "sus2",
               "tonic": "F",
-              "handShapeId": 1,
-              "leftHand": "F-C（3-1）",
-              "rightHand": "G-C-D（1-2-4）"
-            },
-            {
-              "degree": "5sus4",
-              "chordId": "sus4",
-              "tonic": "G",
               "handShapeId": 2,
-              "leftHand": "G-D（3-1）",
-              "rightHand": "G-C-D-G（1-2-4）"
+              "leftHand": "F-C-F（5-2-1）",
+              "rightHand": "G-C-G（1-2-5）"
             }
           ]
         },
         {
-          "id": "basic",
-          "title": "组合二 · 干净骨架",
-          "tag": "基础",
+          "id": "m7",
+          "title": "组合三 · 小七温柔",
+          "tag": "备选",
           "tagTone": "ink",
-          "mood": "清晰 · 稳",
-          "note": "先用三和弦把级数走顺，再替换色彩。",
-          "symbols": ["C", "Em", "F", "G"],
-          "degrees": ["I", "iii", "IV", "V"],
+          "mood": "柔和 · 流动",
+          "note": "vi 换 m7 增加流动感，其余保持三和弦骨架。",
+          "symbols": ["C", "G", "Am7", "F"],
+          "degrees": ["I", "V", "vim7", "IV"],
           "measures": [
             {
               "degree": "I",
               "chordId": "major",
               "tonic": "C",
               "handShapeId": 1,
-              "leftHand": "C-G（3-1）",
-              "rightHand": "E-G-C（1-2-5）"
+              "leftHand": "C-G（5-2）",
+              "rightHand": "G-C-E（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "vim7",
+              "chordId": "m7",
+              "tonic": "Am",
+              "handShapeId": 1,
+              "leftHand": "A-E（3-1）",
+              "rightHand": "G-C-E（1-2-4）"
+            },
+            {
+              "degree": "IV",
+              "chordId": "major",
+              "tonic": "F",
+              "handShapeId": 1,
+              "leftHand": "F-C（5-2）",
+              "rightHand": "A-C-F（1-2-5）"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1543",
+      "name": "1543 卡农前段",
+      "tag": "卡农进行",
+      "key": "C大调",
+      "roman": "I-V-IV-iii",
+      "listChords": ["C", "G", "F", "Em"],
+      "basicChords": ["C", "G", "F", "Em"],
+      "basicDegrees": ["I", "V", "IV", "iii"],
+      "description": "I-V-IV-iii，帕赫贝尔卡农进行的前半段",
+      "intro": "源自帕赫贝尔《D大调卡农》，I-V-IV-iii 的根音下行构成经典的「卡农感」。从主和弦出发，经属到下属，再以三级小和弦收色，形成温暖明亮又略带忧伤的色彩。在流行音乐中被广泛使用。",
+      "moodTags": ["温暖", "明亮", "忧伤"],
+      "moodAnalysis": "I 到 V 是自然上扬，V 到 IV 的下行带来温暖的怀旧感，最后的 iii（Em）在明亮的基调里掺入一丝忧伤，形成「温暖中带着遗憾」的独特色彩。根音 C-G-F-E 的半音下行是卡农进行的标志性听感。",
+      "songs": [
+        { "title": "卡农", "artist": "帕赫贝尔", "note": "经典原型，D大调 D-A-Bm-F#-G-D-G-A" },
+        { "title": "Memory", "artist": "Cats 音乐剧", "note": "副歌借用卡农进行" },
+        { "title": "婚礼进行曲", "artist": "瓦格纳", "note": "常以卡农进行铺底" }
+      ],
+      "folder": null,
+      "rhythmSvg": null,
+      "combos": [
+        {
+          "id": "basic",
+          "title": "组合一 · 干净骨架",
+          "tag": "基础",
+          "tagTone": "ink",
+          "mood": "清晰 · 稳",
+          "note": "先用三和弦把级数走顺，再替换色彩。",
+          "symbols": ["C", "G", "F", "Em"],
+          "degrees": ["I", "V", "IV", "iii"],
+          "measures": [
+            {
+              "degree": "I",
+              "chordId": "major",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C-G（5-2）",
+              "rightHand": "G-C-E（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "IV",
+              "chordId": "major",
+              "tonic": "F",
+              "handShapeId": 1,
+              "leftHand": "F-C（5-2）",
+              "rightHand": "A-C-F（1-2-5）"
             },
             {
               "degree": "iii",
               "chordId": "minor",
               "tonic": "Em",
               "handShapeId": 1,
-              "leftHand": "E-B（3-1）",
-              "rightHand": "G-B-E（1-2-5）"
-            },
-            {
-              "degree": "IV",
-              "chordId": "major",
-              "tonic": "F",
-              "handShapeId": 1,
-              "leftHand": "F-C（3-1）",
-              "rightHand": "A-C-F（1-2-5）"
-            },
-            {
-              "degree": "V",
-              "chordId": "major",
-              "tonic": "G",
-              "handShapeId": 1,
-              "leftHand": "G-D（3-1）",
-              "rightHand": "B-D-G（1-2-5）"
+              "leftHand": "E-B（5-2）",
+              "rightHand": "G-B-E（1-2-4）"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "sus4-resolve",
-      "name": "挂留终止式",
-      "tag": "终止式",
-      "key": "C大调",
-      "roman": "IV-V-I",
-      "listChords": ["Fsus2", "Gsus4", "C"],
-      "basicChords": ["F", "G", "C"],
-      "basicDegrees": ["IV", "V", "I"],
-      "description": "下属挂留二 → 属挂留四 → 主大三，终止式",
-      "intro": "经典终止式骨架：下属到属再到主。挂留把解决推迟一拍，落地时更有「终于回来」的感觉。",
-      "moodTags": ["张力", "解决"],
-      "moodAnalysis": "sus2 / sus4 制造短暂悬空，I 和弦原位落下完成收束。适合乐句结尾与间奏过门。",
-      "songs": [
-        { "title": "平凡之路", "artist": "朴树", "note": "段落收束常用 IV-V-I" }
-      ],
-      "folder": "sus4-progressions",
-      "rhythmSvg": null,
-      "combos": [
+        },
         {
-          "id": "hang",
-          "title": "组合一 · 挂留落地",
+          "id": "color",
+          "title": "组合二 · 色彩卡农",
           "tag": "主推",
           "tagTone": "accent",
-          "mood": "张力 → 解决",
-          "note": "前两拍挂留，最后一拍干净落主。",
-          "symbols": ["Fsus2", "Gsus4", "C"],
-          "degrees": ["IVsus2", "Vsus4", "I"],
+          "mood": "温暖 · 梦幻",
+          "note": "I 用 add9 开场，V 挂四推张力，IV 挂二铺开，iii 换 m7 收色。",
+          "symbols": ["Cadd9", "Gsus4", "Fsus2", "Em7"],
+          "degrees": ["Iadd9", "Vsus4", "IVsus2", "iiim7"],
           "measures": [
             {
-              "degree": "IVsus2",
-              "chordId": "sus2",
-              "tonic": "F",
+              "degree": "Iadd9",
+              "chordId": "add9",
+              "tonic": "C",
               "handShapeId": 2,
-              "leftHand": "F-C-F（5-2-1）",
-              "rightHand": "G-C-G（1-2-5）"
+              "leftHand": "C-G-C（5-4-1）",
+              "rightHand": "D-E-G-C（1-2-3-5）"
             },
             {
               "degree": "Vsus4",
@@ -311,84 +249,35 @@
               "rightHand": "G-C-D-G（1-2-3-5）"
             },
             {
-              "degree": "I",
-              "chordId": "major",
-              "tonic": "C",
+              "degree": "IVsus2",
+              "chordId": "sus2",
+              "tonic": "F",
+              "handShapeId": 2,
+              "leftHand": "F-C-F（5-2-1）",
+              "rightHand": "G-C-G（1-2-5）"
+            },
+            {
+              "degree": "iiim7",
+              "chordId": "m7",
+              "tonic": "Em",
               "handShapeId": 1,
-              "leftHand": "C（3）",
-              "rightHand": "G-C-E（1-2-4）"
+              "leftHand": "E-B（3-1）",
+              "rightHand": "D-G-B（1-2-4）"
             }
           ]
         },
         {
-          "id": "basic",
-          "title": "组合二 · 干净终止",
-          "tag": "基础",
-          "tagTone": "ink",
-          "mood": "稳 · 收",
-          "note": "三和弦版，先把终止感弹准。",
-          "symbols": ["F", "G", "C"],
-          "degrees": ["IV", "V", "I"],
-          "measures": [
-            {
-              "degree": "IV",
-              "chordId": "major",
-              "tonic": "F",
-              "handShapeId": 1,
-              "leftHand": "F-C（5-2）",
-              "rightHand": "A-C-F（1-2-5）"
-            },
-            {
-              "degree": "V",
-              "chordId": "major",
-              "tonic": "G",
-              "handShapeId": 1,
-              "leftHand": "G-D（5-2）",
-              "rightHand": "B-D-G（1-2-5）"
-            },
-            {
-              "degree": "I",
-              "chordId": "major",
-              "tonic": "C",
-              "handShapeId": 1,
-              "leftHand": "C（3）",
-              "rightHand": "G-C-E（1-2-4）"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "maj7-1451",
-      "name": "大七 I-IV",
-      "tag": "大七",
-      "key": "C大调",
-      "roman": "I-IV",
-      "listChords": ["Cmaj7", "Fmaj7"],
-      "basicChords": ["C", "F"],
-      "basicDegrees": ["I", "IV"],
-      "description": "大七和弦的 I-IV 色彩进行",
-      "intro": "主与下属都换成大七，空间感立刻打开。适合前奏、间奏或慢板弹唱铺底。",
-      "moodTags": ["梦幻", "开阔"],
-      "moodAnalysis": "大七的七音给和弦蒙上一层薄雾，I-IV 来回摆动像呼吸。节奏可放慢，让音色自己说话。",
-      "songs": [
-        { "title": "第一次爱的人", "artist": "王心凌", "note": "大七铺底常见于抒情段落" }
-      ],
-      "folder": null,
-      "rhythmSvg": "assets/images/rhythm-patterns/maj7-4-88-4-1616-8.svg",
-      "combos": [
-        {
           "id": "maj7",
-          "title": "组合一 · 大七呼吸",
-          "tag": "主推",
-          "tagTone": "accent",
+          "title": "组合三 · 大七呼吸",
+          "tag": "备选",
+          "tagTone": "ink",
           "mood": "梦幻 · 开阔",
-          "note": "两拍一换，听七音的延留。",
-          "symbols": ["Cmaj7", "Fmaj7"],
-          "degrees": ["1maj7", "4maj7"],
+          "note": "I 与 IV 换大七，空间感打开，适合慢板铺底。",
+          "symbols": ["Cmaj7", "G", "Fmaj7", "Em"],
+          "degrees": ["Imaj7", "V", "IVmaj7", "iii"],
           "measures": [
             {
-              "degree": "1maj7",
+              "degree": "Imaj7",
               "chordId": "maj7",
               "tonic": "C",
               "handShapeId": 1,
@@ -396,40 +285,342 @@
               "rightHand": "G-B-E（1-2-4）"
             },
             {
-              "degree": "4maj7",
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "IVmaj7",
               "chordId": "maj7",
               "tonic": "F",
               "handShapeId": 1,
               "leftHand": "F（3）",
               "rightHand": "C-E-A（1-2-4）"
+            },
+            {
+              "degree": "iii",
+              "chordId": "minor",
+              "tonic": "Em",
+              "handShapeId": 1,
+              "leftHand": "E-B（5-2）",
+              "rightHand": "G-B-E（1-2-4）"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "6415",
+      "name": "6415 伤感循环",
+      "tag": "弹唱常用",
+      "key": "C大调",
+      "roman": "vi-IV-I-V",
+      "listChords": ["Am", "F", "C", "G"],
+      "basicChords": ["Am", "F", "C", "G"],
+      "basicDegrees": ["vi", "IV", "I", "V"],
+      "description": "vi-IV-I-V，从小调色彩出发的抒情循环",
+      "intro": "从关系小调的 vi 级起手，先落在一层忧郁底色上，再经下属与主和弦把情绪抬回明亮，最后用属和弦把乐句推回起点。四大和弦的另一种排列，抒情歌里出现频率极高。",
+      "moodTags": ["抒情", "忧郁", "循环"],
+      "moodAnalysis": "与 1564 同属「万能四和弦」的轮转，但把小调 vi 放在句首，开场即带一丝感伤；IV 与 I 的明亮随后冲淡郁色，V 又把期待交还给下一轮。适合慢板叙事与副歌前的铺垫。",
+      "songs": [
+        { "title": "小幸运", "artist": "田馥甄", "note": "主歌抒情循环" },
+        { "title": "说散就散", "artist": "JC 陈咏桐", "note": "伤感底色，vi 起手" },
+        { "title": "光年之外", "artist": "邓紫棋", "note": "副歌情绪推进" }
+      ],
+      "folder": null,
+      "rhythmSvg": null,
+      "combos": [
         {
           "id": "basic",
-          "title": "组合二 · 三和弦对照",
+          "title": "组合一 · 干净骨架",
           "tag": "基础",
           "tagTone": "ink",
-          "mood": "干净",
-          "note": "先弹 C-F，再换回 maj7 感受差异。",
-          "symbols": ["C", "F"],
-          "degrees": ["I", "IV"],
+          "mood": "清晰 · 稳",
+          "note": "先用三和弦把级数走顺，再替换色彩。",
+          "symbols": ["Am", "F", "C", "G"],
+          "degrees": ["vi", "IV", "I", "V"],
           "measures": [
             {
-              "degree": "I",
-              "chordId": "major",
-              "tonic": "C",
+              "degree": "vi",
+              "chordId": "minor",
+              "tonic": "Am",
               "handShapeId": 1,
-              "leftHand": "C（3）",
-              "rightHand": "G-C-E（1-2-4）"
+              "leftHand": "A-E（5-2）",
+              "rightHand": "A-C-E（1-2-4）"
             },
             {
               "degree": "IV",
               "chordId": "major",
               "tonic": "F",
               "handShapeId": 1,
-              "leftHand": "F（3）",
+              "leftHand": "F-C（5-2）",
               "rightHand": "A-C-F（1-2-5）"
+            },
+            {
+              "degree": "I",
+              "chordId": "major",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C-G（5-2）",
+              "rightHand": "G-C-E（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            }
+          ]
+        },
+        {
+          "id": "color",
+          "title": "组合二 · 抒情色彩",
+          "tag": "主推",
+          "tagTone": "accent",
+          "mood": "忧郁 · 温柔",
+          "note": "vi 换 m7，IV 挂二铺开，I 用 add9 点亮，V 挂四推向下一轮。",
+          "symbols": ["Am7", "Fsus2", "Cadd9", "Gsus4"],
+          "degrees": ["vim7", "IVsus2", "Iadd9", "Vsus4"],
+          "measures": [
+            {
+              "degree": "vim7",
+              "chordId": "m7",
+              "tonic": "Am",
+              "handShapeId": 1,
+              "leftHand": "A-E（3-1）",
+              "rightHand": "G-C-E（1-2-4）"
+            },
+            {
+              "degree": "IVsus2",
+              "chordId": "sus2",
+              "tonic": "F",
+              "handShapeId": 2,
+              "leftHand": "F-C-F（5-2-1）",
+              "rightHand": "G-C-G（1-2-5）"
+            },
+            {
+              "degree": "Iadd9",
+              "chordId": "add9",
+              "tonic": "C",
+              "handShapeId": 2,
+              "leftHand": "C-G-C（5-4-1）",
+              "rightHand": "D-E-G-C（1-2-3-5）"
+            },
+            {
+              "degree": "Vsus4",
+              "chordId": "sus4",
+              "tonic": "G",
+              "handShapeId": 2,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "G-C-D-G（1-2-3-5）"
+            }
+          ]
+        },
+        {
+          "id": "maj7",
+          "title": "组合三 · 大七铺底",
+          "tag": "备选",
+          "tagTone": "ink",
+          "mood": "梦幻 · 开阔",
+          "note": "IV 与 I 换大七，空间感打开，适合前奏与间奏。",
+          "symbols": ["Am7", "Fmaj7", "Cmaj7", "G"],
+          "degrees": ["vim7", "IVmaj7", "Imaj7", "V"],
+          "measures": [
+            {
+              "degree": "vim7",
+              "chordId": "m7",
+              "tonic": "Am",
+              "handShapeId": 1,
+              "leftHand": "A-E（3-1）",
+              "rightHand": "G-C-E（1-2-4）"
+            },
+            {
+              "degree": "IVmaj7",
+              "chordId": "maj7",
+              "tonic": "F",
+              "handShapeId": 1,
+              "leftHand": "F（3）",
+              "rightHand": "C-E-A（1-2-4）"
+            },
+            {
+              "degree": "Imaj7",
+              "chordId": "maj7",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C（3）",
+              "rightHand": "G-B-E（1-2-4）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4536251",
+      "name": "4536251 流行圣经",
+      "tag": "完整乐句",
+      "key": "C大调",
+      "roman": "IV-V-iii-vi-ii-V-I",
+      "listChords": ["F", "G", "Em", "Am", "Dm", "G", "C"],
+      "basicChords": ["F", "G", "Em", "Am", "Dm", "G", "C"],
+      "basicDegrees": ["IV", "V", "iii", "vi", "ii", "V", "I"],
+      "description": "IV-V-iii-vi-ii-V-I，华语流行最完整的七和弦乐句",
+      "intro": "被称为「流行圣经」的完整个乐句：前半段 IV-V-iii-vi 完成卡农式的下行叙事，后半段 ii-V-I 用最经典的终止式收束。七个小节正好覆盖一个完整乐段，主歌到副歌都能用。",
+      "moodTags": ["叙事", "完整", "收束"],
+      "moodAnalysis": "IV → V → iii → vi 的根音以四度、二度、四度交替下行，像一条缓缓下坡的叙事线；ii → V → I 则是教科书式的终止，把一路积攒的张力干净落地。既有卡农的温暖，又有终止式的确定感。",
+      "songs": [
+        { "title": "演员", "artist": "薛之谦", "note": "副歌完整乐句" },
+        { "title": "她说", "artist": "林俊杰", "note": "主歌叙事下行" },
+        { "title": "假如爱有天意", "artist": "李健", "note": "抒情段落收束" }
+      ],
+      "folder": null,
+      "rhythmSvg": null,
+      "combos": [
+        {
+          "id": "basic",
+          "title": "组合一 · 干净骨架",
+          "tag": "基础",
+          "tagTone": "ink",
+          "mood": "清晰 · 稳",
+          "note": "先用三和弦把七小节走顺，再替换色彩。",
+          "symbols": ["F", "G", "Em", "Am", "Dm", "G", "C"],
+          "degrees": ["IV", "V", "iii", "vi", "ii", "V", "I"],
+          "measures": [
+            {
+              "degree": "IV",
+              "chordId": "major",
+              "tonic": "F",
+              "handShapeId": 1,
+              "leftHand": "F-C（5-2）",
+              "rightHand": "A-C-F（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "iii",
+              "chordId": "minor",
+              "tonic": "Em",
+              "handShapeId": 1,
+              "leftHand": "E-B（5-2）",
+              "rightHand": "G-B-E（1-2-4）"
+            },
+            {
+              "degree": "vi",
+              "chordId": "minor",
+              "tonic": "Am",
+              "handShapeId": 1,
+              "leftHand": "A-E（5-2）",
+              "rightHand": "A-C-E（1-2-4）"
+            },
+            {
+              "degree": "ii",
+              "chordId": "minor",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（5-2）",
+              "rightHand": "D-F-A（1-2-4）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "I",
+              "chordId": "major",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C-G（5-2）",
+              "rightHand": "G-C-E（1-2-5）"
+            }
+          ]
+        },
+        {
+          "id": "color",
+          "title": "组合二 · 色彩叙事",
+          "tag": "主推",
+          "tagTone": "accent",
+          "mood": "温暖 · 推进",
+          "note": "前半挂留色彩，后半换小七与大七，最后 add9 收束。",
+          "symbols": ["Fsus2", "Gsus4", "Em7", "Am7", "Dm7", "G", "Cadd9"],
+          "degrees": ["IVsus2", "Vsus4", "iiim7", "vim7", "iim7", "V", "Iadd9"],
+          "measures": [
+            {
+              "degree": "IVsus2",
+              "chordId": "sus2",
+              "tonic": "F",
+              "handShapeId": 2,
+              "leftHand": "F-C-F（5-2-1）",
+              "rightHand": "G-C-G（1-2-5）"
+            },
+            {
+              "degree": "Vsus4",
+              "chordId": "sus4",
+              "tonic": "G",
+              "handShapeId": 2,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "G-C-D-G（1-2-3-5）"
+            },
+            {
+              "degree": "iiim7",
+              "chordId": "m7",
+              "tonic": "Em",
+              "handShapeId": 1,
+              "leftHand": "E-B（3-1）",
+              "rightHand": "D-G-B（1-2-4）"
+            },
+            {
+              "degree": "vim7",
+              "chordId": "m7",
+              "tonic": "Am",
+              "handShapeId": 1,
+              "leftHand": "A-E（3-1）",
+              "rightHand": "G-C-E（1-2-4）"
+            },
+            {
+              "degree": "iim7",
+              "chordId": "m7",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（3-1）",
+              "rightHand": "C-F-A（1-2-4）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "Iadd9",
+              "chordId": "add9",
+              "tonic": "C",
+              "handShapeId": 2,
+              "leftHand": "C-G-C（5-4-1）",
+              "rightHand": "D-E-G-C（1-2-3-5）"
             }
           ]
         }

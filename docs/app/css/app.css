@@ -1075,9 +1075,47 @@ h1 {
   line-height: 1.55;
 }
 
-.chord-side h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+/* ---------- 练习步骤子列表（Step1~3 各和弦细则 / Step4 通用方法） ---------- */
+
+.sub-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sub-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fafafa;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.sub-step-phase {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.sub-step-body { flex: 1; min-width: 0; }
+
+.sub-step-body strong { font-size: 14px; }
+
+.sub-step-body p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 /* ---------- 进行列表 / 详情 L5–L6 ---------- */
@@ -1354,4 +1392,5 @@ h1 {
   .basic-grid { grid-template-columns: 1fr; }
   .fifths-panel { padding: 20px; }
   .step-top { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .sub-steps li { flex-wrap: wrap; }
 }
