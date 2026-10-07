@@ -1,8 +1,7 @@
 /* ==========================================================================
    每日练习模块
-   数据：practice.json（周维度轮动 + 四步练习）
-   UI：五度圈扇形双圈 + 当日调组高亮 + Step1~Step4 练习步骤
-   Step1 三和弦 / Step2 七和弦 / Step3 色彩和弦 / Step4 和弦进行
+   数据：practice.json（周维度轮动 + 练习步骤）
+   UI：对齐 Figma L4 — 五度圈扇形双圈 + 当日调组高亮 + 练习步骤
    ========================================================================== */
 
 (async function init() {
@@ -41,12 +40,8 @@
     labelMuted: '#737373',
   };
 
-  const steps = practice.practiceSteps || [];
-  const progressions = (progData && progData.progressions) || [];
-
   let dayIndex = 0;
-  let stepIndex = 0;
-  let chordPick = 0;
+  let practiceIndex = 0;
 
   const tonicsOf = group => (group.tonics === 'all' ? chordsData.tonics : group.tonics);
 
@@ -127,134 +122,68 @@
     `;
   }
 
-  /** 一组练习细则（纵向 / 横向 / 视唱 / 切换） */
-  function subSteps(list) {
-    const rows = (list || []).map(s => `
-      <li>
-        <span class="sub-step-phase">${escapeHtml(s.phase)}</span>
-        <div class="sub-step-body">
-          <strong>${escapeHtml(s.name)}</strong>
-          <p>${escapeHtml(s.detail)}</p>
-        </div>
-        <span class="chip ghost sm">${escapeHtml(s.type)}</span>
-      </li>
-    `).join('');
-    return `<ul class="sub-steps">${rows}</ul>`;
-  }
-
-  /** Step1~3：按类目展示各和弦的练习细则 */
-  function renderChordStep(step, group, tonics) {
-    const scopeBar = `
-      <div class="chips" style="margin-bottom:16px">
-        <span class="chip active-green">${escapeHtml(group.day)} · 扇区调组</span>
-        ${tonics.map(t => `<span class="tonic-pill">${escapeHtml(t)}</span>`).join('')}
-      </div>
-    `;
-
-    const cards = (step.chords || []).map((entry, idx) => {
-      const chord = findChord(chordsData.chords, entry.chordId);
-      if (!chord) return '';
-      const detailHref = `../chords/detail.html#slug=${chordSlug(chord, 'C', chordsData.tonicSlugMap)}`;
-      const familyHref = `../chords/family.html#type=${chord.familyId}`;
-      return `
-        <div class="step-card">
-          <div class="step-index">${idx + 1}</div>
-          <div class="step-body">
-            <div class="step-top">
-              <strong>${escapeHtml(chord.typeName)}</strong>
-              <span class="step-phase">${escapeHtml(chord.formula)} · ${escapeHtml(chord.style)}</span>
-            </div>
-            <p>${escapeHtml(entry.note || chord.tone)}</p>
-            ${subSteps(entry.steps)}
-            <div class="chips tight" style="margin-top:12px">
-              <a class="chip ghost sm" href="${detailHref}">C 调详情</a>
-              <a class="chip ghost sm" href="${familyHref}">和弦分类</a>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    return scopeBar + cards;
-  }
-
-  /** Step4：四条经典进行 + 通用练习方法 */
-  function renderProgressionStep(step, group, tonics) {
-    const cards = (step.progressionIds || []).map(id => {
-      const prog = progressions.find(p => p.id === id);
-      if (!prog) return '';
-      const seq = (prog.listChords || []).join(' → ');
-      return `
-        <a class="text-card" href="../progressions/detail.html#id=${encodeURIComponent(prog.id)}">
-          <div class="text-card-head">
-            <strong>${escapeHtml(prog.name)}</strong>
-            <span class="chip">${escapeHtml(prog.roman || '')}</span>
-          </div>
-          <p>${escapeHtml(seq)}</p>
-          <p class="note">${escapeHtml(prog.description)}</p>
-        </a>
-      `;
-    }).join('');
-
-    const method = `
-      <div class="step-card">
-        <div class="step-index">${step.no || 4}</div>
-        <div class="step-body">
-          <div class="step-top">
-            <strong>练习方法</strong>
-            <span class="step-phase">逐条进行通用</span>
-          </div>
-          <p>${escapeHtml(step.note || '')}</p>
-          ${subSteps(step.steps)}
-        </div>
-      </div>
-    `;
-
-    const scopeBar = `
-      <div class="chips" style="margin-bottom:16px">
-        <span class="chip active-green">${escapeHtml(group.day)} · 扇区调组</span>
-        ${tonics.map(t => `<span class="tonic-pill">${escapeHtml(t)}</span>`).join('')}
-      </div>
-    `;
-
-    return scopeBar + method + cards;
-  }
-
   function refresh() {
     const group = practice.weeklyGroups[dayIndex];
     const tonics = tonicsOf(group);
-    const current = steps[stepIndex] || steps[0];
+    const current = practice.practices[practiceIndex];
+    const chord = findChord(chordsData.chords, current.chordId);
+    const progression = (progData && progData.progressions || [])
+      .find(p => p.id === current.progressionId);
 
     const dayChips = practice.weeklyGroups.map((g, i) => `
       <button type="button" class="chip ${i === dayIndex ? 'active-green' : ''}" data-day="${i}">${escapeHtml(g.day)}</button>
     `).join('');
 
-    const stepChips = steps.map((s, i) => `
-      <button type="button" class="chip ${i === stepIndex ? 'active' : ''}" data-step="${i}">
-        Step ${s.no} · ${escapeHtml(s.title)}
-      </button>
-    `).join('');
+    const practiceChips = practice.practices.map((p, i) => {
+      const c = findChord(chordsData.chords, p.chordId);
+      return `<button type="button" class="chip ${i === practiceIndex ? 'active' : ''}" data-practice="${i}">
+        ${escapeHtml(c ? c.typeName : p.chordId)}
+      </button>`;
+    }).join('');
 
     const tonicPills = tonics.map(tonic =>
       `<span class="tonic-pill">${escapeHtml(tonic)}</span>`
     ).join('');
 
-    const isProg = current.scope === 'progression';
-    const main = isProg
-      ? renderProgressionStep(current, group, tonics)
-      : renderChordStep(current, group, tonics);
+    const stepRows = current.steps.map((step, i) => `
+      <div class="step-card">
+        <div class="step-index">${i + 1}</div>
+        <div class="step-body">
+          <div class="step-top">
+            <strong>${escapeHtml(step.name)}</strong>
+            <span class="step-phase">${escapeHtml(step.phase)}</span>
+          </div>
+          <p>${escapeHtml(step.detail)}</p>
+          <span class="chip ghost sm">${escapeHtml(step.type)}</span>
+        </div>
+      </div>
+    `).join('');
 
-    const stepChords = current.chords || [];
-    if (chordPick >= stepChords.length) chordPick = 0;
-    const picked = stepChords[chordPick];
-    const chord = picked ? findChord(chordsData.chords, picked.chordId) : null;
-
-    const handTypeChips = stepChords.map((entry, i) => {
-      const c = findChord(chordsData.chords, entry.chordId);
-      return `<button type="button" class="chip ${i === chordPick ? 'active' : ''}" data-hand-chord="${i}">
-        ${escapeHtml(c ? c.typeName : entry.chordId)}
-      </button>`;
-    }).join('');
+    const demoTonic = tonics[0] || 'C';
+    const chordSide = chord ? `
+      <div class="panel chord-side">
+        <h3>${escapeHtml(chord.typeName)}</h3>
+        <p class="note">${escapeHtml(chord.tone)}</p>
+        <div class="info">
+          <div class="info-row"><dt>音程关系</dt><dd>${escapeHtml(chord.formula)}</dd></div>
+          <div class="info-row"><dt>音色特征</dt><dd>${escapeHtml(chord.tone)}</dd></div>
+          <div class="info-row"><dt>适用风格</dt><dd>${escapeHtml(chord.style)}</dd></div>
+        </div>
+        <div class="chips tight" style="margin-top:16px">
+          <a class="chip" href="../chords/family.html#type=${chord.familyId}">查看该分类</a>
+          <a class="chip" href="../chords/detail.html#slug=${chordSlug(chord, demoTonic, chordsData.tonicSlugMap)}">${escapeHtml(demoTonic)} 调详情</a>
+        </div>
+        ${current.progressionId && progression ? `
+          <a class="text-card" style="margin-top:16px" href="../progressions/detail.html#id=${progression.id}">
+            <div class="text-card-head">
+              <strong>${escapeHtml(progression.name)}</strong>
+              <span class="chip">${escapeHtml(progression.key)}</span>
+            </div>
+            <p>${escapeHtml(progression.description)}</p>
+          </a>
+        ` : ''}
+      </div>
+    ` : renderState('未找到引用的和弦');
 
     const dayHandItems = chord ? tonics.map((tonic, i) => `
       <div class="acc-item ${i === 0 ? 'open' : ''}" data-acc-item>
@@ -276,7 +205,7 @@
     root.innerHTML = `
       <p class="crumb"><a href="../">首页</a> / 练习</p>
       <h1>每日练习</h1>
-      <p class="lead">按五度圈把 12 个调摊到一周里。点选日期，圈上会亮起当日调组；练习分四步递进：三和弦 → 七和弦 → 色彩和弦 → 和弦进行。</p>
+      <p class="lead">按五度圈把 12 个调摊到一周里。点选日期，圈上会亮起当日调组；每天只练一组，纵向站稳、横向移调、开口视唱。</p>
 
       <div class="chips">${dayChips}</div>
 
@@ -289,7 +218,7 @@
             <h2>${escapeHtml(group.day)} · 今日练习调</h2>
             <p class="note">${escapeHtml(group.note)}</p>
             <div class="tonic-row">${tonicPills}</div>
-            <p class="fifths-hint">Step1~Step3 都在当前扇区高亮的调组上逐个调完成；Step4 再把整条进行移到这组调上。</p>
+            <p class="fifths-hint">扁平实心、无反光。绿色由深到浅递进（外→内→圆心），对齐 OpenMAIC 按钮质感。</p>
           </div>
         </div>
       </section>
@@ -297,21 +226,23 @@
       <section class="section">
         <div class="section-head">
           <h2>练习步骤</h2>
-          <span class="crumb" style="margin:0">共 ${steps.length} 步</span>
+          <span class="crumb" style="margin:0">共 ${current.steps.length} 步</span>
         </div>
-        <div class="chips">${stepChips}</div>
+        <div class="chips">${practiceChips}</div>
 
-        <div class="detail-main step-list">${main}</div>
+        <div class="detail-layout practice-layout">
+          <div class="detail-main step-list">${stepRows}</div>
+          <aside class="related">${chordSide}</aside>
+        </div>
       </section>
 
-      ${!isProg && chord ? `
+      ${chord ? `
       <section class="section">
         <div class="section-head">
           <h2>今日手型</h2>
           <span class="crumb" style="margin:0">${escapeHtml(group.day)} · ${tonics.length} 个调</span>
         </div>
         <p class="note" style="margin:-8px 0 16px">每个手型都按「和弦怎么拆 → 左右手各弹哪一层」来写。先把第一个调弹明白，再展开后面的调做平移。</p>
-        <div class="chips">${handTypeChips}</div>
         <div class="day-hands">${dayHandItems}</div>
       </section>
       ` : ''}
@@ -324,17 +255,9 @@
       });
     });
 
-    root.querySelectorAll('[data-step]').forEach(btn => {
+    root.querySelectorAll('[data-practice]').forEach(btn => {
       btn.addEventListener('click', () => {
-        stepIndex = Number(btn.dataset.step);
-        chordPick = 0;
-        refresh();
-      });
-    });
-
-    root.querySelectorAll('[data-hand-chord]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        chordPick = Number(btn.dataset.handChord);
+        practiceIndex = Number(btn.dataset.practice);
         refresh();
       });
     });
