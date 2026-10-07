@@ -164,16 +164,10 @@ function chordCName(chord, tonic, tonicCn) {
   return `${cn}${chord.typeName}`;
 }
 
-/** 组成音：C - E - G（按调名决定升/降号写法） */
+/** 组成音：C - E - G（按调名拼写，Cm7 为 C - Eb - G - Bb） */
 function chordNotes(chord, tonic, tonicPc) {
   if (!chord || !tonic) return '';
-  const useFlat = String(tonic).includes('b');
-  const names = useFlat ? PITCH_FLAT : PITCH_SHARP;
-  const root = (tonicPc || {})[tonic];
-  const base = root === undefined ? 0 : root;
-  return chord.intervals
-    .map(interval => names[(base + interval) % 12])
-    .join(' - ');
+  return spellSet(tonic, chord.intervals, tonicPc);
 }
 
 /* ---------- 共享渲染 ---------- */
@@ -227,6 +221,99 @@ function renderStars(value) {
   const cells = Array.from({ length: 5 }, (_, i) =>
     `<i class="${i < n ? 'on' : ''}">★</i>`).join('');
   return `<span class="stars" title="难度 ${n} / 5">${cells}</span>`;
+}
+
+const SPELL_LETTERS = 'CDEFGAB';
+const SPELL_LETTER_INDEX = { C: 0, D: 1, E: 2, F: 3, G: 4, A: 5, B: 6 };
+const SPELL_PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+const SPELL_STEPS = { 0: 0, 2: 1, 3: 2, 4: 2, 5: 3, 7: 4, 9: 5, 10: 6, 11: 6 };
+
+/** 按调名拼写音程，保留正确的升降号（Cm7 的三音是 Eb 不是 D#） */
+function spellFromRoot(root, interval, tonicPc) {
+  const letter = SPELL_LETTERS[(SPELL_LETTER_INDEX[root[0]] + SPELL_STEPS[interval]) % 7];
+  const rootPc = (tonicPc && tonicPc[root] !== undefined) ? tonicPc[root] : SPELL_PC[root[0]];
+  let diff = ((rootPc + interval) % 12 - SPELL_PC[letter] + 12) % 12;
+  if (diff > 6) diff -= 12;
+  const acc = { 0: '', 1: '#', 2: '##', [-1]: 'b', [-2]: 'bb' }[diff];
+  return letter + (acc || '');
+}
+
+function spellSet(root, intervals, tonicPc) {
+  return intervals.map(i => spellFromRoot(root, i, tonicPc)).join(' - ');
+}
+
+/** 讲解模板占位符：当前调、组成音，以及七和弦「根音 + 三音上的三和弦」 */
+function fillTeach(template, chord, tonic, data) {
+  if (!template) return '';
+  const pc = data.tonicPc;
+  const thirdMaj = spellFromRoot(tonic, 4, pc);
+  const thirdMin = spellFromRoot(tonic, 3, pc);
+  const vars = {
+    '{tonic}': tonic,
+    '{symbol}': chordSymbol(chord, tonic),
+    '{notes}': spellSet(tonic, chord.intervals, pc),
+    '{name}': chordCName(chord, tonic, data.tonicCn),
+    '{third}': chord.id === 'minor' || chord.id === 'm7' ? thirdMin : thirdMaj,
+    '{upperSymbol}': '',
+    '{upperNotes}': '',
+  };
+  if (chord.id === 'm7') {
+    vars['{upperSymbol}'] = thirdMin;
+    vars['{upperNotes}'] = spellSet(tonic, [3, 7, 10], pc);
+  } else if (chord.id === 'maj7') {
+    vars['{upperSymbol}'] = `${thirdMaj}m`;
+    vars['{upperNotes}'] = spellSet(tonic, [4, 7, 11], pc);
+  }
+  return Object.keys(vars)
+    .sort((a, b) => b.length - a.length)
+    .reduce((text, key) => text.replaceAll(key, vars[key]), String(template));
+}
+
+/**
+ * 手型图 + 讲解。详情页可带指法表；每日练习页只保留图和文字。
+ * @param {{ showTable?: boolean }} [options]
+ */
+function renderHandBlocks(chord, tonic, data, options) {
+  const showTable = !options || options.showTable !== false;
+  return (chord.handShapes || []).map(hand => {
+    const noteRows = (hand.notes || []).map(note => `
+      <tr>
+        <td>${note.hand === 'L' ? '左手' : '右手'}</td>
+        <td>${note.finger} 指</td>
+        <td>${escapeHtml(note.degree)}</td>
+        <td>${note.offset > 0 ? `+${note.offset}` : note.offset}</td>
+      </tr>
+    `).join('');
+
+    const notesTable = showTable && noteRows ? `
+      <table class="table" style="margin-top:16px">
+        <thead>
+          <tr><th>手</th><th>指法</th><th>声部</th><th>八度位移</th></tr>
+        </thead>
+        <tbody>${noteRows}</tbody>
+      </table>
+    ` : '';
+
+    const whyTexts = hand.why || hand.description || '';
+    const whyHtml = (Array.isArray(whyTexts) ? whyTexts : [whyTexts])
+      .filter(Boolean)
+      .map(text => `<p class="hand-why">${escapeHtml(fillTeach(text, chord, tonic, data))}</p>`)
+      .join('');
+    const tip = fillTeach(hand.tip || '', chord, tonic, data);
+    const symbol = chordSymbol(chord, tonic);
+
+    return `
+      <div class="hand-block">
+        <h3>${escapeHtml(hand.label)}</h3>
+        ${whyHtml}
+        <img src="${svgHandShapePath(chord.folder, tonic, hand.id)}"
+             alt="${escapeHtml(`${symbol} ${hand.label}`)}" width="640" height="360" loading="lazy"
+             onerror="imgFallback(this, '手位图待生成')">
+        ${tip ? `<p class="hand-tip">${escapeHtml(tip)}</p>` : ''}
+        ${notesTable}
+      </div>
+    `;
+  }).join('');
 }
 
 /** 空态 / 加载态 */

@@ -120,36 +120,7 @@ function renderDetail(root, data, slug) {
   const slugKey = chordSlug(chord, tonic, data.tonicSlugMap);
   const family = data.families.find(f => f.id === chord.familyId);
 
-  const handBlocks = chord.handShapes.map(hand => {
-    const noteRows = (hand.notes || []).map(note => `
-      <tr>
-        <td>${note.hand === 'L' ? '左手' : '右手'}</td>
-        <td>${note.finger} 指</td>
-        <td>${escapeHtml(note.degree)}</td>
-        <td>${note.offset > 0 ? `+${note.offset}` : note.offset}</td>
-      </tr>
-    `).join('');
-
-    const notesTable = noteRows ? `
-      <table class="table" style="margin-top:16px">
-        <thead>
-          <tr><th>手</th><th>指法</th><th>声部</th><th>八度位移</th></tr>
-        </thead>
-        <tbody>${noteRows}</tbody>
-      </table>
-    ` : '';
-
-    return `
-      <div class="hand-block">
-        <h3>${escapeHtml(hand.label)}</h3>
-        <p>${escapeHtml(hand.description)}</p>
-        <img src="${svgHandShapePath(chord.folder, tonic, hand.id)}"
-             alt="${escapeHtml(`${symbol} ${hand.label}`)}" width="640" height="360" loading="lazy"
-             onerror="imgFallback(this, '手位图待生成')">
-        ${notesTable}
-      </div>
-    `;
-  }).join('');
+  const handBlocks = renderHandBlocks(chord, tonic, data);
 
   const tonicChips = data.tonics.map(t => {
     const tSlug = chordSlug(chord, t, data.tonicSlugMap);

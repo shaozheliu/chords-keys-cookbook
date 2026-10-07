@@ -552,6 +552,36 @@ h1 {
   line-height: 1.6;
 }
 
+.hand-why { margin: 0 0 10px; }
+
+.hand-why + .hand-why { margin-top: -2px; }
+
+.hand-tip {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-radius: 10px;
+  color: #525252;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.day-hands {
+  margin-top: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.day-hands .acc-body .hand-block {
+  padding-top: 4px;
+}
+
+.day-hands .acc-body .hand-block img {
+  width: min(560px, 100%);
+}
+
 .hand-block img,
 .figure img {
   display: block;

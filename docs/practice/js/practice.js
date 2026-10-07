@@ -46,6 +46,7 @@
 
   let dayIndex = 0;
   let stepIndex = 0;
+  let chordPick = 0;
 
   const tonicsOf = group => (group.tonics === 'all' ? chordsData.tonics : group.tonics);
 
@@ -243,6 +244,35 @@
       ? renderProgressionStep(current, group, tonics)
       : renderChordStep(current, group, tonics);
 
+    const stepChords = current.chords || [];
+    if (chordPick >= stepChords.length) chordPick = 0;
+    const picked = stepChords[chordPick];
+    const chord = picked ? findChord(chordsData.chords, picked.chordId) : null;
+
+    const handTypeChips = stepChords.map((entry, i) => {
+      const c = findChord(chordsData.chords, entry.chordId);
+      return `<button type="button" class="chip ${i === chordPick ? 'active' : ''}" data-hand-chord="${i}">
+        ${escapeHtml(c ? c.typeName : entry.chordId)}
+      </button>`;
+    }).join('');
+
+    const dayHandItems = chord ? tonics.map((tonic, i) => `
+      <div class="acc-item ${i === 0 ? 'open' : ''}" data-acc-item>
+        <button type="button" class="acc-head" data-acc-head aria-expanded="${i === 0 ? 'true' : 'false'}">
+          <span class="acc-index">${i + 1}</span>
+          <span class="acc-name">${escapeHtml(chordSymbol(chord, tonic))}</span>
+          <span class="acc-phase">${escapeHtml(chordCName(chord, tonic, chordsData.tonicCn))}</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          ${renderHandBlocks(chord, tonic, chordsData, { showTable: false })}
+          <div class="mini-chips">
+            <a class="chip" href="../chords/detail.html#slug=${chordSlug(chord, tonic, chordsData.tonicSlugMap)}">打开该调和弦详情</a>
+          </div>
+        </div>
+      </div>
+    `).join('') : '';
+
     root.innerHTML = `
       <p class="crumb"><a href="../">首页</a> / 练习</p>
       <h1>每日练习</h1>
@@ -273,6 +303,18 @@
 
         <div class="detail-main step-list">${main}</div>
       </section>
+
+      ${!isProg && chord ? `
+      <section class="section">
+        <div class="section-head">
+          <h2>今日手型</h2>
+          <span class="crumb" style="margin:0">${escapeHtml(group.day)} · ${tonics.length} 个调</span>
+        </div>
+        <p class="note" style="margin:-8px 0 16px">每个手型都按「和弦怎么拆 → 左右手各弹哪一层」来写。先把第一个调弹明白，再展开后面的调做平移。</p>
+        <div class="chips">${handTypeChips}</div>
+        <div class="day-hands">${dayHandItems}</div>
+      </section>
+      ` : ''}
     `;
 
     root.querySelectorAll('[data-day]').forEach(btn => {
@@ -285,9 +327,19 @@
     root.querySelectorAll('[data-step]').forEach(btn => {
       btn.addEventListener('click', () => {
         stepIndex = Number(btn.dataset.step);
+        chordPick = 0;
         refresh();
       });
     });
+
+    root.querySelectorAll('[data-hand-chord]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        chordPick = Number(btn.dataset.handChord);
+        refresh();
+      });
+    });
+
+    initAccordion(root);
   }
 
   refresh();
