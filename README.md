@@ -14,7 +14,7 @@
 
 | 模块 | 入口 | 说明 |
 |------|------|------|
-| **和弦库** | `docs/chords/` | 9 种和弦类型 × 12 调 × 1~3 手型，三级路由（大全 → 分类 → 详情） |
+| **和弦库** | `docs/chords/` | 10 种和弦类型 × 12 调 × 1~3 手型，三级路由（大全 → 分类 → 详情） |
 | **每日练习** | `docs/practice/` | 五度圈周维度轮动，纵向 → 横向 → 视唱三段式练习步骤 |
 | **和弦进行** | `docs/progressions/` | 4 条经典进行的级数序列、手型表与节奏型 |
 | **曲目拆解** | `docs/songs/` | 经典弹唱曲目的和声分析、段落拆解、伴奏手法与练习要点 |
@@ -67,7 +67,7 @@ python -m http.server 8000 --directory docs
 
 所有内容集中在 `docs/data/` 下的 4 个 JSON 文件：
 
-- `chords.json` — 和弦家族、9 种和弦定义（音程 / 公式 / 音色 / 手型 / 声部排列）、12 调与 slug 映射
+- `chords.json` — 和弦家族、10 种和弦定义（音程 / 公式 / 音色 / 手型 / 声部排列）、12 调与 slug 映射
 - `practice.json` — 周维度轮动分组与各和弦的练习步骤
 - `progressions.json` — 和弦进行的小节定义（通过 `chordId` 引用 `chords.json`）
 - `songs.json` — 曲目五维度数据（通过 `progressionId` 关联进行）

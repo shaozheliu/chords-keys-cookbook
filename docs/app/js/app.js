@@ -44,6 +44,7 @@ const SUFFIX_SYMBOL = {
   major: '',
   minor: 'm',
   7: '7',
+  '7sus4': '7sus4',
   m7: 'm7',
   maj7: 'maj7',
   sus2: 'sus2',

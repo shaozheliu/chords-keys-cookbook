@@ -359,6 +359,164 @@
       ]
     },
     {
+      "id": "dom7-turnaround",
+      "name": "ii–V 属七 turnaround",
+      "tag": "爵士常用",
+      "key": "C大调",
+      "roman": "2m7-5⁷-1maj7-6⁷-2m7-5⁷sus4-1maj7",
+      "listChords": ["Dm7", "G7", "Cmaj7", "A7", "Dm7", "G7sus4", "Cmaj7"],
+      "basicChords": ["Dm", "G", "C", "A", "Dm", "G", "C"],
+      "basicDegrees": ["ii", "V", "I", "VI", "ii", "V", "I"],
+      "description": "ii–V 属七 turnaround，含 V7sus4",
+      "intro": "四小节、七个换和弦点：前两圈 ii–V 推主，6⁷ 作副属，最后一圈用 5⁷sus4 悬置三音再落 1maj7。手型以各和弦收缩型为主，与每日属七练习一致。",
+      "moodTags": ["推进", "爵士", "解决"],
+      "moodAnalysis": "属七与属七挂四制造张力阶梯；maj7 落地比大三更「飘」，适合慢中板弹唱与爵士伴奏入门。",
+      "songs": [
+        { "title": "Fly Me to the Moon", "artist": "Frank Sinatra", "note": "经典 ii–V–I 语汇相近" },
+        { "title": "Autumn Leaves", "artist": "Joseph Kosma", "note": "turnaround 与 ii–V 训练高度相关" }
+      ],
+      "folder": "dom7-progressions",
+      "rhythmSvg": "assets/images/rhythm-patterns/dom7-turnaround.svg",
+      "combos": [
+        {
+          "id": "color",
+          "title": "组合一 · 属七 turnaround",
+          "tag": "主推",
+          "tagTone": "accent",
+          "mood": "推进 → 悬置 → 落地",
+          "note": "每小节两拍一换（第 4 小节 1maj7 延满），对照节奏型练左右手对齐。",
+          "symbols": ["Dm7", "G7", "Cmaj7", "A7", "Dm7", "G7sus4", "Cmaj7"],
+          "degrees": ["2m7", "5⁷", "1maj7", "6⁷", "2m7", "5⁷sus4", "1maj7"],
+          "measures": [
+            {
+              "degree": "2m7",
+              "chordId": "m7",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（3-1）",
+              "rightHand": "C-F-A（1-2-4）"
+            },
+            {
+              "degree": "5⁷",
+              "chordId": "dom7",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G（3）",
+              "rightHand": "D-F-B（1-2-4）"
+            },
+            {
+              "degree": "1maj7",
+              "chordId": "maj7",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C（3）",
+              "rightHand": "G-B-E（1-2-4）"
+            },
+            {
+              "degree": "6⁷",
+              "chordId": "dom7",
+              "tonic": "A",
+              "handShapeId": 1,
+              "leftHand": "A（3）",
+              "rightHand": "E-G-C♯（1-2-4）"
+            },
+            {
+              "degree": "2m7",
+              "chordId": "m7",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（3-1）",
+              "rightHand": "C-F-A（1-2-4）"
+            },
+            {
+              "degree": "5⁷sus4",
+              "chordId": "dom7sus4",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G（3）",
+              "rightHand": "D-F-C（1-2-4）"
+            },
+            {
+              "degree": "1maj7",
+              "chordId": "maj7",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C（3）",
+              "rightHand": "G-B-E（1-2-4）"
+            }
+          ]
+        },
+        {
+          "id": "basic",
+          "title": "组合二 · 三和弦骨架",
+          "tag": "基础",
+          "tagTone": "ink",
+          "mood": "清晰 · 稳",
+          "note": "先弹基本级数，再换回属七色彩版。",
+          "symbols": ["Dm", "G", "C", "A", "Dm", "G", "C"],
+          "degrees": ["ii", "V", "I", "VI", "ii", "V", "I"],
+          "measures": [
+            {
+              "degree": "ii",
+              "chordId": "minor",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（5-2）",
+              "rightHand": "F-A-D（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "I",
+              "chordId": "major",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C（3）",
+              "rightHand": "G-C-E（1-2-4）"
+            },
+            {
+              "degree": "VI",
+              "chordId": "major",
+              "tonic": "A",
+              "handShapeId": 1,
+              "leftHand": "A-E（5-2）",
+              "rightHand": "C♯-E-A（1-2-5）"
+            },
+            {
+              "degree": "ii",
+              "chordId": "minor",
+              "tonic": "Dm",
+              "handShapeId": 1,
+              "leftHand": "D-A（5-2）",
+              "rightHand": "F-A-D（1-2-5）"
+            },
+            {
+              "degree": "V",
+              "chordId": "major",
+              "tonic": "G",
+              "handShapeId": 1,
+              "leftHand": "G-D（5-2）",
+              "rightHand": "B-D-G（1-2-5）"
+            },
+            {
+              "degree": "I",
+              "chordId": "major",
+              "tonic": "C",
+              "handShapeId": 1,
+              "leftHand": "C（3）",
+              "rightHand": "G-C-E（1-2-4）"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "maj7-1451",
       "name": "大七 I-IV",
       "tag": "大七",
