@@ -127,9 +127,21 @@ function svgCardKeyPath(slug, variant = 'list') {
   return `${ASSET_BASE}card-keys/${slug}-${variant}.svg`;
 }
 
-/** 手位图：{folder}/{调名}-hand-shape-{id}.svg */
+/**
+ * 手型 SVG 文件名里的根音（与生成脚本一致：C-hand-shape-1，不含 m / m7 后缀）
+ * @param {string} tonic - 如 Am、Dm、Am7（误写时也可纠正）
+ */
+function handShapeTonicForAsset(tonic) {
+  const s = String(tonic);
+  if (/m7$/i.test(s)) return s.slice(0, -2);
+  if (/m$/i.test(s)) return s.slice(0, -1);
+  return s;
+}
+
+/** 手位图：{folder}/{根音}-hand-shape-{id}.svg */
 function svgHandShapePath(folder, tonic, shapeId) {
-  return `${ASSET_BASE}${folder}/${encodeURIComponent(`${tonic}-hand-shape-${shapeId}.svg`)}`;
+  const root = handShapeTonicForAsset(tonic);
+  return `${ASSET_BASE}${folder}/${encodeURIComponent(`${root}-hand-shape-${shapeId}.svg`)}`;
 }
 
 /** 进行图：{folder}/{调名}-progression.svg */
@@ -340,4 +352,335 @@ function initAccordion(root) {
       head.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
+}
+
+/* ---------- 进行 · Practice Kit（L4 / L6） ---------- */
+
+/** 进行列表页与练习页当前仅开放这些 id（占位，可后续在 JSON 扩展） */
+const DEFAULT_PROGRESSION_CATALOG_IDS = ['1564', '2516251'];
+
+function progressionCatalog(progData) {
+  const ids = (progData && progData.featuredProgressionIds) || DEFAULT_PROGRESSION_CATALOG_IDS;
+  const all = (progData && progData.progressions) || [];
+  return all.filter(p => ids.includes(p.id));
+}
+
+function progressionRootOf(tonic) {
+  return handShapeTonicForAsset(tonic);
+}
+
+function progressionMeasureSymbol(measure, chordsData) {
+  const chord = chordsData && findChord(chordsData.chords, measure.chordId);
+  const tonic = String(measure.tonic);
+  const rootName = progressionRootOf(tonic);
+  if (!chord) return tonic;
+  const suffix = SUFFIX_SYMBOL[chord.suffix];
+  const s = suffix === undefined ? chord.suffix : suffix;
+  if (/m$/.test(tonic)) {
+    if (chord.suffix === 'minor') return tonic;
+    if (chord.suffix === 'm7') return `${rootName}m7`;
+    if (chord.suffix === 'add9') return `${tonic}add9`;
+  }
+  return `${rootName}${s}`;
+}
+
+function featuredCombo(prog) {
+  const combos = prog.combos || [];
+  return combos.find(c => c.featured) || combos[0] || null;
+}
+
+const PROGRESSION_DEGREE_SEMI = { I: 0, ii: 2, iii: 4, IV: 5, V: 7, vi: 9, VI: 9 };
+
+function tonicPcForDegree(keyMajor, degree, chordsData) {
+  const semi = PROGRESSION_DEGREE_SEMI[degree];
+  if (semi === undefined || !chordsData || !chordsData.tonicPc) return null;
+  const keyPc = chordsData.tonicPc[keyMajor];
+  if (keyPc === undefined) return null;
+  return (keyPc + semi) % 12;
+}
+
+function majorTonicNameForPc(pc, chordsData) {
+  return (chordsData.tonics || []).find(t => chordsData.tonicPc[t] === pc) || null;
+}
+
+function resolveMeasureTonic(keyMajor, measure, chordsData) {
+  const pc = tonicPcForDegree(keyMajor, measure.degree, chordsData);
+  if (pc === null) return measure.tonic;
+  const name = majorTonicNameForPc(pc, chordsData) || keyMajor;
+  const id = measure.chordId;
+  if (id === 'minor' || id === 'm7') return `${name}m`;
+  return name;
+}
+
+/** 进行练习节奏型：直接对应 docs/assets/images/rhythm-patterns/{调}-{进行id}-rhythm.svg */
+function rhythmPatternUrl(practiceKey, progressionId) {
+  if (!progressionId) return '';
+  if (progressionId === '2516251') {
+    return `${ASSET_BASE}rhythm-patterns/2516251-rhythm.svg`;
+  }
+  if (!practiceKey) return '';
+  const file = `${practiceKey}-${progressionId}-rhythm.svg`;
+  return `${ASSET_BASE}rhythm-patterns/${encodeURIComponent(file)}`;
+}
+
+function resolveProgressionRhythmSvg(prog, combo, keyMajor) {
+  const id = prog && prog.id;
+  if (id === '1564' || id === '2516251') {
+    return rhythmPatternUrl(keyMajor, id);
+  }
+  const template = (combo && combo.rhythmSvgTemplate) || prog.rhythmSvgTemplate;
+  if (template) {
+    return svgAssetPath(String(template).replace(/\{tonic\}/g, keyMajor));
+  }
+  return svgAssetPath(prog.rhythmSvg || (combo && combo.rhythmSvg) || '');
+}
+
+function comboForPracticeKey(combo, keyMajor, chordsData) {
+  if (!combo) return combo;
+  const measures = (combo.measures || []).map(m => ({
+    ...m,
+    tonic: resolveMeasureTonic(keyMajor, m, chordsData),
+  }));
+  const symbols = measures.map(m => progressionMeasureSymbol(m, chordsData));
+  return { ...combo, measures, symbols };
+}
+
+function progressionRhythmSvg(prog, keyMajor, combo) {
+  if (!prog) return '';
+  if (prog.rhythmSvgByKey && prog.rhythmSvgByKey[keyMajor]) {
+    return prog.rhythmSvgByKey[keyMajor];
+  }
+  return resolveProgressionRhythmSvg(prog, combo, keyMajor);
+}
+
+function renderKeySwitcherCompact(activeTonic, tonics) {
+  const list = tonics || ['F', 'C', 'G'];
+  return `
+    <div class="key-switcher-compact" data-key-switcher>
+      <span class="key-switcher-label">练习调</span>
+      <div class="key-switcher-pills">
+        ${list.map(t => `
+          <button type="button" class="key-pill ${t === activeTonic ? 'active' : ''}" data-practice-key="${escapeHtml(t)}">
+            ${escapeHtml(t)} 大调
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderHandSlotMeasure(measure, chordsData) {
+  const chord = chordsData && findChord(chordsData.chords, measure.chordId);
+  const folder = chord && chord.folder;
+  const img = folder ? `
+    <img src="${svgHandShapePath(folder, measure.tonic, measure.handShapeId)}"
+         alt="" loading="lazy" onerror="imgFallback(this, '指法待补充')">
+  ` : '<div class="placeholder sm">指法待补充</div>';
+  const sym = escapeHtml(progressionMeasureSymbol(measure, chordsData));
+  return `
+    <div class="hand-slot">
+      <div class="hand-slot-symbol">${sym}</div>
+      ${img}
+      <dl class="hand-slot-meta">
+        <div><dt>左</dt><dd>${escapeHtml(measure.leftHand)}</dd></div>
+        <div><dt>右</dt><dd>${escapeHtml(measure.rightHand)}</dd></div>
+      </dl>
+    </div>
+  `;
+}
+
+/** 手型区只使用 1×3 或 2×2，多组时纵向叠放 */
+function renderHandSlotGrids(measures, chordsData) {
+  const n = measures.length;
+  const cell = m => renderHandSlotMeasure(m, chordsData);
+  const block = (layout, slice) =>
+    `<div class="hand-slot-grid hand-slot-grid--${layout}">${slice.map(cell).join('')}</div>`;
+  const stack = parts => `<div class="hand-slot-stack">${parts.join('')}</div>`;
+
+  if (n === 0) return '';
+  if (n <= 2) return block('1x3', measures);
+  if (n === 3) return block('1x3', measures);
+  if (n === 4) return block('2x2', measures);
+  if (n === 5) {
+    return stack([block('1x3', measures.slice(0, 3)), block('2x2', measures.slice(3, 5))]);
+  }
+  if (n === 6) {
+    return stack([block('1x3', measures.slice(0, 3)), block('1x3', measures.slice(3, 6))]);
+  }
+  if (n === 7) {
+    return stack([block('1x3', measures.slice(0, 3)), block('2x2', measures.slice(3, 7))]);
+  }
+
+  const parts = [];
+  let i = 0;
+  while (i < n) {
+    const remain = n - i;
+    if (remain >= 4) {
+      parts.push(block('2x2', measures.slice(i, i + 4)));
+      i += 4;
+    } else if (remain === 3) {
+      parts.push(block('1x3', measures.slice(i, i + 3)));
+      i += 3;
+    } else {
+      parts.push(block('2x2', measures.slice(i, i + remain)));
+      i += remain;
+    }
+  }
+  return stack(parts);
+}
+
+function bindPracticeKeySwitcher(root, onChange) {
+  const host = (root || document).querySelector('[data-key-switcher]');
+  if (!host || !onChange) return;
+  host.querySelectorAll('[data-practice-key]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      onChange(btn.dataset.practiceKey);
+    });
+  });
+}
+
+/**
+ * @param {{ showHead?: boolean, tonicLabel?: string, practiceKey?: string, showProgressionStrip?: boolean, showHandSlots?: boolean }} [opts]
+ */
+function renderPracticeKit(prog, combo, chordsData, opts) {
+  if (!prog || !combo) {
+    return '<div class="practice-kit"><p class="note">进行内容待补充。</p></div>';
+  }
+  const options = opts || {};
+  const practiceKey = options.practiceKey || prog.key?.replace(/大调$/, '') || 'C';
+  const kitCombo = comboForPracticeKey(combo, practiceKey, chordsData);
+  const rhythmUrl = resolveProgressionRhythmSvg(prog, combo, practiceKey);
+  const rhythm = `
+    <div class="practice-kit-rhythm">
+      <div class="practice-kit-subhead">节奏型 · 固定弹法</div>
+      <figure class="figure practice-kit-figure">
+        <img src="${rhythmUrl}" alt="${escapeHtml(`${prog.code} 节奏型 · ${practiceKey} 大调`)}" width="834" height="170" loading="lazy">
+      </figure>
+    </div>
+  `;
+
+  const showStrip = options.showProgressionStrip !== false;
+  const progressionStrip = showStrip && prog.folder ? `
+    <figure class="figure practice-kit-figure" style="margin-top:12px">
+      <img src="${svgProgressionPath(prog.folder, practiceKey)}"
+           alt="${escapeHtml(`${prog.code} 进行手位`)}" loading="lazy"
+           onerror="imgFallback(this, '进行手位图待生成')">
+      <figcaption class="note">四拍手位总览（${escapeHtml(practiceKey)} 大调）</figcaption>
+    </figure>
+  ` : '';
+
+  const showHands = options.showHandSlots !== false;
+  const measures = kitCombo.measures || [];
+  let hands = '';
+  if (showHands) {
+    hands = measures.length ? `
+      <div class="practice-kit-hands">
+        <div class="practice-kit-subhead">固定指法 · 按拍拆解</div>
+        ${renderHandSlotGrids(measures, chordsData)}
+      </div>
+    ` : '<p class="note" style="margin:0">指法拆解待补充。</p>';
+  }
+
+  const head = options.showHead === false ? '' : `
+    <div class="practice-kit-head">
+      <div>
+        <strong class="practice-kit-code">${escapeHtml(prog.code)}</strong>
+        <span class="chip">${escapeHtml(prog.tag || '')}</span>
+      </div>
+      <p class="practice-kit-roman">${escapeHtml(prog.roman || '')} · ${escapeHtml((kitCombo.symbols || []).join(' → '))}</p>
+    </div>
+  `;
+
+  const tonicNote = options.tonicLabel
+    ? `<p class="note practice-kit-tonic">练习调：${escapeHtml(options.tonicLabel)}</p>`
+    : '';
+
+  return `
+    <div class="practice-kit">
+      ${head}
+      ${tonicNote}
+      ${rhythm}
+      ${progressionStrip}
+      ${hands}
+    </div>
+  `;
+}
+
+/** 练习页手型厚度标签（薄 / 中 / 厚），替代「手型一、二」 */
+function practiceHandDensity(chord, hand) {
+  const shapes = chord.handShapes || [];
+  const id = hand.id;
+  let short = '薄';
+  if (shapes.length >= 3) {
+    short = id === 1 ? '薄' : id === 2 ? '中' : '厚';
+  } else if (shapes.length === 2) {
+    short = id === 1 ? '薄' : '厚';
+  }
+
+  const leftNotes = (hand.notes || []).filter(n => n.hand === 'L');
+  let left = '左：根音';
+  if (leftNotes.length >= 3) left = '左：低音区加厚';
+  else if (leftNotes.length === 2) left = '左：根音 + 五音';
+
+  const sing = chord.formula ? `唱 ${chord.formula.replace(/-/g, ' – ')}` : '';
+
+  return { short, left, sing };
+}
+
+function renderChordPracticePanel(chord, tonic, chordsData, linkedProg) {
+  if (!chord) return renderState('未找到和弦类型');
+
+  const symbol = chordSymbol(chord, tonic);
+  const cn = (chordsData.tonicCn || {})[tonic] || tonic;
+  const notes = chordNotes(chord, tonic, chordsData.tonicPc);
+  const noteTokens = notes.split(' - ').filter(Boolean);
+
+  const density = practiceHandDensity(chord, (chord.handShapes || [])[0] || {});
+  const singLine = density.sing || (chord.formula ? `唱 ${chord.formula}` : '');
+
+  const notePills = noteTokens.map(n =>
+    `<span class="chord-note-pill">${escapeHtml(n)}</span>`
+  ).join('');
+
+  const colClass = (chord.handShapes || []).length >= 3 ? ' hand-practice-row--triple' : '';
+
+  const handPanes = (chord.handShapes || []).map(hand => {
+    const d = practiceHandDensity(chord, hand);
+    return `
+      <article class="hand-practice-pane">
+        <div class="hand-practice-head">
+          <strong>${escapeHtml(d.short)}</strong>
+          <span>${escapeHtml(d.left)}</span>
+        </div>
+        <img src="${svgHandShapePath(chord.folder, tonic, hand.id)}"
+             alt="${escapeHtml(`${symbol} · ${d.short}`)}" loading="lazy"
+             onerror="imgFallback(this, '手位图待生成')">
+      </article>
+    `;
+  }).join('');
+
+  const progLink = linkedProg ? `
+    <div class="chips" style="margin-top:16px">
+      <a class="chip" href="../progressions/detail.html#id=${encodeURIComponent(linkedProg.id)}">
+        关联进行 · ${escapeHtml(linkedProg.code)}
+      </a>
+    </div>
+  ` : '';
+
+  return `
+    <div class="chord-practice-panel">
+      <div class="chord-practice-identity">
+        <div class="chord-practice-symbol">${escapeHtml(symbol)}</div>
+        <p class="chord-practice-meta">${escapeHtml(cn)} 大调 · ${escapeHtml(chord.typeName)}</p>
+        <div class="chord-note-row">${notePills}</div>
+        <p class="chord-sing-line">${escapeHtml(singLine)}</p>
+      </div>
+      <div class="hand-practice-row${colClass}">${handPanes}</div>
+      <div class="chips tight">
+        <a class="chip" href="../chords/family.html#type=${chord.familyId}">该分类说明</a>
+        <a class="chip" href="../chords/detail.html#slug=${chordSlug(chord, tonic, chordsData.tonicSlugMap)}">${escapeHtml(symbol)} 详情页</a>
+      </div>
+      ${progLink}
+    </div>
+  `;
 }

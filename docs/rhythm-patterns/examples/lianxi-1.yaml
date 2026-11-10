@@ -1,0 +1,25 @@
+schema: chords-keys-handbook/rhythm-score/1
+title: 练习1
+time: 4/4
+layout: v2
+output:
+  basename: lianxi-1-demo
+bars:
+  - chords:
+      - { beat: 1, text: "1add9" }
+      - { beat: 3, text: "5/7" }
+    chord_holds: [2, 4]
+    beats:
+      - four-sixteenth-fast
+      - four-sixteenth-fast
+      - four-sixteenth-fast
+      - four-sixteenth-fast
+    ties: [[3, 4], [11, 12]]
+  - chords:
+      - { beat: 1, text: "6m7" }
+    chord_holds: [2, 3, 4]
+    beats:
+      - four-sixteenth
+      - quarter
+      - rest
+      - rest

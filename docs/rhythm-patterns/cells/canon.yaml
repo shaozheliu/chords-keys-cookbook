@@ -1,0 +1,102 @@
+# 综合节奏 · 标准单拍型（rhythm-cell/1）
+schema: chords-keys-handbook/rhythm-cell/1
+
+cells:
+  quarter:
+    label: 四
+    dsl: q
+    slots:
+      - { at: 0, dur: q }
+    beams: []
+
+  two-eighth:
+    label: 二八
+    dsl: 8+8
+    slots:
+      - { at: 0, dur: 8 }
+      - { at: 2, dur: 8 }
+    beams:
+      - { from: 0, to: 2, layers: 1 }
+
+  eighth-two-sixteenth:
+    label: 八十六
+    dsl: 8+16+16
+    slots:
+      - { at: 0, dur: 8 }
+      - { at: 2, dur: 16 }
+      - { at: 3, dur: 16 }
+    beams:
+      - { from: 0, to: 3, layers: auto }
+
+  two-sixteenth-eighth:
+    label: 十六八
+    dsl: 16+16+8
+    slots:
+      - { at: 0, dur: 16 }
+      - { at: 1, dur: 16 }
+      - { at: 2, dur: 8 }
+    beams:
+      - { from: 0, to: 2, layers: auto }
+
+  dotted-eighth-sixteenth:
+    label: 附点
+    dsl: 8.+16
+    slots:
+      - { at: 0, dur: 8, dot: true }
+      - { at: 3, dur: 16 }
+    beams:
+      - { from: 0, to: 3, layers: auto }
+
+  sixteenth-dotted-eighth:
+    label: 后附
+    dsl: 16+8.
+    slots:
+      - { at: 0, dur: 16 }
+      - { at: 2, dur: 8, dot: true }
+    beams:
+      - { from: 0, to: 2, layers: auto }
+
+  sync-small:
+    label: 小切分
+    dsl: 16+8+16
+    slots:
+      - { at: 0, dur: 16 }
+      - { at: 1, dur: 8 }
+      - { at: 3, dur: 16 }
+    beams:
+      - { from: 0, to: 3, layers: auto }
+
+  triplet-eighth:
+    label: 三连音
+    dsl: 8t3
+    slots:
+      - { at: 0, dur: 8, triplet: true }
+      - { at: 1, dur: 8, triplet: true }
+      - { at: 2, dur: 8, triplet: true }
+    beams:
+      - { from: 0, to: 2, layers: 1 }
+    tuplet:
+      ratio: 3
+      dur: 8
+
+  four-sixteenth:
+    label: 四个十六
+    dsl: 16x4
+    slots:
+      - { at: 0, dur: 16 }
+      - { at: 1, dur: 16 }
+      - { at: 2, dur: 16 }
+      - { at: 3, dur: 16 }
+    beams:
+      - { from: 0, to: 3, layers: 2 }
+
+  four-sixteenth-fast:
+    label: 四连三十二分语感
+    dsl: 32x4
+    slots:
+      - { at: 0, dur: 32 }
+      - { at: 1, dur: 32 }
+      - { at: 2, dur: 32 }
+      - { at: 3, dur: 32 }
+    beams:
+      - { from: 0, to: 3, layers: 3 }

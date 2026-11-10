@@ -59,7 +59,7 @@
         {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-3-5-7", "type": "双手"},
         {"phase": "切换", "name": "手型一 ↔ 二 ↔ 三动态切换", "detail": "强化肌肉记忆", "type": "收缩 ↔ 中间 ↔ 扩张"}
       ],
-      "progressionId": "4566"
+      "progressionId": "1564"
     },
     {
       "chordId": "dom7",
@@ -71,7 +71,7 @@
         {"phase": "切换", "name": "属七 ↔ 属七挂四", "detail": "右手三音与四音互换，体会 V7 与 V7sus4", "type": "收缩型"},
         {"phase": "进行", "name": "ii–V turnaround", "detail": "2m7–5⁷–1maj7–6⁷–2m7–5⁷sus4–1maj7，见进行模块", "type": "收缩型为主"}
       ],
-      "progressionId": "dom7-turnaround"
+      "progressionId": "2516251"
     },
     {
       "chordId": "m7",
@@ -82,7 +82,7 @@
         {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-♭3-5-♭7", "type": "双手"},
         {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "紧凑型 ↔ 扩张型"}
       ],
-      "progressionId": "add9-m7"
+      "progressionId": null
     },
     {
       "chordId": "sus2",
@@ -103,7 +103,7 @@
         {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-4-5", "type": "双手"},
         {"phase": "切换", "name": "sus4 → 大三和弦解决", "detail": "感受挂四 → 主和弦的解决感", "type": "扩张型 → 紧凑型"}
       ],
-      "progressionId": "sus4-resolve"
+      "progressionId": null
     },
     {
       "chordId": "add9",
@@ -114,7 +114,7 @@
         {"phase": "视唱", "name": "唱级数 / 唱名", "detail": "边弹边唱 1-2-3-5", "type": "双手"},
         {"phase": "切换", "name": "手型一 ↔ 手型二动态切换", "detail": "强化肌肉记忆", "type": "收缩型 ↔ 扩张型"}
       ],
-      "progressionId": "4566"
+      "progressionId": "1564"
     },
     {
       "chordId": "maj6",

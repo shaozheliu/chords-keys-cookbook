@@ -1,7 +1,8 @@
 /* ==========================================================================
    每日练习模块
-   数据：practice.json（周维度轮动 + 练习步骤）
-   UI：对齐 Figma L4 — 五度圈扇形双圈 + 当日调组高亮 + 练习步骤
+   L4：五度圈 + 练习工作区（和弦 | 进行）
+   - 和弦：F/C/G + 和弦类型 → 构成音 + 薄/厚手型图对照
+   - 进行：F/C/G + 1564 / 2516251 Practice Kit
    ========================================================================== */
 
 (async function init() {
@@ -20,7 +21,14 @@
     return;
   }
 
-  // 五度圈：C 居中朝上，顺时针五度
+  const progressions = progressionCatalog(progData);
+
+  let dayIndex = 0;
+  let practiceIndex = 0;
+  let practiceMode = 'chord';
+  let progressionId = progressions[0] ? progressions[0].id : '1564';
+  let drillTonic = 'C';
+
   const CIRCLE_MAJOR = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
   const CIRCLE_MINOR = ['Am', 'Em', 'Bm', 'F#m', 'C#m', 'G#m', 'Ebm', 'Bbm', 'Fm', 'Cm', 'Gm', 'Dm'];
   const RELATIVE_MINOR = {
@@ -40,9 +48,6 @@
     labelMuted: '#737373',
   };
 
-  let dayIndex = 0;
-  let practiceIndex = 0;
-
   const tonicsOf = group => (group.tonics === 'all' ? chordsData.tonics : group.tonics);
 
   function activeMajors(group) {
@@ -53,13 +58,20 @@
     return activeMajors(group).map(t => RELATIVE_MINOR[t]).filter(Boolean);
   }
 
-  /** 极坐标：0° 在正上方，顺时针 */
+  function drillTonicsForDay(group) {
+    return tonicsOf(group);
+  }
+
+  function defaultDrillTonic(group) {
+    const dayTonics = drillTonicsForDay(group);
+    return dayTonics[0] || 'C';
+  }
+
   function polar(cx, cy, r, deg) {
     const rad = (deg - 90) * Math.PI / 180;
     return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
   }
 
-  /** 环形扇区路径（外径 → 内径） */
   function ringWedge(cx, cy, rOuter, rInner, i) {
     const start = i * 30 - 15;
     const end = start + 30;
@@ -122,90 +134,104 @@
     `;
   }
 
-  function refresh() {
-    const group = practice.weeklyGroups[dayIndex];
-    const tonics = tonicsOf(group);
+  function renderTonicSwitch(dayTonics) {
+    return dayTonics.map(t => `
+      <button type="button" class="${t === drillTonic ? 'active' : ''}" data-drill-tonic="${escapeHtml(t)}">${escapeHtml(t)}</button>
+    `).join('');
+  }
+
+  function renderModeTabs() {
+    const chordActive = practiceMode === 'chord';
+    return `
+      <div class="practice-mode-tabs">
+        <button type="button" class="${chordActive ? 'active' : ''}" data-practice-mode="chord">和弦练习</button>
+        <button type="button" class="${chordActive ? '' : 'active'}" data-practice-mode="progression">进行练习</button>
+      </div>
+    `;
+  }
+
+  function renderWorkspaceShell(bodyHtml, dayTonics) {
+    return `
+      <section class="section">
+        <div class="practice-workspace">
+          <div class="practice-bar">
+            ${renderModeTabs()}
+            <div class="tonic-switch" aria-label="当日练习调">
+              ${renderTonicSwitch(dayTonics)}
+            </div>
+          </div>
+          ${bodyHtml}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderProgressionWorkspace(dayTonics) {
+    const prog = progressions.find(p => p.id === progressionId) || progressions[0];
+    if (!prog) {
+      return renderWorkspaceShell('<p class="note">进行练习数据待补充。</p>', dayTonics);
+    }
+    const combo = featuredCombo(prog);
+    const progChips = progressions.map(p => `
+      <button type="button" class="${p.id === progressionId ? 'active' : ''}" data-progression-id="${escapeHtml(p.id)}">
+        ${escapeHtml(p.code)}
+      </button>
+    `).join('');
+
+    const body = `
+      <p class="note" style="margin:0 0 16px">练习调与当日调组一致；展示节奏型与按拍指法小图（不含四拍手位总览长图）。</p>
+      <div class="practice-filters">${progChips}</div>
+      ${renderPracticeKit(prog, combo, chordsData, {
+        tonicLabel: `${drillTonic} 大调`,
+        practiceKey: drillTonic,
+        showProgressionStrip: false,
+      })}
+      <div class="chips" style="margin-top:16px">
+        <a class="chip" href="../progressions/detail.html#id=${encodeURIComponent(prog.id)}">查看 ${escapeHtml(prog.code)} 进行详情</a>
+      </div>
+    `;
+    return renderWorkspaceShell(body, dayTonics);
+  }
+
+  function renderChordWorkspace(dayTonics) {
     const current = practice.practices[practiceIndex];
     const chord = findChord(chordsData.chords, current.chordId);
-    const progression = (progData && progData.progressions || [])
-      .find(p => p.id === current.progressionId);
+    const linkedProg = (current.progressionId && progressions.find(p => p.id === current.progressionId)) || null;
+
+    const typeChips = practice.practices.map((p, i) => {
+      const c = findChord(chordsData.chords, p.chordId);
+      const label = c ? c.typeName.replace(/和弦$/, '') : p.chordId;
+      return `<button type="button" class="${i === practiceIndex ? 'active' : ''}" data-practice="${i}">${escapeHtml(label)}</button>`;
+    }).join('');
+
+    const body = `
+      <p class="note" style="margin:0 0 16px">对照构成音与薄 / 厚手型（大七另有「中」）。练习调与当日调组一致，点选 F / C / G 等即切换该调的和弦内容。</p>
+      <div class="practice-filters">${typeChips}</div>
+      ${renderChordPracticePanel(chord, drillTonic, chordsData, linkedProg)}
+    `;
+    return renderWorkspaceShell(body, dayTonics);
+  }
+
+  function refresh() {
+    const group = practice.weeklyGroups[dayIndex];
+    const dayTonics = drillTonicsForDay(group);
+
+    if (!dayTonics.includes(drillTonic)) {
+      drillTonic = defaultDrillTonic(group);
+    }
 
     const dayChips = practice.weeklyGroups.map((g, i) => `
       <button type="button" class="chip ${i === dayIndex ? 'active-green' : ''}" data-day="${i}">${escapeHtml(g.day)}</button>
     `).join('');
 
-    const practiceChips = practice.practices.map((p, i) => {
-      const c = findChord(chordsData.chords, p.chordId);
-      return `<button type="button" class="chip ${i === practiceIndex ? 'active' : ''}" data-practice="${i}">
-        ${escapeHtml(c ? c.typeName : p.chordId)}
-      </button>`;
-    }).join('');
-
-    const tonicPills = tonics.map(tonic =>
-      `<span class="tonic-pill">${escapeHtml(tonic)}</span>`
-    ).join('');
-
-    const stepRows = current.steps.map((step, i) => `
-      <div class="step-card">
-        <div class="step-index">${i + 1}</div>
-        <div class="step-body">
-          <div class="step-top">
-            <strong>${escapeHtml(step.name)}</strong>
-            <span class="step-phase">${escapeHtml(step.phase)}</span>
-          </div>
-          <p>${escapeHtml(step.detail)}</p>
-          <span class="chip ghost sm">${escapeHtml(step.type)}</span>
-        </div>
-      </div>
-    `).join('');
-
-    const demoTonic = tonics[0] || 'C';
-    const chordSide = chord ? `
-      <div class="panel chord-side">
-        <h3>${escapeHtml(chord.typeName)}</h3>
-        <p class="note">${escapeHtml(chord.tone)}</p>
-        <div class="info">
-          <div class="info-row"><dt>音程关系</dt><dd>${escapeHtml(chord.formula)}</dd></div>
-          <div class="info-row"><dt>音色特征</dt><dd>${escapeHtml(chord.tone)}</dd></div>
-          <div class="info-row"><dt>适用风格</dt><dd>${escapeHtml(chord.style)}</dd></div>
-        </div>
-        <div class="chips tight" style="margin-top:16px">
-          <a class="chip" href="../chords/family.html#type=${chord.familyId}">查看该分类</a>
-          <a class="chip" href="../chords/detail.html#slug=${chordSlug(chord, demoTonic, chordsData.tonicSlugMap)}">${escapeHtml(demoTonic)} 调详情</a>
-        </div>
-        ${current.progressionId && progression ? `
-          <a class="text-card" style="margin-top:16px" href="../progressions/detail.html#id=${progression.id}">
-            <div class="text-card-head">
-              <strong>${escapeHtml(progression.name)}</strong>
-              <span class="chip">${escapeHtml(progression.key)}</span>
-            </div>
-            <p>${escapeHtml(progression.description)}</p>
-          </a>
-        ` : ''}
-      </div>
-    ` : renderState('未找到引用的和弦');
-
-    const dayHandItems = chord ? tonics.map((tonic, i) => `
-      <div class="acc-item ${i === 0 ? 'open' : ''}" data-acc-item>
-        <button type="button" class="acc-head" data-acc-head aria-expanded="${i === 0 ? 'true' : 'false'}">
-          <span class="acc-index">${i + 1}</span>
-          <span class="acc-name">${escapeHtml(chordSymbol(chord, tonic))}</span>
-          <span class="acc-phase">${escapeHtml(chordCName(chord, tonic, chordsData.tonicCn))}</span>
-          <span class="acc-arrow" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-body">
-          ${renderHandBlocks(chord, tonic, chordsData, { showTable: false })}
-          <div class="mini-chips">
-            <a class="chip" href="../chords/detail.html#slug=${chordSlug(chord, tonic, chordsData.tonicSlugMap)}">打开该调和弦详情</a>
-          </div>
-        </div>
-      </div>
-    `).join('') : '';
+    const body = practiceMode === 'progression'
+      ? renderProgressionWorkspace(dayTonics)
+      : renderChordWorkspace(dayTonics);
 
     root.innerHTML = `
       <p class="crumb"><a href="../">首页</a> / 练习</p>
       <h1>每日练习</h1>
-      <p class="lead">按五度圈把 12 个调摊到一周里。点选日期，圈上会亮起当日调组；每天只练一组，纵向站稳、横向移调、开口视唱。</p>
+      <p class="lead">选定日期与调，直接在页面查看构成音与手型图；和弦与进行两类练习在下方工作区切换。</p>
 
       <div class="chips">${dayChips}</div>
 
@@ -217,40 +243,21 @@
           <div class="fifths-meta">
             <h2>${escapeHtml(group.day)} · 今日练习调</h2>
             <p class="note">${escapeHtml(group.note)}</p>
-            <div class="tonic-row">${tonicPills}</div>
-            <p class="fifths-hint">扁平实心、无反光。绿色由深到浅递进（外→内→圆心），对齐 OpenMAIC 按钮质感。</p>
+            <p class="fifths-hint">高亮为当日调组。下方工作区按钮与之一致，点选即可切换和弦 / 进行内容。</p>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-head">
-          <h2>练习步骤</h2>
-          <span class="crumb" style="margin:0">共 ${current.steps.length} 步</span>
-        </div>
-        <div class="chips">${practiceChips}</div>
-
-        <div class="detail-layout practice-layout">
-          <div class="detail-main step-list">${stepRows}</div>
-          <aside class="related">${chordSide}</aside>
-        </div>
-      </section>
-
-      ${chord ? `
-      <section class="section">
-        <div class="section-head">
-          <h2>今日手型</h2>
-          <span class="crumb" style="margin:0">${escapeHtml(group.day)} · ${tonics.length} 个调</span>
-        </div>
-        <p class="note" style="margin:-8px 0 16px">每个手型都按「和弦怎么拆 → 左右手各弹哪一层」来写。先把第一个调弹明白，再展开后面的调做平移。</p>
-        <div class="day-hands">${dayHandItems}</div>
-      </section>
-      ` : ''}
+      ${body}
     `;
 
     root.querySelectorAll('[data-day]').forEach(btn => {
       btn.addEventListener('click', () => {
         dayIndex = Number(btn.dataset.day);
+        const g = practice.weeklyGroups[dayIndex];
+        if (!drillTonicsForDay(g).includes(drillTonic)) {
+          drillTonic = defaultDrillTonic(g);
+        }
         refresh();
       });
     });
@@ -262,8 +269,28 @@
       });
     });
 
-    initAccordion(root);
+    root.querySelectorAll('[data-practice-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        practiceMode = btn.dataset.practiceMode;
+        refresh();
+      });
+    });
+
+    root.querySelectorAll('[data-progression-id]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        progressionId = btn.dataset.progressionId;
+        refresh();
+      });
+    });
+
+    root.querySelectorAll('[data-drill-tonic]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        drillTonic = btn.dataset.drillTonic;
+        refresh();
+      });
+    });
   }
 
+  drillTonic = defaultDrillTonic(practice.weeklyGroups[dayIndex]);
   refresh();
 })();

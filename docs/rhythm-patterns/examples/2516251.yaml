@@ -1,0 +1,39 @@
+schema: chords-keys-handbook/rhythm-score/1
+title: 2516251
+time: 4/4
+layout: v2
+output:
+  basename: 2516251-rhythm
+bars:
+  - chords:
+      - { beat: 1, text: "2m7" }
+      - { beat: 3, text: "5⁷" }
+    beats:
+      - two-eighth
+      - two-sixteenth-eighth
+      - two-eighth
+      - quarter
+  - chords:
+      - { beat: 1, text: "1maj7" }
+      - { beat: 3, text: "6⁷" }
+    beats:
+      - two-eighth
+      - quarter
+      - two-eighth
+      - two-eighth
+  - chords:
+      - { beat: 1, text: "2m7" }
+      - { beat: 3, text: "5⁷sus4" }
+    beats:
+      - two-eighth
+      - four-sixteenth
+      - two-eighth
+      - two-sixteenth-eighth
+  - chords:
+      - { beat: 1, text: "1maj7" }
+    chord_holds: [2, 3, 4]
+    beats:
+      - quarter
+      - rest
+      - rest
+      - rest

@@ -45,7 +45,7 @@ python -m http.server 8000 --directory docs
 ## 内部约定
 
 - **路由**：静态服务器会把 `xxx.html` 301 到无扩展名路径并丢弃查询串，因此模块内部统一用 hash 传参
-  （`detail.html#slug=c-major`、`family.html#type=sevenths`、`progressions/#4566`）。
+  （`detail.html#slug=c-major`、`family.html#type=sevenths`、`progressions/#id=1564`）。
 - **资源命名**：卡片图 `card-keys/{slug}-{list|hero}.svg`；手型图 `{folder}/{调名}-hand-shape-{id}.svg`；
   进行图 `{folder}/{调名}-progression.svg`。`major` / `minor` 后缀用连字符（`c-major`），其余直接拼接（`c7`、`csus4`）。
 - **模块解耦**：练习与进行只存 `chordId`，曲目只存 `progressionId`，运行时查表渲染。

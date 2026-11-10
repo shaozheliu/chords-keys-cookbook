@@ -76,9 +76,13 @@ python -m http.server 8000 --directory docs
 
 ## SVG 生成
 
-`scripts/` 下的 Python 脚本负责生成 `docs/assets/images/` 中的全部 SVG。命名约定：
+`scripts/` 下的 Python 脚本负责键盘图、手型图、进行图等 SVG。
 
 - 卡片图：`card-keys/{slug}-{list|hero}.svg`
 - 手型图：`{folder}/{调名}-hand-shape-{手型id}.svg`
 - 进行图：`{folder}/{调名}-progression.svg`
-- 节奏型：`rhythm-patterns/{名称}.svg`
+- **节奏型（X 谱）**：`rhythm-patterns/{名称}.svg` — 由 **`.cursor/skills/handbook-rhythm-pattern/scripts/build_rhythm_patterns.py`** 生成（见 Skill 说明）
+
+```bash
+python .cursor/skills/handbook-rhythm-pattern/scripts/build_rhythm_patterns.py builtin
+```

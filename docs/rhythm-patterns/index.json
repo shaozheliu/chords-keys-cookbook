@@ -1,0 +1,39 @@
+{
+  "schema": "chords-keys-handbook/rhythm-pattern-index/1",
+  "notationFormat": ".cursor/skills/handbook-rhythm-pattern/reference/notation-format.md",
+  "cellRegistry": "docs/rhythm-patterns/cells/canon.yaml",
+  "layoutDefault": "v2",
+  "outputDir": "docs/assets/images/rhythm-patterns",
+  "skillScripts": ".cursor/skills/handbook-rhythm-pattern/scripts",
+  "examples": {
+    "lianxi-1": {
+      "title": "练习1",
+      "out": "lianxi-1-demo.svg",
+      "buildTarget": "exercise-1",
+      "chords": "1add9 — 5/7 — | 6m7 — — —"
+    },
+    "2516251": {
+      "title": "2516251",
+      "out": "2516251-rhythm.svg",
+      "buildTarget": "2516251",
+      "source": "docs/rhythm-patterns/examples/2516251.yaml"
+    }
+  },
+  "buildTargets": {
+    "exercise-1": {
+      "label": "教材示例 · 练习1（2 小节）",
+      "scripts": ["gen_rhythm_patterns.py exercise-1"],
+      "outs": ["lianxi-1-demo.svg"]
+    },
+    "1564-12": {
+      "label": "12 调 · 1564 练习1 节奏",
+      "scripts": ["gen_1564_progression_rhythm.py"],
+      "outs": "{tonic}-1564-rhythm.svg"
+    },
+    "2516251": {
+      "label": "2516251 turnaround（级数通用 · v2）",
+      "scripts": ["gen_2516251_rhythm.py"],
+      "outs": "2516251-rhythm.svg"
+    }
+  }
+}
