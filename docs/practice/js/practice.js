@@ -184,7 +184,6 @@
       ${renderPracticeKit(prog, combo, chordsData, {
         tonicLabel: `${drillTonic} 大调`,
         practiceKey: drillTonic,
-        showProgressionStrip: false,
       })}
       <div class="chips" style="margin-top:16px">
         <a class="chip" href="../progressions/detail.html#id=${encodeURIComponent(prog.id)}">查看 ${escapeHtml(prog.code)} 进行详情</a>

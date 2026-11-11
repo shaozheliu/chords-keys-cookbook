@@ -1,1 +1,4 @@
 .DS_Store
+
+# Cursor 本地配置（rules / skills / mcp 等不进库）
+.cursor/

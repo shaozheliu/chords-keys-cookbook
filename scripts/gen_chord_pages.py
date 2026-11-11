@@ -5,7 +5,11 @@
 # 同时写出卡片琴键图（固定 13 个白键）。
 
 import html
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_paths import HAND_IMAGE_FOLDER_TO_KIND, hand_shape_svg
 from urllib.parse import quote
 
 from piano_svg import CARD_HERO, CARD_LIST, write_card_svg
@@ -13,7 +17,7 @@ from piano_svg import CARD_HERO, CARD_LIST, write_card_svg
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
 CHORDS = DOCS / 'chords'
-KEYS = DOCS / 'assets' / 'images' / 'card-keys'
+KEYS = DOCS / 'assets' / 'images' / 'cards'
 
 TONICS = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F']
 TONIC_PC = {
@@ -353,7 +357,7 @@ def chips(items, active):
 
 
 def card_html(item, img_prefix, href_prefix):
-    src = f'{img_prefix}card-keys/{item["slug"]}-list.svg'
+    src = f'{img_prefix}cards/{item["slug"]}-list.svg'
     href = f'{href_prefix}{item["slug"]}/'
     return f'''<a class="chord-card" href="{href}">
   <div class="chord-copy"><strong>{e(item["symbol"])}</strong><span>{e(item["title"])}</span></div>
@@ -455,7 +459,7 @@ def write_detail(kind_id, tonic):
     item = chord(kind_id, tonic)
     family = next(f for f in FAMILIES if kind_id in f['kinds'])
     img = '../../assets/images/'
-    hero = f'{img}card-keys/{item["slug"]}-hero.svg'
+    hero = f'{img}cards/{item["slug"]}-hero.svg'
     rows = [
         ('根音', tonic),
         ('和弦类型', kind['type_name']),
@@ -468,12 +472,13 @@ def write_detail(kind_id, tonic):
         f'<div class="info-row"><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in rows
     )
     hands = []
+    hand_kind = HAND_IMAGE_FOLDER_TO_KIND.get(kind['folder'], kind['folder'])
     for idx, label, sentence in kind['hands']:
-        filename = f'{tonic}-hand-shape-{idx}.svg'
-        path = DOCS / 'assets' / 'images' / kind['folder'] / filename
+        path = hand_shape_svg(hand_kind, tonic, idx)
         if not path.exists():
             continue
-        src = img + kind['folder'] + '/' + asset_name(filename)
+        rel = path.relative_to(DOCS / 'assets' / 'images')
+        src = img + '/'.join(asset_name(p) for p in rel.parts)
         hands.append(f'''<div class="hand-block">
   <h3>{e(label)}</h3>
   <p>{e(sentence)}</p>

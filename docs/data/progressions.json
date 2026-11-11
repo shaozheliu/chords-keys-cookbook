@@ -16,8 +16,7 @@
       "moodTags": ["明亮", "推进"],
       "moodAnalysis": "属七带来张力，小七制造下沉，IV 把乐句托回根音方向。",
       "songs": [],
-      "folder": "1564-progressions",
-      "rhythmSvgTemplate": "assets/images/rhythm-patterns/{tonic}-1564-rhythm.svg",
+      "rhythmSvgTemplate": "assets/images/rhythm/by-progression/1564/rhythm.svg",
       "combos": [
         {
           "id": "main",
@@ -26,7 +25,7 @@
           "tagTone": "accent",
           "featured": true,
           "mood": "明亮 · 推进",
-          "rhythmSvgTemplate": "assets/images/rhythm-patterns/{tonic}-1564-rhythm.svg",
+          "rhythmSvgTemplate": "assets/images/rhythm/by-progression/1564/rhythm.svg",
           "note": "节奏型 1add9 / 5/7 / 6m7（练习1）；1add9 与 4 用手型一，5 级大三用手型二，6m7 用手型二。",
           "symbols": ["Cadd9", "G", "Am7", "F"],
           "degrees": ["1add9", "5/7", "6m7", "4"],
@@ -94,8 +93,7 @@
       "moodTags": ["推进", "爵士", "解决"],
       "moodAnalysis": "属七与挂四制造张力阶梯，maj7 落地收束。",
       "songs": [],
-      "folder": "dom7-progressions",
-      "rhythmSvgTemplate": "assets/images/rhythm-patterns/2516251-rhythm.svg",
+      "rhythmSvgTemplate": "assets/images/rhythm/by-progression/2516251/rhythm.svg",
       "combos": [
         {
           "id": "main",
@@ -104,7 +102,7 @@
           "tagTone": "accent",
           "featured": true,
           "mood": "推进 → 悬置 → 落地",
-          "rhythmSvgTemplate": "assets/images/rhythm-patterns/2516251-rhythm.svg",
+          "rhythmSvgTemplate": "assets/images/rhythm/by-progression/2516251/rhythm.svg",
           "note": "四小节 turnaround 节奏；第 4 小节仅 1maj7 延拍。指法：2m7、1maj7 手型一；5⁷、6⁷、5⁷sus4 手型二。",
           "symbols": ["Dm7", "G7", "Cmaj7", "A7", "Dm7", "G7sus4", "Cmaj7"],
           "degrees": ["2m7", "5⁷", "1maj7", "6⁷", "2m7", "5⁷sus4", "1maj7"],

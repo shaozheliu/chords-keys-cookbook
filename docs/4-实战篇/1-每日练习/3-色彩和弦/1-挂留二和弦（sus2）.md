@@ -35,7 +35,7 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 > **练习要点**：左手根音力度稍重，建立低音支撑感；右手 1-2-3 三音间距较近（纯四度 + 大二度），手指保持放松。
 
-![手型一示意图](../../../assets/images/sus2-chords/C-hand-shape-1.svg)
+![手型一示意图](../../../assets/images/hands/by-tonic/C/sus2/shape-1.svg)
 
 ### 手型二：左手 do-so-do + 右手 re-so-re
 
@@ -48,7 +48,7 @@ sus2 有两种基本手型，覆盖从简约到丰满的弹奏场景：
 
 > **练习要点**：左手 5→1 跨一个八度、右手 1→5 也跨八度，手腕放松不要僵硬；确保每个音均匀触键。
 
-![手型二示意图](../../../assets/images/sus2-chords/C-hand-shape-2.svg)
+![手型二示意图](../../../assets/images/hands/by-tonic/C/sus2/shape-2.svg)
 
 ### 两种手型对比
 
@@ -99,9 +99,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 F（3 指）、右手 C-F-G（1-2-3 指）；手型二：左手 F-C-F（5-2-1）、右手 G-C-G（1-2-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Fsus2 · 手型一](../../../assets/images/sus2-chords/F-hand-shape-1.svg)
+![Fsus2 · 手型一](../../../assets/images/hands/by-tonic/F/sus2/shape-1.svg)
 
-![Fsus2 · 手型二](../../../assets/images/sus2-chords/F-hand-shape-2.svg)
+![Fsus2 · 手型二](../../../assets/images/hands/by-tonic/F/sus2/shape-2.svg)
 
 #### Csus2
 
@@ -111,9 +111,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 C（3 指）、右手 G-C-D（1-2-3 指）；手型二：左手 C-G-C（5-2-1）、右手 D-G-D（1-2-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Csus2 · 手型一](../../../assets/images/sus2-chords/C-hand-shape-1.svg)
+![Csus2 · 手型一](../../../assets/images/hands/by-tonic/C/sus2/shape-1.svg)
 
-![Csus2 · 手型二](../../../assets/images/sus2-chords/C-hand-shape-2.svg)
+![Csus2 · 手型二](../../../assets/images/hands/by-tonic/C/sus2/shape-2.svg)
 
 #### Gsus2
 
@@ -123,9 +123,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 G（3 指）、右手 D-G-A（1-2-3 指）；手型二：左手 G-D-G（5-2-1）、右手 A-D-A（1-2-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Gsus2 · 手型一](../../../assets/images/sus2-chords/G-hand-shape-1.svg)
+![Gsus2 · 手型一](../../../assets/images/hands/by-tonic/G/sus2/shape-1.svg)
 
-![Gsus2 · 手型二](../../../assets/images/sus2-chords/G-hand-shape-2.svg)
+![Gsus2 · 手型二](../../../assets/images/hands/by-tonic/G/sus2/shape-2.svg)
 
 > **周一要点**：Fsus2（F-G-C）、Csus2（C-D-G）、Gsus2（G-A-D）全白键、无黑键，是手感最友好的一组。重点体会「五音-根音-二音」骨架在无黑键时的手型，再把这份手感带到后面的黑键调。
 
@@ -141,9 +141,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 D（3 指）、右手 A-D-E（1-2-3 指）；手型二：左手 D-A-D（5-2-1）、右手 E-A-E（1-2-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Dsus2 · 手型一](../../../assets/images/sus2-chords/D-hand-shape-1.svg)
+![Dsus2 · 手型一](../../../assets/images/hands/by-tonic/D/sus2/shape-1.svg)
 
-![Dsus2 · 手型二](../../../assets/images/sus2-chords/D-hand-shape-2.svg)
+![Dsus2 · 手型二](../../../assets/images/hands/by-tonic/D/sus2/shape-2.svg)
 
 #### Asus2
 
@@ -153,9 +153,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 A（3 指）、右手 E-A-B（1-2-3 指）；手型二：左手 A-E-A（5-2-1）、右手 B-E-B（1-2-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Asus2 · 手型一](../../../assets/images/sus2-chords/A-hand-shape-1.svg)
+![Asus2 · 手型一](../../../assets/images/hands/by-tonic/A/sus2/shape-1.svg)
 
-![Asus2 · 手型二](../../../assets/images/sus2-chords/A-hand-shape-2.svg)
+![Asus2 · 手型二](../../../assets/images/hands/by-tonic/A/sus2/shape-2.svg)
 
 #### Esus2
 
@@ -165,9 +165,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 E（3 指）、右手 B-E-F♯（1-2-3 指）；手型二：左手 E-B-E（5-2-1）、右手 F♯-B-F♯（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![Esus2 · 手型一](../../../assets/images/sus2-chords/E-hand-shape-1.svg)
+![Esus2 · 手型一](../../../assets/images/hands/by-tonic/E/sus2/shape-1.svg)
 
-![Esus2 · 手型二](../../../assets/images/sus2-chords/E-hand-shape-2.svg)
+![Esus2 · 手型二](../../../assets/images/hands/by-tonic/E/sus2/shape-2.svg)
 
 > **周二要点**：Dsus2、Asus2 全白键；Esus2 首次出现二音黑键 F♯。二音落在黑键时，右手 ③ 指（二音）用指腹均匀下键，手型仍保持「五音-根音-二音」不变。
 
@@ -183,9 +183,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 B（3 指）、右手 F♯-B-C♯（1-2-3 指）；手型二：左手 B-F♯-B（5-2-1）、右手 C♯-F♯-C♯（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![Bsus2 · 手型一](../../../assets/images/sus2-chords/B-hand-shape-1.svg)
+![Bsus2 · 手型一](../../../assets/images/hands/by-tonic/B/sus2/shape-1.svg)
 
-![Bsus2 · 手型二](../../../assets/images/sus2-chords/B-hand-shape-2.svg)
+![Bsus2 · 手型二](../../../assets/images/hands/by-tonic/B/sus2/shape-2.svg)
 
 #### F♯sus2
 
@@ -207,9 +207,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 D♭（3 指）、右手 A♭-D♭-E♭（1-2-3 指）；手型二：左手 D♭-A♭-D♭（5-2-1）、右手 E♭-A♭-E♭（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![D♭sus2 · 手型一](../../../assets/images/sus2-chords/Db-hand-shape-1.svg)
+![D♭sus2 · 手型一](../../../assets/images/hands/by-tonic/Db/sus2/shape-1.svg)
 
-![D♭sus2 · 手型二](../../../assets/images/sus2-chords/Db-hand-shape-2.svg)
+![D♭sus2 · 手型二](../../../assets/images/hands/by-tonic/Db/sus2/shape-2.svg)
 
 > **周三~周四要点**：黑键渐多。Bsus2 黑键在二音 C♯、五音 F♯；F♯sus2 三个音全黑；D♭sus2 黑键在根音 D♭、二音 E♭、五音 A♭。手型关系与其他调完全一致，重点感受右手「五音-根音-二音」在黑键上的整体平移。
 
@@ -225,9 +225,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 A♭（3 指）、右手 E♭-A♭-B♭（1-2-3 指）；手型二：左手 A♭-E♭-A♭（5-2-1）、右手 B♭-E♭-B♭（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![A♭sus2 · 手型一](../../../assets/images/sus2-chords/Ab-hand-shape-1.svg)
+![A♭sus2 · 手型一](../../../assets/images/hands/by-tonic/Ab/sus2/shape-1.svg)
 
-![A♭sus2 · 手型二](../../../assets/images/sus2-chords/Ab-hand-shape-2.svg)
+![A♭sus2 · 手型二](../../../assets/images/hands/by-tonic/Ab/sus2/shape-2.svg)
 
 #### E♭sus2
 
@@ -237,9 +237,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 E♭（3 指）、右手 B♭-E♭-F（1-2-3 指）；手型二：左手 E♭-B♭-E♭（5-2-1）、右手 F-B♭-F（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![E♭sus2 · 手型一](../../../assets/images/sus2-chords/Eb-hand-shape-1.svg)
+![E♭sus2 · 手型一](../../../assets/images/hands/by-tonic/Eb/sus2/shape-1.svg)
 
-![E♭sus2 · 手型二](../../../assets/images/sus2-chords/Eb-hand-shape-2.svg)
+![E♭sus2 · 手型二](../../../assets/images/hands/by-tonic/Eb/sus2/shape-2.svg)
 
 #### B♭sus2
 
@@ -249,9 +249,9 @@ sus2 的练习只有一条主线：**手型平移**（把每个 sus2 的两种�
 > 手型一：左手 B♭（3 指）、右手 F-B♭-C（1-2-3 指）；手型二：左手 B♭-F-B♭（5-2-1）、右手 C-F-C（1-2-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![B♭sus2 · 手型一](../../../assets/images/sus2-chords/Bb-hand-shape-1.svg)
+![B♭sus2 · 手型一](../../../assets/images/hands/by-tonic/Bb/sus2/shape-1.svg)
 
-![B♭sus2 · 手型二](../../../assets/images/sus2-chords/Bb-hand-shape-2.svg)
+![B♭sus2 · 手型二](../../../assets/images/hands/by-tonic/Bb/sus2/shape-2.svg)
 
 > **周五~周六要点**：降号命名。A♭sus2 黑键在根音 A♭、二音 B♭、五音 E♭；E♭sus2 黑键在根音 E♭、五音 B♭；B♭sus2 黑键只在根音 B♭。注意降号调里「根音 + 大二度 + 纯五度」的关系不变，只是书面记谱换成降号。
 

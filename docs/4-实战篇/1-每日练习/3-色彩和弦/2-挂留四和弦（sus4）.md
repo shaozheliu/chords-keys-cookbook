@@ -35,7 +35,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 > **练习要点**：左手纯五度跨度（C→G）与大三扩张型一致，手腕放松不要僵硬；右手 1-2-3-5 跨度也为纯八度（C→C），唯一变化是 ② 指从大三的 E 移到 F，注意 ② 指（fa）与 ③ 指（so）之间的大二度间距。
 
-![Csus4 示意图](../../../assets/images/sus4-chords/C-hand-shape-2.svg)
+![Csus4 示意图](../../../assets/images/hands/by-tonic/C/sus4/shape-2.svg)
 
 ---
 
@@ -85,7 +85,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 
 整个进行共 3 个小节（每个和弦一小节），每小节弹 **8 个八分音符**（一拍一个，两两共用下划线）。下面为 X 节奏谱——**X 表示一次弹奏，一道下划线 = 八分音符；红色弧线为跨拍连音线**。**每个 sus4 的节奏谱上直接标注具体和弦名**（如 Fsus2 / Gsus4 / C），方便代入式练习：
 
-![节奏型示例](../../../assets/images/rhythm-patterns/C-sus4-rhythm.svg)
+![节奏型示例](../../../assets/images/rhythm/by-progression/sus4-drill/C-rhythm.svg)
 
 > **连音线**：第 2 拍的第 3 个八分音符与第 3 拍的第 4 个八分音符用弧线连在一起——第 3 个音按住不松手，时值延长到第 4 个音的位置再抬起，制造一个跨拍的小切分。
 >
@@ -107,7 +107,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 F-C（5-2 指）、右手 F-B♭-C-F（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![Fsus4 · 扩张型](../../../assets/images/sus4-chords/F-hand-shape-2.svg)
+![Fsus4 · 扩张型](../../../assets/images/hands/by-tonic/F/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -120,9 +120,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Fsus4 | F - C（5-2） | F - B♭ - C - F（1-2-3-5） |
 | I | B♭ | B♭（3） | F - B♭ - D（1-2-4） |
 
-![B♭ 大调进行手位图](../../../assets/images/sus4-progressions/Bb-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/Bb-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/Bb-rhythm.svg)
 
 #### Csus4
 
@@ -132,7 +131,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 C-G（5-2 指）、右手 C-F-G-C（1-2-3-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Csus4 · 扩张型](../../../assets/images/sus4-chords/C-hand-shape-2.svg)
+![Csus4 · 扩张型](../../../assets/images/hands/by-tonic/C/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -145,9 +144,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Csus4 | C - G（5-2） | C - F - G - C（1-2-3-5） |
 | I | F | F（3） | C - F - A（1-2-4） |
 
-![F 大调进行手位图](../../../assets/images/sus4-progressions/F-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/F-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/F-rhythm.svg)
 
 #### Gsus4
 
@@ -157,7 +155,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 G-D（5-2 指）、右手 G-C-D-G（1-2-3-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Gsus4 · 扩张型](../../../assets/images/sus4-chords/G-hand-shape-2.svg)
+![Gsus4 · 扩张型](../../../assets/images/hands/by-tonic/G/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -170,9 +168,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Gsus4 | G - D（5-2） | G - C - D - G（1-2-3-5） |
 | I | C | C（3） | G - C - E（1-2-4） |
 
-![C 大调进行手位图](../../../assets/images/sus4-progressions/C-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/C-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/C-rhythm.svg)
 
 > **周一要点**：Fsus4 的四音 B♭ 是黑键，Csus4、Gsus4 全白键。sus4 只有一个扩张型手型，换调只是整体平移，重点感受四音（右手 ② 指）落在黑键时的指腹下键。
 
@@ -188,7 +185,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 D-A（5-2 指）、右手 D-G-A-D（1-2-3-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Dsus4 · 扩张型](../../../assets/images/sus4-chords/D-hand-shape-2.svg)
+![Dsus4 · 扩张型](../../../assets/images/hands/by-tonic/D/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -201,9 +198,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Dsus4 | D - A（5-2） | D - G - A - D（1-2-3-5） |
 | I | G | G（3） | D - G - B（1-2-4） |
 
-![G 大调进行手位图](../../../assets/images/sus4-progressions/G-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/G-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/G-rhythm.svg)
 
 #### Asus4
 
@@ -213,7 +209,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 A-E（5-2 指）、右手 A-D-E-A（1-2-3-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Asus4 · 扩张型](../../../assets/images/sus4-chords/A-hand-shape-2.svg)
+![Asus4 · 扩张型](../../../assets/images/hands/by-tonic/A/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -226,9 +222,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Asus4 | A - E（5-2） | A - D - E - A（1-2-3-5） |
 | I | D | D（3） | A - D - F♯（1-2-4） |
 
-![D 大调进行手位图](../../../assets/images/sus4-progressions/D-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/D-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/D-rhythm.svg)
 
 #### Esus4
 
@@ -238,7 +233,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 E-B（5-2 指）、右手 E-A-B-E（1-2-3-5，末音高八度）。
 > 先柱式后琶音，重点保持手指放松、均匀触键。
 
-![Esus4 · 扩张型](../../../assets/images/sus4-chords/E-hand-shape-2.svg)
+![Esus4 · 扩张型](../../../assets/images/hands/by-tonic/E/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -251,9 +246,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Esus4 | E - B（5-2） | E - A - B - E（1-2-3-5） |
 | I | A | A（3） | E - A - C♯（1-2-4） |
 
-![A 大调进行手位图](../../../assets/images/sus4-progressions/A-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/A-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/A-rhythm.svg)
 
 > **周二要点**：Dsus4、Asus4、Esus4 全白键，手感友好。三级 D-G-A、A-D-E、E-A-B 全白，重点体会「根-四-五-高八度根」骨架在无黑键时的手型，再把这份手感带到黑键调。
 
@@ -269,7 +263,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 B-F♯（5-2 指）、右手 B-E-F♯-B（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![Bsus4 · 扩张型](../../../assets/images/sus4-chords/B-hand-shape-2.svg)
+![Bsus4 · 扩张型](../../../assets/images/hands/by-tonic/B/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -282,9 +276,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | Bsus4 | B - F♯（5-2） | B - E - F♯ - B（1-2-3-5） |
 | I | E | E（3） | B - E - G♯（1-2-4） |
 
-![E 大调进行手位图](../../../assets/images/sus4-progressions/E-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/E-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/E-rhythm.svg)
 
 #### F♯sus4
 
@@ -307,9 +300,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | F♯sus4 | F♯ - C♯（5-2） | F♯ - B - C♯ - F♯（1-2-3-5） |
 | I | B | B（3） | F♯ - B - D♯（1-2-4） |
 
-![B 大调进行手位图](../../../assets/images/sus4-progressions/B-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/B-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/B-rhythm.svg)
 
 #### D♭sus4
 
@@ -319,7 +311,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 D♭-A♭（5-2 指）、右手 D♭-G♭-A♭-D♭（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![D♭sus4 · 扩张型](../../../assets/images/sus4-chords/Db-hand-shape-2.svg)
+![D♭sus4 · 扩张型](../../../assets/images/hands/by-tonic/Db/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -332,7 +324,6 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | D♭sus4 | D♭ - A♭（5-2） | D♭ - G♭ - A♭ - D♭（1-2-3-5） |
 | I | G♭ | G♭（3） | D♭ - G♭ - B♭（1-2-4） |
 
-![G♭ 大调进行手位图](../../../assets/images/sus4-progressions/F%23-progression.svg)
 
 ![节奏型](../../../assets/images/rhythm-patterns/F%23-sus4-rhythm.svg)
 
@@ -350,7 +341,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 A♭-E♭（5-2 指）、右手 A♭-D♭-E♭-A♭（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![A♭sus4 · 扩张型](../../../assets/images/sus4-chords/Ab-hand-shape-2.svg)
+![A♭sus4 · 扩张型](../../../assets/images/hands/by-tonic/Ab/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -363,9 +354,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | A♭sus4 | A♭ - E♭（5-2） | A♭ - D♭ - E♭ - A♭（1-2-3-5） |
 | I | D♭ | D♭（3） | A♭ - D♭ - F（1-2-4） |
 
-![D♭ 大调进行手位图](../../../assets/images/sus4-progressions/Db-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/Db-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/Db-rhythm.svg)
 
 #### E♭sus4
 
@@ -375,7 +365,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 E♭-B♭（5-2 指）、右手 E♭-A♭-B♭-E♭（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![E♭sus4 · 扩张型](../../../assets/images/sus4-chords/Eb-hand-shape-2.svg)
+![E♭sus4 · 扩张型](../../../assets/images/hands/by-tonic/Eb/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -388,9 +378,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | E♭sus4 | E♭ - B♭（5-2） | E♭ - A♭ - B♭ - E♭（1-2-3-5） |
 | I | A♭ | A♭（3） | E♭ - A♭ - C（1-2-4） |
 
-![A♭ 大调进行手位图](../../../assets/images/sus4-progressions/Ab-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/Ab-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/Ab-rhythm.svg)
 
 #### B♭sus4
 
@@ -400,7 +389,7 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 > 扩张型：左手 B♭-F（5-2 指）、右手 B♭-E♭-F-B♭（1-2-3-5，末音高八度）。
 > 先柱式后琶音，黑键用指腹均匀下键。
 
-![B♭sus4 · 扩张型](../../../assets/images/sus4-chords/Bb-hand-shape-2.svg)
+![B♭sus4 · 扩张型](../../../assets/images/hands/by-tonic/Bb/sus4/shape-2.svg)
 
 ##### （2）和弦进行练习
 
@@ -413,9 +402,8 @@ sus4 **只需掌握一种手型——扩张型**，直接参考 C 大三和弦�
 | V | B♭sus4 | B♭ - F（5-2） | B♭ - E♭ - F - B♭（1-2-3-5） |
 | I | E♭ | E♭（3） | B♭ - E♭ - G（1-2-4） |
 
-![E♭ 大调进行手位图](../../../assets/images/sus4-progressions/Eb-progression.svg)
 
-![节奏型](../../../assets/images/rhythm-patterns/Eb-sus4-rhythm.svg)
+![节奏型](../../../assets/images/rhythm/by-progression/sus4-drill/Eb-rhythm.svg)
 
 > **周五~周六要点**：降号命名的 sus4。A♭sus4、E♭sus4、B♭sus4 分别是 D♭、A♭、E♭ 大调的五级。这是全篇黑键最多的一组，四音基本都落在黑键（A♭sus4 的 D♭、E♭sus4 的 A♭、B♭sus4 的 E♭），右手 ② 指（四音）务必用指腹均匀下键，保持「根-四-五-高八度根」骨架不变。
 

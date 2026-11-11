@@ -46,7 +46,6 @@
           showHead: false,
           tonicLabel: `${detailPracticeKey} 大调`,
           practiceKey: detailPracticeKey,
-          showProgressionStrip: false,
         }
       )}</div>`
       : '';

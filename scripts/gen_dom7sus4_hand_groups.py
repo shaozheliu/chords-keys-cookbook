@@ -2,7 +2,11 @@
 # 十二调属七挂四（dom7sus4 / 7sus4）手型图 — 属七三音换四音
 # ============================================================
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_paths import hand_shape_svg
 
 from piano_svg import write_hand_svg
 
@@ -46,12 +50,13 @@ HANDS = [
 ]
 
 DEGREE = {0: '根音', 5: '四音', 7: '五音', 10: '七音'}
-OUT = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'dom7sus4-chords'
+HAND_KIND = 'dom7sus4'
 
 
 def build_single_svg(tonic_name, hand, idx):
     title = f'{tonic_name}7sus4 · {hand["label"]}（{hand["sub"]}）'
-    path = OUT / f'{tonic_name}-hand-shape-{idx}.svg'
+    path = hand_shape_svg(HAND_KIND, tonic_name, idx)
+    path.parent.mkdir(parents=True, exist_ok=True)
     write_hand_svg(path, title, hand['desc'], tonic_name, hand, DEGREE, TONIC_INFO, BASE)
     print(f'{path.name} done')
 

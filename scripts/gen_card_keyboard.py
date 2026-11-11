@@ -11,7 +11,7 @@ from piano_svg import CARD_HERO, CARD_LIST, write_card_svg
 # A 大三：A4=69, C#5=73, E5=76；再标高八度 A5=81 更完整
 A_MAJOR = {69, 73, 76, 81}
 
-OUT = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'card-keys'
+OUT = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'cards'
 
 
 def main():

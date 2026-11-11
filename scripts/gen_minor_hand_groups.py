@@ -8,7 +8,11 @@
 # 小三和弦 = 根音 + 小三度（+3）+ 纯五度（+7），三音为降三音。
 # ============================================================
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_paths import hand_shape_svg
 
 from piano_svg import write_hand_svg
 
@@ -76,14 +80,15 @@ HANDS = [
 ]
 
 DEGREE = {0: '根音', 3: '三音', 7: '五音'}
-OUT = Path(__file__).resolve().parent.parent / 'docs' / 'assets' / 'images' / 'minor-triads'
+HAND_KIND = 'minor'
 
 
 def build_single_svg(tonic_name, hand, idx):
     sub = hand.get('sub')
     extra = f'（{sub}）' if sub else ''
     title = f'{tonic_name} Minor · {hand["label"]}{extra}'
-    path = OUT / f'{tonic_name}-hand-shape-{idx}.svg'
+    path = hand_shape_svg(HAND_KIND, tonic_name, idx)
+    path.parent.mkdir(parents=True, exist_ok=True)
     write_hand_svg(path, title, hand['desc'], tonic_name, hand, DEGREE, TONIC_INFO, BASE)
     print(f'{path.name} done')
 
